@@ -1,0 +1,53 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex envsubst
+@cindex @code{envsubst} program, usage
+@example
+envsubst [@var{option}] [@var{shell-format}]
+@end example
+
+@cindex shell format string
+@cindex dollar substitution
+@cindex environment variables
+@code{envsubst}は環境変数をその値に置き換えるプログラムです。
+
+@noindent @strong{Operation mode}
+
+@table @samp
+@item -v
+@itemx --variables
+@opindex -v@r{, @code{envsubst} option}
+@opindex --variables@r{, @code{envsubst} option}
+@var{shell-format}の中に出現する変数を出力します。
+
+@end table
+
+@noindent @strong{Informative output}
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{envsubst} option}
+@opindex --help@r{, @code{envsubst} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{envsubst} option}
+@opindex --version@r{, @code{envsubst} option}
+バージョン情報を表示して終了します。
+
+@end table
+
+通常では、標準入力から@code{$VARIABLE}または@code{$@{VARIABLE@}}という形式で参照される環境変数を読み込んで、対応する値に置き換えてから標準出力にコピーします。@var{shell-format}が与えられたときは、@var{shell-format}で指定された環境変数だけが置き換えられます。指定しなかった場合は、標準入力の中に出現するすべての環境変数が置き換えられます。
+
+この置き換えは、ダブルクォートされた文字列をシェルがアンクォートするときに行われる置き換え処理のサブセットです。他の@code{$@{@var{variable}-@var{default}@}}、@code{$(@var{command-list})}、@code{`@var{command-list}`}などにたいする置き換えは、セキュリティー上の理由から@code{envsubst}ではなくシェルによって処理されます。
+
+@code{--variables}を指定したときは、@var{shell-format}に含まれる環境変数名を1行に1つずつ出力します(標準入力は無視されます)。

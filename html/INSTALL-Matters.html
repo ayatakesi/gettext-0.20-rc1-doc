@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>INSTALL Matters (GNU gettext utilities)</title>
+
+<meta name="description" content="INSTALL Matters (GNU gettext utilities)">
+<meta name="keywords" content="INSTALL Matters (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="The-original-ABOUT_002dNLS.html#The-original-ABOUT_002dNLS" rel="up" title="The original ABOUT-NLS">
+<link href="Using-This-Package.html#Using-This-Package" rel="next" title="Using This Package">
+<link href="The-original-ABOUT_002dNLS.html#The-original-ABOUT_002dNLS" rel="prev" title="The original ABOUT-NLS">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="INSTALL-Matters"></span><div class="header">
+<p>
+Next: <a href="Using-This-Package.html#Using-This-Package" accesskey="n" rel="next">Using This Package</a>, Up: <a href="The-original-ABOUT_002dNLS.html#The-original-ABOUT_002dNLS" accesskey="u" rel="up">The original ABOUT-NLS</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="INSTALL-Matters-1"></span><h4 class="subsection">17.2.1 INSTALL Matters</h4>
+
+<p>Some packages are <em>localizable</em> when properly installed; the
+programs they contain can be made to speak your own native language.
+Most such packages use GNU <code>gettext</code>.  Other packages have their
+own ways to internationalization, predating GNU <code>gettext</code>.
+</p>
+<p>By default, this package will be installed to allow translation of
+messages.  It will automatically detect whether the system already
+provides the GNU <code>gettext</code> functions.  Installers may use special
+options at configuration time for changing the default behaviour.  The
+command:
+</p>
+<div class="example">
+<pre class="example">./configure --disable-nls
+</pre></div>
+
+<p>will <em>totally</em> disable translation of messages.
+</p>
+<p>When you already have GNU <code>gettext</code> installed on your system and
+run configure without an option for your new package, <code>configure</code>
+will probably detect the previously built and installed <samp>libintl</samp>
+library and will decide to use it.  If not, you may have to to use the
+&lsquo;<samp>--with-libintl-prefix</samp>&rsquo; option to tell <code>configure</code> where to
+look for it.
+</p>
+<p>Internationalized packages usually have many <samp>po/<var>ll</var>.po</samp>
+files, where <var>ll</var> gives an ISO&nbsp;639<!-- /@w --> two-letter code
+identifying the language.  Unless translations have been forbidden
+at <code>configure</code> time by using the &lsquo;<samp>--disable-nls</samp>&rsquo; switch,
+all available translations are installed together with the package.
+However, the environment variable <code>LINGUAS</code> may be set, prior
+to configuration, to limit the installed set.  <code>LINGUAS</code> should
+then contain a space separated list of two-letter codes, stating
+which languages are allowed.
+</p>
+
+
+
+</body>
+</html>

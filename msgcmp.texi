@@ -1,0 +1,94 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msgcmp
+@cindex @code{msgcmp} program, usage
+@example
+msgcmp [@var{option}] @var{def}.po @var{ref}.pot
+@end example
+
+@cindex compare PO files
+@code{msgcmp}プログラムは、Uniforum形式の2つの.poファイルを比較して、同じmsgid文字列を含んでいるかチェックするプログラムです。@var{def}.poファイルは、翻訳を含んだ既存のPOファイルです。@var{ref}.potは、最後に作成したPOファイル、またはPO
+Templateファイル(通常@code{xgettext}により作成される)です。このプログラムは、プログラム内のメッセージが翻訳されているかチェックするときに便利です。完全に一致するエントリーが見つからない場合は、より良い診断メッセージを生成するためにfuzzyマッチングが行われます。
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item @var{def}.po
+翻訳です。
+
+@item @var{ref}.pot
+ソースへの参照です。
+
+@item -D @var{directory}
+@itemx --directory=@var{directory}
+@opindex -D@r{, @code{msgcmp} option}
+@opindex --directory@r{, @code{msgcmp} option}
+ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストよりソースファイルを検索します。
+
+@end table
+
+@subsection オペレーションの修飾
+
+@table @samp
+@item -m
+@itemx --multi-domain
+@opindex -m@r{, @code{msgcmp} option}
+@opindex --multi-domain@r{, @code{msgcmp} option}
+@var{def}.po 内の各ドメインにたいして@var{ref}.potを適用します。
+
+@item -N
+@itemx --no-fuzzy-matching
+@opindex -N@r{, @code{msgcmp} option}
+@opindex --no-fuzzy-matching@r{, @code{msgcmp} option}
+完全に一致するものが見つからない場合、fuzzyマッチングを行いません。これにより処理のスピードが大幅に改善されます。
+
+@item --use-fuzzy
+@opindex --use-fuzzy@r{, @code{msgcmp} option}
+@var{def}.po内のfuzzyメッセージを、翻訳されたメッセージとみなします。fuzzyメッセージは翻訳者により検証されていないので、普通はこのオプションを使うのは正しくないことに注意してください。
+
+@item --use-untranslated
+@opindex --use-untranslated@r{, @code{msgcmp} option}
+@var{def}.po内の未翻訳のメッセージを、翻訳されたメッセージとみなします。普通はこのオプションを使うのは正しくないことに注意してください。
+
+@end table
+
+@subsection 入力ファイルの構文
+
+@table @samp
+@item -P
+@itemx --properties-input
+@opindex -P@r{, @code{msgcmp} option}
+@opindex --properties-input@r{, @code{msgcmp} option}
+入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava
+ResourceBundleファイルだとみなします。
+
+@item --stringtable-input
+@opindex --stringtable-input@r{, @code{msgcmp} option}
+入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized
+resourceの@code{.strings}の構文にのっとったファイルだとみなします。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msgcmp} option}
+@opindex --help@r{, @code{msgcmp} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msgcmp} option}
+@opindex --version@r{, @code{msgcmp} option}
+バージョン情報を表示して終了します。
+
+@end table

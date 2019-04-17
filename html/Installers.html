@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Installers (GNU gettext utilities)</title>
+
+<meta name="description" content="Installers (GNU gettext utilities)">
+<meta name="keywords" content="Installers (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html#Top" rel="up" title="Top">
+<link href="Programming-Languages.html#Programming-Languages" rel="next" title="Programming Languages">
+<link href="Release-Management.html#Release-Management" rel="prev" title="Release Management">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Installers"></span><div class="header">
+<p>
+Next: <a href="Programming-Languages.html#Programming-Languages" accesskey="n" rel="next">Programming Languages</a>, Previous: <a href="Maintainers.html#Maintainers" accesskey="p" rel="prev">Maintainers</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="insutoratoPei-Bu-Zhe-noShi-Dian-"></span><h2 class="chapter">14 インストーラーと配布者の視点</h2>
+<span id="index-package-installer_0027s-view-of-gettext"></span>
+<span id="index-package-distributor_0027s-view-of-gettext"></span>
+<span id="index-package-build-and-installation-options"></span>
+<span id="index-setting-up-gettext-at-build-time"></span>
+
+<p>デフォルトでは、内部的にGNU
+<code>gettext</code>をフルに使っているパッケージは、翻訳されたメッセージを使えるような方法でインストールされます。<em>configuration</em>実行時には、これらのパッケージはホストシステムですでにGNU
+<code>gettext</code>の機能が提供されているかを、自動的に検出する必要があります。もし提供されていない場合、GNU
+<code>gettext</code>ライブラリーが自動的に準備・使用されます。インストーラーは、configure時のこの動作を変更するための特別なオプションを使うことができます。コマンド&lsquo;<samp>./configure
+--with-included-gettext</samp>&rsquo;により、そのシステムの<code>gettext</code>をバイパスしてかわりに同梱された GNU
+<code>gettext</code>を使用します。また&lsquo;<samp>./configure
+--disable-nls</samp>&rsquo;では、翻訳されたメッセージを利用しないプログラムを生成します。
+</p>
+<span id="index-LINGUAS_002c-environment-variable"></span>
+<p>インターナショナライズされたパッケージには通常、多くの<samp><var>ll</var>.po</samp>ファイルがあります。翻訳が利用不可になっていなければ、パッケージのインストールによりそれらが利用可能になります。しかしconfigureに先立ち環境変数の<code>LINGUAS</code>がセットされていると、インストールされる対象が制限されます。<code>LINGUAS</code>はスペースで区切られた2文字のコードのリストで、利用できる言語を指定します。
+</p>
+
+
+
+</body>
+</html>

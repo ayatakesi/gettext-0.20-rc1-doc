@@ -1,0 +1,496 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex xgettext
+@cindex @code{xgettext} program, usage
+@example
+xgettext [@var{option}] [@var{inputfile}] @dots{}
+@end example
+
+@code{xgettext}プログラムは、与えられた入力ファイルから、翻訳可能な文字列を抽出します。
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item @var{inputfile} @dots{}
+入力ファイルを指定します。
+
+@item -f @var{file}
+@itemx --files-from=@var{file}
+@opindex -f@r{, @code{xgettext} option}
+@opindex --files-from@r{, @code{xgettext} option}
+入力ファイルの名前を、コマンドラインからではなく、@var{file}から読み込みます。
+
+@item -D @var{directory}
+@itemx --directory=@var{directory}
+@opindex -D@r{, @code{xgettext} option}
+@opindex --directory@r{, @code{xgettext} option}
+ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストからソースファイルを検索します。しかし@file{.po}ファイルが出力されるのは、カレントディレクトリーです。
+
+@end table
+
+@var{inputfile}に@samp{-}が指定された場合は、標準入力から読み込みます。
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -d @var{name}
+@itemx --default-domain=@var{name}
+@opindex -d@r{, @code{xgettext} option}
+@opindex --default-domain@r{, @code{xgettext} option}
+出力ファイルとして、(@file{messages.po}のかわりに)@file{@var{name}.po}を使用します。
+
+@item -o @var{file}
+@itemx --output=@var{file}
+@opindex -o@r{, @code{xgettext} option}
+@opindex --output@r{, @code{xgettext} option}
+(@file{@var{name}.po}や@file{messages.po}ではなく)指定されたファイルに出力を書き込みます。
+
+@item -p @var{dir}
+@itemx --output-dir=@var{dir}
+@opindex -p@r{, @code{xgettext} option}
+@opindex --output-dir@r{, @code{xgettext} option}
+ファイルは@var{dir}に出力されます。
+
+@end table
+
+@cindex output to stdout, @code{xgettext}
+出力の@var{file}に@samp{-}または@samp{/dev/stdout}が指定された場合、出力は標準出力に書き込まれます。
+
+@subsection 入力ファイルの言語の選択
+
+@table @samp
+@item -L @var{name}
+@itemx --language=@var{name}
+@opindex -L@r{, @code{xgettext} option}
+@opindex --language@r{, @code{xgettext} option}
+@cindex supported languages, @code{xgettext}
+Specifies the language of the input files.  The supported languages are
+@code{C}、@code{C++}、@code{ObjectiveC}、@code{PO}、@code{Shell}、@code{Python}、@code{Lisp}、@code{EmacsLisp}、@code{librep}、@code{Scheme}、@code{Smalltalk}、@code{Java}、@code{JavaProperties}、@code{C#}、@code{awk}、@code{YCP}、@code{Tcl}、@code{Perl}、@code{PHP}、@code{GCC-source}、@code{NXStringTable}、@code{RST}、@code{RSJ}、@code{Glade}、@code{Lua}、@code{JavaScript}、@code{Vala}、@code{GSettings}、@code{Desktop}。
+
+@item -C
+@itemx --c++
+@opindex -C@r{, @code{xgettext} option}
+@opindex --c++@r{, @code{xgettext} option}
+@code{--language=C++}の省略指定です。
+
+@end table
+
+デフォルトでは、入力ファイルの言語は拡張子により推測されます。
+
+@subsection 入力ファイルの解釈
+
+@table @samp
+@item --from-code=@var{name}
+@opindex --from-code@r{, @code{xgettext} option}
+入力ファイルのエンコーディングを指定します。このオプションはメッセージ文字列や、それらのコメントに非ASCII文字が含まれている場合のみ必要です。TclとGladeの入力ファイルは、このオプションの指定に関わらず、UTF-8が想定されることに注意してください。
+
+@end table
+
+デフォルトでは、入力ファイルのエンコーディングはASCIIであると仮定されます。
+
+@subsection オペレーションモード
+
+@table @samp
+@item -j
+@itemx --join-existing
+@opindex -j@r{, @code{xgettext} option}
+@opindex --join-existing@r{, @code{xgettext} option}
+既存のファイルのメッセージを結合します。
+
+@item -x @var{file}
+@itemx --exclude-file=@var{file}
+@opindex -x@r{, @code{xgettext} option}
+@opindex --exclude-file@r{, @code{xgettext} option}
+@var{file}のエントリーは抽出されません。@var{file}には、POファイルかPOTファイルを指定します。
+
+@item -c[@var{tag}]
+@itemx --add-comments[=@var{tag}]
+@opindex -c@r{, @code{xgettext} option}
+@opindex --add-comments@r{, @code{xgettext} option}
+@var{tag}で始まるコメントブロックを、出力ファイル中のキーワード行の前に配置します。このオプションで@var{tag}を指定しない場合には、出力ファイル中のすべてのキーワード行の前にコメントブロックが配置されます。
+
+コメントブロックと想定されるブロックが抽出されるために、ブロックはキーワード行により調整されなければならないことに注意してください。
+たとえば以下のCソースコードでは:
+
+@example
+/* This is the first comment.  */
+gettext ("foo");
+
+/* This is the second comment: not extracted  */
+gettext (
+  "bar");
+
+gettext (
+  /* This is the third comment.  */
+  "baz");
+@end example
+
+2番目のコメント行は抽出されないでしょう。なぜならコメント行とキーワードの間にブランク行が1つあるからです。
+
+@item --check[=@var{CHECK}]
+@opindex --check@r{, @code{xgettext} option}
+@cindex supported syntax checks, @code{xgettext}
+msgidおよびmsgid_pluralにたいして構文チェックを行います。サポートされているチェックは:
+
+@table @samp
+@item ellipsis-unicode
+ASCIIの@code{...}より、Unicodeのellipsis文字を優先します。
+
+@item space-ellipsis
+ellipsis文字の前の空白文字を抑制します。
+
+@item quote-unicode
+ASCIIの@code{"'`}より、Unicodeのクォーテーションマークを優先します。
+
+@item bullet-unicode
+ASCIIの@code{*}または@code{-}より、Unicodeのbullet文字を優先します。
+
+@end table
+
+オプションはすべての入力ファイルに効果をもちます。特定の文字列にたいするチェックを有効、または無効にするために、ソースファイル中で特別なコメント@code{xgettext:}でマークすることができます。たとえば、@code{--check=space-ellipsis}を指定して、なおかつ特定の文字列にたいしてチェックを行いたくない場合には、以下のコメントを追加します:
+
+@example
+/* xgettext: no-space-ellipsis-check */
+gettext ("We really want a space before ellipsis here ...");
+@end example
+
+@code{xgettext:}コメントの後に、カンマで区切られたフラグを記述できます。利用可能なフラグは、@samp{[no-]@var{name}-check}という形式で、@var{name}は有効な構文チェックです。フラグのプレフィクスが@code{no-}の場合は、否定を意味します。
+
+文字列全体ではなく、msgid内の各センテンスへのチェックに適用されるテストがいくつかあります。xgettextはパターンマッチを行うことによりセンテンスの終わりを検出し、通常は特定の個数のスペースを後にともなうピリオドを探します。この数は@code{--sentence-end}オプションで指定されます。
+
+@item --sentence-end[=@var{TYPE}]
+@opindex --sentence-end@r{, @code{xgettext} option}
+@cindex sentence end markers, @code{xgettext}
+サポートされる値は:
+
+@table @samp
+@item single-space
+ピリオドの後に少なくとも1つの空白文字を要求します。
+
+@item double-space
+ピリオドの後に少なくとも2つの空白文字を要求します。
+
+@end table
+
+@end table
+
+@subsection 言語特有のオプション
+
+@table @samp
+@item -a
+@itemx --extract-all
+@opindex -a@r{, @code{xgettext} option}
+@opindex --extract-all@r{, @code{xgettext} option}
+すべての文字列を抽出します。
+
+このオプションはほとんどの言語、すなわち、C、C++、Objective-C、Shell、Python、Lisp、EmacsLisp、librep、Java、C#、awk、Tcl、Perl、PHP、GCC-source、Glade、Lua、JavaScript、Vala、GSettingsに影響を与えます。
+
+@item -k[@var{keywordspec}]
+@itemx --keyword[=@var{keywordspec}]
+@opindex -k@r{, @code{xgettext} option}
+@opindex --keyword@r{, @code{xgettext} option}
+検索する追加のキーワードを@var{keywordspec}に指定します。@var{keywordspec}を指定しない場合には、デフォルトのキーワードを使用しないことを意味します。
+
+@cindex adding keywords, @code{xgettext}
+@cindex context, argument specification in @code{xgettext}
+@var{keywordspec}として指定された@var{id}がCのものだった場合、@code{xgettext}は関数(またはマクロ)@var{id}の各呼び出しの最初の引数から文字列を検索します。@var{keywordspec}が@samp{@var{id}:@var{argnum}}という形式で指定された場合、@code{xgettext}は呼び出しの@var{argnum}番目の引数を探します。@var{keywordspec}が@samp{@var{id}:@var{argnum1},@var{argnum2}}の形式で指定された場合、@code{xgettext}は呼び出しの@var{argnum1}番目と@var{argnum2}番目の引数から文字列を探して、複数形として処理すべきメッセージのsingular(単数形)とplural(複数形)として扱います。同様に、@var{keywordspec}が@samp{@var{id}:@var{contextargnum}c,@var{argnum}}や@samp{@var{id}:@var{argnum},@var{contextargnum}c}という形式で指定された場合、@code{xgettext}は@var{contextargnum}番目の引数の文字列をコンテキスト指定子(context
+specifier)として扱います。そして GNOME
+のための特別なサポートとして、keywordspecが@samp{id:argnumg}という形式で指定された場合、xgettextはargnum番目の引数がcontextを伴う文字列と認識して、GNOME
+glibの@samp{"msgctxt|msgid"}という構文を使用します。そしてGNOMEのための特別なサポートとして、@var{keywordspec}が@samp{@var{id}:@var{argnum}g}という形式で指定された場合、@code{xgettext}は@var{argnum}番目の引数がcontextを伴う文字列と認識して、GNOME
+@code{glib}の@samp{"msgctxt|msgid"}という構文を使用します。@*また@var{keywordspec}が@samp{@var{id}:@dots{},@var{totalnumargs}t}という形式で指定された場合、@code{xgettext}は実際の引数の数が@var{totalnumargs}と等しい場合のみ、この引数指定を処理します。これはC++でのオーバーロードされた関数の呼び出しなどで便利です。@*最後に、もし@var{keywordspec}が@samp{@var{id}:@var{argnum}...,"@var{xcomment}"}という形式で指定された場合、@code{xgettext}は指定された引数から文字列を抽出するときに、追加のコメントとして@var{xcomment}をメッセージに追加します。通常のシェルのコマンドラインから使用する場合は、@var{xcomment}を括るダブルクォーテーションはエスケープする必要があることに注意してください。
+
+このオプションはほとんどの言語、すなわち、C、C++、Objective-C、Shell、Python、Lisp、EmacsLisp、librep、Java、C#、awk、Tcl、Perl、PHP、GCC-source、Glade、Lua、JavaScript、Vala、GSettings、Desktopに影響を与えます。
+
+明示的に無効化されていない限り、常に検索されるデフォルトキーワードの指定は、言語に依存します:
+
+@itemize
+@item
+C、C++、GCC-sourceの場合:
+@code{gettext}、@code{dgettext:2}、@code{dcgettext:2}、@code{ngettext:1,2}、@code{dngettext:2,3}、@code{dcngettext:2,3}、@code{gettext_noop}、そして@code{pgettext:1c,2}、@code{dpgettext:2c,3}、@code{dcpgettext:2c,3}、@code{npgettext:1c,2,3}、@code{dnpgettext:2c,3,4}、@code{dcnpgettext:2c,3,4}。
+
+@item
+Objective C:
+Cと同様です。@code{NSLocalizedString}、@code{_}、@code{NSLocalizedStaticString}、@code{__}も該当します。
+
+@item
+shellスクリプトの場合:
+@code{gettext}、@code{ngettext:1,2}、@code{eval_gettext}、@code{eval_ngettext:1,2}、@code{eval_pgettext:1c,2}、@code{eval_npgettext:1c,2,3}。
+
+@item
+Pythonの場合:
+@code{gettext}、@code{ugettext}、@code{dgettext:2}、@code{ngettext:1,2}、@code{ungettext:1,2}、@code{dngettext:2,3}、@code{_}。
+
+@item
+Lispの場合: @code{gettext}、@code{ngettext:1,2}、@code{gettext-noop}。
+
+@item
+EmacsLispの場合: @code{_}。
+
+@item
+librepの場合: @code{_}。
+
+@item
+Schemeの場合: @code{gettext}、@code{ngettext:1,2}、@code{gettext-noop}。
+
+@item
+Javaの場合:
+@code{GettextResource.gettext:2}、@code{GettextResource.ngettext:2,3}、@code{GettextResource.pgettext:2c,3}、@code{GettextResource.npgettext:2c,3,4}、@code{gettext}、@code{ngettext:1,2}、@code{pgettext:1c,2}、@code{npgettext:1c,2,3}、@code{getString}。
+
+@item
+C#の場合:
+@code{GetString}、@code{GetPluralString:1,2}、@code{GetParticularString:1c,2}、@code{GetParticularPluralString:1c,2,3}。
+
+@item
+awkの場合: @code{dcgettext}、@code{dcngettext:1,2}。
+
+@item
+Tclの場合: @code{::msgcat::mc}。
+
+@item
+Perlの場合:
+@code{gettext}、@code{%gettext}、@code{$gettext}、@code{dgettext:2}、@code{dcgettext:2}、@code{ngettext:1,2}、@code{dngettext:2,3}、@code{dcngettext:2,3}、@code{gettext_noop}。
+
+@item
+PHPの場合:
+@code{_}、@code{gettext}、@code{dgettext:2}、@code{dcgettext:2}、@code{ngettext:1,2}、@code{dngettext:2,3}、@code{dcngettext:2,3}。
+
+@item
+Glade 1の場合:
+@code{label}、@code{title}、@code{text}、@code{format}、@code{copyright}、@code{comments}、@code{preview_text}、@code{tooltip}。
+
+@item
+Luaの場合:
+@code{_}、@code{gettext.gettext}、@code{gettext.dgettext:2}、@code{gettext.dcgettext:2}、@code{gettext.ngettext:1,2}、@code{gettext.dngettext:2,3}、@code{gettext.dcngettext:2,3}。
+
+@item
+JavaScriptの場合:
+@code{_}、@code{gettext}、@code{dgettext:2}、@code{dcgettext:2}、@code{ngettext:1,2}、@code{dngettext:2,3}、@code{pgettext:1c,2}、@code{dpgettext:2c,3}。
+
+@item
+Valaの場合:
+@code{_}、@code{Q_}、@code{N_}、@code{NC_}、@code{dgettext:2}、@code{dcgettext:2}、@code{ngettext:1,2}、@code{dngettext:2,3}、@code{dpgettext:2c,3}、@code{dpgettext2:2c,3}。
+
+@item
+デスクトップの場合:
+@code{Name}、@code{GenericName}、@code{Comment}、@code{Icon}、@code{Keywords}。
+@end itemize
+
+デフォルトキーワードの指定は、@samp{-k}オプション、@samp{--keyword}を指定するか、@var{keywordspec}を指定せずに@samp{--keyword=}として無効にすることができます。
+
+@item --flag=@var{word}:@var{arg}:@var{flag}
+@opindex --flag@r{, @code{xgettext} option}
+関数@var{word}の、@var{arg}番目の引数の一部となるような文字列のための、追加のフラグを指定します。@samp{c-format}や、それの反対の@samp{no-c-format}のような、利用可能な書式文字列を示すフラグを利用でき、@samp{pass-}を前置して指定することもできます。@*
+@cindex function attribute, __format__
+@code{--flag=@var{function}:@var{arg}:@var{lang}-format}は、言語@var{lang}の関数@var{function}の@var{arg}番目の引数を書式文字列とみなすという意味です(GCC関数の属性に慣れている人は、@code{--flag=@var{function}:@var{arg}:c-format}が、Cソース中の関数
+@var{function}に付記される@samp{__attribute__ ((__format__ (__printf__, @var{arg},
+...)))}宣言と同様だと思えばよいでしょう)。たとえばGNU
+libcから、関数@samp{error}を使用する場合、それの振る舞いについて@code{--flag=error:3:c-format}のように指定することができます。この指定により@code{xgettext}は、すべての@code{gettext}呼び出しの@var{function}の@var{arg}番目の引数に出現する文字列を、書式指定文字列としてマークします。これは書式指定子が含まれていないような文字列にたいして@samp{msgfmt
+-c}によりチェックを行う場合に便利です。これにより翻訳者が実行時のクラッシュを引き起こすような書式指定子を意図せずに使ってしまうことを防ぐことができます。@*
+@cindex function attribute, __format_arg__
+@code{--flag=@var{function}:@var{arg}:pass-@var{lang}-format}は、言語@var{lang}において、書式文字列が出現しなければいけない位置に@var{function}呼び出しがある場合、その関数の@var{arg}番目の引数には、同じタイプの書式文字列となければならないという意味です。(GCC関数の属性を知っている人は、@code{--flag=@var{function}:@var{arg}:pass-c-format}が、Cソース中の関数@var{function}に付記される@samp{__attribute__
+((__format_arg__
+(@var{arg})))}宣言と同様だと思えばよいでしょう)。たとえば@code{gettext}関数の略記である@samp{_}を使用している場合は、@code{--flag=_:1:pass-c-format}を使う必要があります。この指定により@code{xgettext}は、@code{_("string")}呼び出しの最初の引数@code{"string"}には書式指定文字列が必要だと伝えるために、その文字列を書式指定文字列としてマークします。これは書式指定子が含まれていないような文字列にたいして@samp{msgfmt
+-c}によりチェックを行う場合に便利です。これにより翻訳者が実行時のクラッシュを引き起こすような書式指定子を意図せずに使ってしまうことを防ぐことができます。@*このオプションは、C、C++、ObjectiveC、Shell、Python、Lisp、EmacsLisp、librep、Scheme、Java、C#、awk、YCP、Tcl、Perl、PHP、GCC-source、Lua、JavaScript、Vala(つまり、ほとんどの言語)に影響を与えます。
+
+@item -T
+@itemx --trigraphs
+@opindex -T@r{, @code{xgettext} option}
+@opindex --trigraphs@r{, @code{xgettext} option}
+@cindex C trigraphs
+入力におけるANSI Cの三連表記(trigraph)を理解します。@*このオプションは言語がC、C++、ObjectiveCの場合のみ効果があります。
+
+@item --qt
+@opindex --qt@r{, @code{xgettext} option}
+@cindex Qt format strings
+Qtの書式指定文字列を認識します。@*このオプションは言語がC++の場合のみ効果があります。
+
+@item --kde
+@opindex --kde@r{, @code{xgettext} option}
+@cindex KDE format strings
+KDE 4の書式指定文字列を認識します。@*このオプションは言語がC++の場合のみ効果があります。
+
+@item --boost
+@opindex --boost@r{, @code{xgettext} option}
+@cindex Boost format strings
+Boostの書式指定文字列を認識します。@*このオプションは言語がC++の場合のみ効果があります。
+
+@item --debug
+@opindex --debug@r{, @code{xgettext} option}
+@cindex debugging messages marked as format strings
+メッセージ中の書式指定文字列を、@code{c-format}や@code{possible-c-format}フラグでマークすることにより、誰がマークしたかを表示します。後者の形式は、@code{xgettext}が決定したときに使用され、前者の書式はプログラマーが決定したときに使用されます。
+
+デフォルトでは@code{c-format}形式だけが使用されます。翻訳者はそれらの詳細について気にする必要はありません。
+
+@end table
+
+この@code{xgettext}の実装は、プリプロセッサーのマクロの中の文字列や、ANSIによる隣接した文字列の結合、エスケープ文字による行の継続等の厄介なケースを処理することができます。
+
+@subsection 出力の詳細
+
+@c --no-escape and --escape omitted on purpose.  They are not useful.
+
+@table @samp
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{xgettext} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{xgettext} オプション}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item --force-po
+@opindex --force-po@r{, @code{xgettext} オプション}
+何もメッセージが定義されていない場合でも、常に出力ファイルに書き込みます。
+
+@item -i
+@itemx --indent
+@opindex -i@r{, @code{xgettext} option}
+@opindex --indent@r{, @code{xgettext} option}
+インデントされた形式で.poファイルを書き込みます。
+
+@item --no-location
+@opindex --no-location@r{, @code{xgettext} オプション}
+@samp{#:
+@var{filename}:@var{line}}のような行を書き込みません。このオプションを使用することにより、熟練した翻訳者が、どのようなコンテキストでメッセージが使用されるのかを理解するのが困難になることに注意してください。
+
+@item -n
+@itemx --add-location=@var{type}
+@opindex -n@r{, @code{xgettext} option}
+@opindex --add-location@r{, @code{xgettext} option}
+@samp{#: @var{filename}:@var{line}}という行を生成します(デフォルト)。
+
+@var{type}はオプションで、@samp{full}、@samp{file}、または@samp{never}を指定できます。オプションが指定されない、または@samp{full}の場合は、ファイル名と行番号のの両方が生成されます。@samp{file}の場合、行番号は省略されます。@samp{never}の場合は、完全にこの行を抑制します(@code{--no-location}と同じです)。
+
+@item --strict
+@opindex --strict@r{, @code{xgettext} オプション}
+Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。
+
+@item --properties-output
+@opindex --properties-output@r{, @code{xgettext} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、廃止されたメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{xgettext} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item --its=@var{file}
+@opindex --its@r{, @code{xgettext} option}
+@var{file}で定義されたITSルールを使用します。これはXMLファイルデだけ効果があることに注意してください。
+
+@item --itstool
+@opindex --itstool@r{, @code{xgettext} option}
+itstool(@uref{http://itstool.org})で認識されるコメントを書き出します。これはXMLファイルデだけ効果があることに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{xgettext} option}
+@opindex --width@r{, @code{xgettext} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{xgettext} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@item -s
+@itemx --sort-output
+@opindex -s@r{, @code{xgettext} option}
+@opindex --sort-output@r{, @code{xgettext} option}
+@cindex sorting output of @code{xgettext}
+ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。
+
+@item -F
+@itemx --sort-by-file
+@opindex -F@r{, @code{xgettext} option}
+@opindex --sort-by-file@r{, @code{xgettext} option}
+ファイルの場所により出力をソートします。
+
+@item --omit-header
+@opindex --omit-header@r{, @code{xgettext} option}
+@samp{msgid ""}というエントリーにたいして、ヘッダーを書き込みません。
+
+@cindex testing @file{.po} files for equivalence
+これはソースファイルの変更をテストする等の目的で、@code{.gmo}ファイルを生成するときに便利です。@code{--omit-header}を使用すると、同じファイルにたいして、同じオプションで@code{xgettext}を実行すれば、実行した時が異なっていても同じ結果を得ることができます。
+
+このオプションをASCII以外の文字が含まれたファイルにたいして使用した場合、エラーとなることに注意してください。
+
+@item --copyright-holder=@var{string}
+@opindex --copyright-holder@r{, @code{xgettext} option}
+出力に著作権所有者(copyright
+holder)をセットします。@var{string}にはパッケージの著作権所有者を指定する必要があります(パッケージのソースから抽出されたmsgstr文字列の著作権は、パッケージの著作権所有者に帰属することに注意してください)。翻訳者は、翻訳物の著作権を譲渡、もしくは放棄することが望まれます。これによりパッケージのメンテナーは法的なリスクなしでそれらを配布できるのです。@var{string}が空の場合、出力ファイルはパブリックドメインに属するとマークされます。この場合も翻訳者は著作権を譲渡、もしくは放棄することが望まれます。繰り返しになりますが、そうすることによりパッケージのメンテナーは法的なリスクなしでそれらを配布できるのです。
+
+@var{string}のデフォルト値はFree Software Foundation,
+Inc.です。これは単に@code{xgettext}が最初に使用されたのが GNU プロジェクトであることが理由です。
+
+@item --foreign-user
+@opindex --foreign-user@r{, @code{xgettext} option}
+出力からFSFの著作権を省略します。これは@samp{--copyright-holder=''}とするのと同じです。これはGNUプロジェクト以外で、翻訳物をパブリックドメインにしたいときに便利です。
+
+@item --package-name=@var{package}
+@opindex --package-name@r{, @code{xgettext} option}
+出力のヘッダーに、パッケージ名をセットします。
+
+@item --package-version=@var{version}
+@opindex --package-version@r{, @code{xgettext} option}
+出力のヘッダーにパッケージのバージョンをセットします。このオプションは、同時に@samp{--package-name}を指定したときだけ効果があります。
+
+@item --msgid-bugs-address=@var{email@@address}
+@opindex --msgid-bugs-address@r{, @code{xgettext} option}
+msgidに関するバグの報告先アドレスをセットします。このアドレスは、翻訳者が未翻訳文字列のバグを報告するための電子メールのアドレス、またはURLです。
+
+@itemize -
+@item センテンス全体となっていないような文字列。メンテナーのためのガイドライン
+@ref{Preparing Strings}を参照してください。
+@item 不明な用語を使用したり、追加のコンテキストを理解することが必要とする文字列
+。
+@item 日付・時刻・通貨の表記で、無効な仮定をしている文字列
+。
+@item plural化に関する問題。
+@item 間違ったEnglishのスペル。
+@item 間違った書式。
+@end itemize
+
+このアドレスは、あなたのメールアドレスでも構いませんし、翻訳者が登録しなくても投稿できるメーリングリストのアドレスや、翻訳者があなたに連絡をとることができるウェブページのアドレスにすることもできます。
+
+デフォルトは空文字列が設定されており、これは翻訳者にはこれらの情報が分からないことを意味します! このオプションを指定するのを忘れないでください。
+
+@item -m[@var{string}]
+@itemx --msgstr-prefix[=@var{string}]
+@opindex -m@r{, @code{xgettext} option}
+@opindex --msgstr-prefix@r{, @code{xgettext} option}
+msgstrの値に前置する文字列として@var{string}(指定されていない場合は"")を使用します。
+
+@item -M[@var{string}]
+@itemx --msgstr-suffix[=@var{string}]
+@opindex -M@r{, @code{xgettext} option}
+@opindex --msgstr-suffix@r{, @code{xgettext} option}
+msgstrの値に後置する文字列として@var{string}(指定されていない場合は"")を使用します。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{xgettext} option}
+@opindex --help@r{, @code{xgettext} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{xgettext} option}
+@opindex --version@r{, @code{xgettext} option}
+バージョン情報を表示して終了します。
+
+@end table

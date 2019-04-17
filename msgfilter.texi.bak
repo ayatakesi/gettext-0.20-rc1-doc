@@ -1,0 +1,250 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msgfilter
+@cindex @code{msgfilter} program, usage
+@example
+msgfilter [@var{option}] @var{filter} [@var{filter-option}]
+@end example
+
+@cindex apply a filter to translations
+@code{msgfilter}は、翻訳カタログ内の翻訳にフィルターを適用するためのプログラムです。
+
+@vindex MSGFILTER_MSGCTXT@r{, environment variable}
+@vindex MSGFILTER_MSGID@r{, environment variable}
+@vindex MSGFILTER_MSGID_PLURAL@r{, environment variable}
+@vindex MSGFILTER_LOCATION@r{, environment variable}
+@vindex MSGFILTER_PLURAL_FORM@r{, environment variable}
+@vindex MSGFILTER_PREV_MSGCTXT@r{, environment variable}
+@vindex MSGFILTER_PREV_MSGID@r{, environment variable}
+@vindex MSGFILTER_PREV_MSGID_PLURAL@r{, environment variable}
+各@var{filter}呼び出しの間、環境変数@code{MSGFILTER_MSGID}がそのメッセージのmsgid、環境変数@code{MSGFILTER_LOCATION}がそのメッセージのPOファイル内での位置にバインドされます。そのメッセージがコンテキストをもつ場合、環境変数@code{MSGFILTER_MSGCTXT}にそのメッセージのmsgctxtがバインドされます(それ以外はバインドされません)。そのメッセージがplural
+formをもつ場合、環境変数@code{MSGFILTER_MSGID_PLURAL}にそのメッセージのmsgid_plural、@code{MSGFILTER_PLURAL_FORM}には実際に処理sqあれたpluralの順番(0から開始)がバインドされます(それ以外では両方ともバインドされません)。そのメッセージが(@code{msgmerge}により追加された)以前のmsgidをもつ場合、環境変数@code{MSGFILTER_PREV_MSGCTXT}にそのメッセージの以前のmsgctxt、@code{MSGFILTER_PREV_MSGID}に以前のmsgid、@code{MSGFILTER_PREV_MSGID_PLURAL}に以前のmsgid_pluralがバインドされます。
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item -i @var{inputfile}
+@itemx --input=@var{inputfile}
+@opindex -i@r{, @code{msgfilter} option}
+@opindex --input@r{, @code{msgfilter} option}
+入力となるPOファイルです。
+
+@item -D @var{directory}
+@itemx --directory=@var{directory}
+@opindex -D@r{, @code{msgfilter} option}
+@opindex --directory@r{, @code{msgfilter} option}
+ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストよりソースファイルを検索します。しかし@file{.po}ファイルが出力されるのは、カレントディレクトリーです。
+
+@end table
+
+@var{inputfile}が指定されていないか、@samp{-}が指定された場合は、標準入力から読み込みます。
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -o @var{file}
+@itemx --output-file=@var{file}
+@opindex -o@r{, @code{msgfilter} option}
+@opindex --output-file@r{, @code{msgfilter} option}
+指定されたファイルに出力を書き込みます。
+
+@end table
+
+出力ファイルが指定されていない、または@samp{-}が指定された場合、結果は標準出力に出力されます。
+
+@subsection フィルター
+
+@var{filter}は、標準入力から翻訳を読み込み、それに変更を加えて標準出力に書き込むプログラムです。フィルターとして頻繁に使用されるプログラムとしては@samp{sed}があります。その他にも認識できるビルトインフィルターがいくつか存在します。
+
+@table @samp
+@item --newline
+@opindex --newline@r{, @code{msgfilter} option}
+各入力行の最後に改行を追加するとともに、出力行の最後の改行を取り除きます。
+
+@end table
+
+@cindex @code{msgfilter} filter and catalog encoding
+注意:
+ビルトインではないフィルターの場合には、エンコーディングに注意する必要があります。@var{filter}が、入力となる翻訳カタログのエンコードに対処できるようにするのは、あなたの責任となります。@var{filter}が入力として特定のエンコーディングを期待する場合には、@samp{msgfilter}を呼び出す前に、最初のステップとして@samp{msgconv}で翻訳カタログをそのエンコーディングに変換できます。@var{filter}が入力としてlocaleのエンコーディングを期待しているけれど、あなたはlocaleのエンコーディングを無視したいときには、最初に@samp{msgconv}で翻訳カタログをUTF-8に変換してから、環境変数@code{LC_ALL}にUTF-8
+localeを指定して、@samp{msgfilter}を使うことができます。
+
+@cindex portability problems with @code{sed}
+注意:
+翻訳カタログ内のほとんどの翻訳は改行で終端されていません。そのため、@code{--newline}が使用されていない場合は、入力の最終行が改行で終端されていなくても、@var{filter}がそれを認識すること、そして最終行に余分な改行を付加しないことが重要になります。いくつかのプラットフォームにおいて@samp{sed}が、改行で終端されていない最終行を無視することが知られています。代用として、このような制限を持たないGNU
+@samp{sed}を使うことができます。
+
+@subsection @var{filter}が@samp{sed}のときの便利な@var{filter-option}
+
+@table @samp
+@item -e @var{script}
+@itemx --expression=@var{script}
+@opindex -e@r{, @code{msgfilter} option}
+@opindex --expression@r{, @code{msgfilter} option}
+実行するコマンドに@var{script}を追加します。
+
+@item -f @var{scriptfile}
+@itemx --file=@var{scriptfile}
+@opindex -f@r{, @code{msgfilter} option}
+@opindex --file@r{, @code{msgfilter} option}
+実行するコマンドに、@var{scriptfile}の内容を追加します。
+
+@item -n
+@itemx --quiet
+@itemx --silent
+@opindex -n@r{, @code{msgfilter} option}
+@opindex --quiet@r{, @code{msgfilter} option}
+@opindex --silent@r{, @code{msgfilter} option}
+パターンの空白の出力を自動的に抑制します。
+
+@end table
+
+@subsection ビルトインの@var{filter}
+
+@pindex recode-sr-latin
+@cindex @code{recode-sr-latin} program
+@samp{recode-sr-latin}はビルトインのフィルターとして認識されます。@samp{recode-sr-latin}は、Cyrillic文字で記述されたSerbianのテキストを、Latin文字に変換するコマンドです。@samp{msgfilter
+recode-sr-latin}コマンドにより、POファイルの翻訳にたいしてこの変換を適用できます。これを使えば@file{sr.po}ファイルを、@file{sr@@latin.po}ファイルに変換できます。
+
+@pindex quot
+フィルター@samp{quot}は、ビルトインフィルターとして認識されます。コマンド@samp{msgfilter
+quot}は、対になった@samp{"}、および@samp{'}と@samp{`}で囲まれた引用を変換します。
+
+@pindex boldquot
+フィルター@samp{boldquot}は、ビルトインフィルターとして認識されます。コマンド@samp{msgfilter
+boldquot}は、対になった@samp{"}、@samp{'}と@samp{`}で囲まれた引用を変換するとともに、そのテキストがboldとして装飾されるように、VT100エスケープシーケンスを追加します。
+
+ビルトインのフィルターは、現在のロケールのエンコーディングとは無関係です。またビルトインのフィルターを使う場合、@samp{msgfilter}はメッセージカタログのエンコーディングを自動的にUTF-8に変換することができます。
+
+@subsection 入力ファイルの構文
+
+@table @samp
+@item -P
+@itemx --properties-input
+@opindex -P@r{, @code{msgfilter} option}
+@opindex --properties-input@r{, @code{msgfilter} option}
+入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava
+ResourceBundleファイルだとみなします。
+
+@item --stringtable-input
+@opindex --stringtable-input@r{, @code{msgfilter} option}
+入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized
+resourceの@code{.strings}の構文にのっとったファイルだとみなします。
+
+@end table
+
+@subsection 出力の詳細
+
+@c --no-escape and --escape omitted on purpose.  They are not useful.
+
+@table @samp
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{msgfilter} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{msgfilter} option}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item --force-po
+@opindex --force-po@r{, @code{msgfilter} option}
+メッセージが何も含まれていない場合でも、常に出力ファイルに書き込みます。
+
+@item --indent
+@opindex --indent@r{, @code{msgfilter} option}
+インデントされた形式で.poファイルを書き込みます。
+
+@item --keep-header
+@opindex --keep-header@r{, @code{msgfilter} option}
+ヘッダーのエントリーを保持します(例: @samp{msgid
+""}にフィルターを適用しないで未変更にします)。デフォルトでは、ヘッダーのエントリーにたいしても、他のメッセージと同様にフィルタリングの対象になります。
+
+@item --no-location
+@opindex --no-location@r{, @code{msgfilter} option}
+@samp{#: @var{filename}:@var{line}}という行を書き込みません。
+
+@item -n
+@itemx --add-location=@var{type}
+@opindex --add-location@r{, @code{msgfilter} option}
+@samp{#: @var{filename}:@var{line}}という行を生成します(デフォルト)。
+
+@var{type}はオプションで、@samp{full}、@samp{file}、または@samp{never}を指定できます。オプションが指定されない、または@samp{full}の場合は、ファイル名と行番号のの両方が生成されます。@samp{file}の場合、行番号は省略されます。@samp{never}の場合は、完全にこの行を抑制します(@code{--no-location}と同じです)。
+
+@item --strict
+@opindex --strict@r{, @code{msgfilter} option}
+Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。
+
+@item -p
+@itemx --properties-output
+@opindex -p@r{, @code{msgfilter} option}
+@opindex --properties-output@r{, @code{msgfilter} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、陳腐化したメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{msgfilter} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{msgfilter} option}
+@opindex --width@r{, @code{msgfilter} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{msgfilter} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@item -s
+@itemx --sort-output
+@opindex -s@r{, @code{msgfilter} option}
+@opindex --sort-output@r{, @code{msgfilter} option}
+ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。
+
+@item -F
+@itemx --sort-by-file
+@opindex -F@r{, @code{msgfilter} option}
+@opindex --sort-by-file@r{, @code{msgfilter} option}
+ファイルの場所により出力をソートします。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msgfilter} option}
+@opindex --help@r{, @code{msgfilter} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msgfilter} option}
+@opindex --version@r{, @code{msgfilter} option}
+バージョン情報を表示して終了します。
+
+@end table
+
+@subsection 例
+
+Germanの翻訳を、Swissの正書法に変換する場合(UTF-8 locale):
+
+@smallexample
+msgconv -t UTF-8 de.po | msgfilter sed -e 's/@ss{}/ss/g'
+@end smallexample
+
+Cyrillic文字の Serbianの翻訳を、Latin文字に変換する場合:
+
+@smallexample
+msgfilter recode-sr-latin < sr.po
+@end smallexample

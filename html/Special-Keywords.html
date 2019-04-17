@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Special Keywords (GNU gettext utilities)</title>
+
+<meta name="description" content="Special Keywords (GNU gettext utilities)">
+<meta name="keywords" content="Special Keywords (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Perl.html#Perl" rel="up" title="Perl">
+<link href="Quote_002dlike-Expressions.html#Quote_002dlike-Expressions" rel="next" title="Quote-like Expressions">
+<link href="Default-Keywords.html#Default-Keywords" rel="prev" title="Default Keywords">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Special-Keywords"></span><div class="header">
+<p>
+Next: <a href="Quote_002dlike-Expressions.html#Quote_002dlike-Expressions" accesskey="n" rel="next">Quote-like Expressions</a>, Previous: <a href="Default-Keywords.html#Default-Keywords" accesskey="p" rel="prev">Default Keywords</a>, Up: <a href="Perl.html#Perl" accesskey="u" rel="up">Perl</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="hatusiyukiwoChou-Chu-suruFang-Fa-"></span><h4 class="subsubsection">15.5.18.3 ハッシュキーを抽出する方法</h4>
+<span id="index-Perl-special-keywords-for-hash_002dlookups"></span>
+
+<p>通常の実行時のメッセージ翻訳は、翻訳が格納されたデータベースから元の文字列を検索して、、翻訳された文字列を戻します。これをPerlで実装する&ldquo;自然な&rdquo;方法は、ハッシュのルックアップで、もちろん<code>xgettext</code>もこのような実装をサポートしています。
+</p>
+<div class="example">
+<pre class="example">print __&quot;Hello world!&quot;;
+print $__{&quot;Hello world!&quot;};
+print $__-&gt;{&quot;Hello world!&quot;};
+print $$__{&quot;Hello world!&quot;};
+</pre></div>
+
+<p>上の4つの行は、すべて同じことを行います。Perlの<code>Locale::TextDomain</code>モジュールは、関数<code>__()</code>にtiedされたハッシュ<code>%__</code>をデフォルトでエクスポートします。また、このモジュールは<code>%__</code>にたいするリファレンス<code>$__</code>もエクスポートします。
+</p>
+<p><code>xgettext</code>に<code>--keyword</code>(または<code>-k</code>)オプションを指定したときに、その引数の1文字目がパーセント記号(%)の場合、残りの部分のキーワードはハッシュの名前として解釈されます。引数の1文字目がダラー記号($)の場合、残りの部分のキーワードはハッシュにたいするリファレンスとして解釈されます。
+</p>
+<p>Perlのコードとして許容できるなら(大抵の場合は問題ないはずです)、ハッシュキーを囲むシングルクォーテーション(またはダブルクォーテーション)は省略できることに注意してください:
+</p>
+<div class="example">
+<pre class="example">print $gettext{Error};
+</pre></div>
+
+<p>ルールを正確にいうと: ハッシュキーが有効なCの識別子(!)の場合(例:
+識別子の1文字目がアンダースコアーまたはASCII文字で、その後ろに任意の個数のアンダースコアー、または半角英数が続くような識別子)、その識別子を囲むクォート記号を省略できます。その他のUnicode文字は、<code>use
+utf8</code> pragmaを使っていない限り、認められません。
+</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>aclocal (GNU gettext utilities)</title>
+
+<meta name="description" content="aclocal (GNU gettext utilities)">
+<meta name="keywords" content="aclocal (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Adjusting-Files.html#Adjusting-Files" rel="up" title="Adjusting Files">
+<link href="config_002eh_002ein.html#config_002eh_002ein" rel="next" title="config.h.in">
+<link href="mkinstalldirs.html#mkinstalldirs" rel="prev" title="mkinstalldirs">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="aclocal"></span><div class="header">
+<p>
+Next: <a href="config_002eh_002ein.html#config_002eh_002ein" accesskey="n" rel="next">config.h.in</a>, Previous: <a href="mkinstalldirs.html#mkinstalldirs" accesskey="p" rel="prev">mkinstalldirs</a>, Up: <a href="Adjusting-Files.html#Adjusting-Files" accesskey="u" rel="up">Adjusting Files</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="totupureberunoaclocal_002em4"></span><h4 class="subsection">13.4.8 トップレベルの<samp>aclocal.m4</samp></h4>
+<span id="index-aclocal_002em4-file"></span>
+
+<p>ディストリビューション内に<samp>aclocal.m4</samp>ファイルがなければ、GNU
+<code>gettext</code>の<samp>m4/</samp>ディレクトリー内のファイル<samp>gettext.m4</samp>、<samp>host-cpu-c-abi.m4</samp>、<samp>intlmacosx.m4</samp>、<samp>iconv.m4</samp>、<samp>lib-ld.m4</samp>、<samp>lib-link.m4</samp>、<samp>lib-prefix.m4</samp>、<samp>nls.m4</samp>、<samp>po.m4</samp>、<samp>progtest.m4</samp>を単一ファイルに結合するのが、もっともシンプルな方法です。
+</p>
+<p>すでに<samp>aclocal.m4</samp>ファイルがある場合は、前述のマクロファイルを既存の<samp>aclocal.m4</samp>にマージする必要があります。以前にリリースされたGNU
+<code>gettext</code>からアップグレードしたようなときは、ほとんどの場合マクロ(<code>AM_GNU_GETTEXT</code>、...
+)を<em>置き換える</em>必要があることに注意してください。なぜならそれらのマクロは、GNU
+<code>gettext</code>がリリースされるときは通常、少し変更されるからです。これらの内容は、わたしたちが &quot;奇妙&quot;
+なシステムに出会う度に増えていくかもしれません。
+</p>
+<p>GNU <code>automake</code>の1.9以降を使用するべきです。これを使用する場合は、ファイルGNU
+<code>gettext</code>の<samp>m4/</samp>ディレクトリー内のファイル<samp>gettext.m4</samp>、<samp>host-cpu-c-abi.m4</samp>、<samp>intlmacosx.m4</samp>、<samp>iconv.m4</samp>、<samp>lib-ld.m4</samp>、<samp>lib-link.m4</samp>、<samp>lib-prefix.m4</samp>、<samp>nls.m4</samp>、<samp>po.m4</samp>、<samp>progtest.m4</samp>を<samp>m4/</samp>という名前のサブディレクトリー内にコピーする必要があります。
+</p>
+<div class="example">
+<pre class="example">ACLOCAL_AMFLAGS = -I m4
+</pre></div>
+
+<p>上記のような行を、トップレベルの<samp>Makefile.am</samp>に追加してください。
+</p>
+<p>GNU <code>automake</code> 1.10以降を使用している場合は、さらに簡単になります。以下の行を追加してください
+</p>
+<div class="example">
+<pre class="example">ACLOCAL_AMFLAGS = --install -I m4
+</pre></div>
+
+<p>上記のような行を、トップレベルの<samp>Makefile.am</samp>に追加して、&lsquo;<samp>aclocal --install -I
+m4</samp>&rsquo;を実行します。これは<samp>aclocal.m4</samp>を更新する前に、必要なファイルを自動的に<samp>m4/</samp>サブディレクトリーに追加します。
+</p>
+<p>これらのマクロはインターナショナリゼーションのサポート機能と関連情報をチェックします。1度うまく安定させられれば、多分これらのマクロを、標準のAutoconfに統合できるでしょう。なぜなら、これらの断片的な<code>m4</code>コードは、GNU
+<code>gettext</code>を使うプロジェクトでは同一だからです。
+</p>
+
+
+
+</body>
+</html>

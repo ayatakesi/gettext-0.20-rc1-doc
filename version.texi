@@ -1,0 +1,5 @@
+@set UPDATED 8 April 2019
+@set UPDATED-MONTH April 2019
+@set EDITION 0.20-rc1
+@set VERSION 0.20-rc1
+@set ARCHIVE-VERSION 0.20

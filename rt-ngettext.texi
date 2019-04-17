@@ -1,0 +1,66 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex ngettext
+@cindex @code{ngettext} program, usage
+@example
+ngettext [@var{option}] [@var{textdomain}] @var{msgid} @var{msgid-plural} @var{count}
+@end example
+
+@cindex lookup plural message translation
+@code{ngettext}は数に依存した文法をもつテキストメッセージを母国語に翻訳して表示するプログラムです。
+
+@noindent @strong{Arguments}
+
+@table @samp
+@item -c @var{context}
+@itemx --context=@var{context}
+@opindex -c@r{, @code{ngettext} option}
+@opindex --context@r{, @code{ngettext} option}
+翻訳されるメッセージのコンテキストを指定します。詳細は@ref{Contexts}を参照してください。
+
+@item -d @var{textdomain}
+@itemx --domain=@var{textdomain}
+@opindex -d@r{, @code{ngettext} option}
+@opindex --domain@r{, @code{ngettext} option}
+@var{textdomain}から翻訳されたメッセージを取得します。@var{textdomain}は通常、パッケージか、プログラムやプログラムのモジュールと一致します。
+
+@item -e
+@opindex -e@r{, @code{ngettext} option}
+いくつかのエスケープシーケンスの展開を可能にします。これは@samp{gettext}プログラムにたいする互換のためのオプションです。対象となるエスケープシーケンスは、@samp{\a}、@samp{\b}、@samp{\c}、@samp{\f}、@samp{\n}、@samp{\r}、@samp{\t}、@samp{\v}、@samp{\\}、および@samp{\}と3桁以内の8進数です(System
+Vの@samp{echo}と同様に処理されます)。
+
+@item -E
+@opindex -E@r{, @code{ngettext} option}
+このオプションは@samp{gettext}プログラムとの互換性のためだけのもので、何の効果も及ぼしません。
+
+@item -h
+@itemx --help
+@opindex -h@r{, @code{ngettext} option}
+@opindex --help@r{, @code{ngettext} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{ngettext} option}
+@opindex --version@r{, @code{ngettext} option}
+バージョン情報を表示して終了します。
+
+@item @var{textdomain}
+@var{textdomain}から、翻訳されたメッセージを取得します。
+
+@item @var{msgid} @var{msgid-plural}
+msgid( Englishのsingular )、およびmsgid-plural(Englishのplural)を翻訳します。
+
+@item @var{count}
+この値にもとづいて、singularとpluralのどちらを使うか選択します。
+
+@end table
+
+パラメーター@var{textdomain}を指定しなかった場合、環境変数@code{TEXTDOMAIN}によりdomainが決定されます。メッセージカタログが標準のディレクトリーで見つからなかった場合には、環境変数@code{TEXTDOMAINDIR}で他の場所を指定できます。

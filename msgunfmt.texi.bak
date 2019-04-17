@@ -1,0 +1,211 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msgunfmt
+@cindex @code{msgunfmt} program, usage
+@example
+msgunfmt [@var{option}] [@var{file}]...
+@end example
+
+@cindex convert binary message catalog into PO file
+@code{msgunfmt}は、バイナリーのメッセージカタログを、Uniforum形式の.poファイルに変換するプログラムです。
+
+@subsection オペレーションモード
+
+@table @samp
+@item -j
+@itemx --java
+@opindex -j@r{, @code{msgunfmt} option}
+@opindex --java@r{, @code{msgunfmt} option}
+@cindex Java mode, and @code{msgunfmt} program
+Javaモード: Javaの@code{ResourceBundle} class が入力となります。
+
+@item --csharp
+@opindex --csharp@r{, @code{msgunfmt} option}
+@cindex C# mode, and @code{msgunfmt} program
+C#モード: @code{GettextResourceSet}のサブクラスを含む.NETの.dllファイルが入力となります。
+
+@item --csharp-resources
+@opindex --csharp-resources@r{, @code{msgunfmt} option}
+@cindex C# resources mode, and @code{msgunfmt} program
+C# resourcesモード: .NETの@file{.resources}ファイルが入力となります。
+
+@item --tcl
+@opindex --tcl@r{, @code{msgunfmt} option}
+@cindex Tcl mode, and @code{msgunfmt} program
+Tclモード: tcl/msgcatの@file{.msg}ファイルが入力となります。
+
+@end table
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item @var{file} @dots{}
+入力となる.moファイルです。
+
+@end table
+
+@var{file}が指定されていないか、@samp{-}が指定された場合は、標準入力から読み込みます。
+
+@subsection Javaモードでの入力ファイルの位置
+
+@table @samp
+@item -r @var{resource}
+@itemx --resource=@var{resource}
+@opindex -r@r{, @code{msgunfmt} option}
+@opindex --resource@r{, @code{msgunfmt} option}
+リソース名を指定します。
+
+@item -l @var{locale}
+@itemx --locale=@var{locale}
+@opindex -l@r{, @code{msgunfmt} option}
+@opindex --locale@r{, @code{msgunfmt} option}
+locale名を指定します。@var{ll}形式による言語指定と、国と言語指定を組み合わせた@var{ll_CC}のどちらでも指定できます。
+
+@end table
+
+class名は、resource名の後ろにアンダースコアーをつけて、その後ろにlocale
+名を付加することにより決定されます。classは、@code{CLASSPATH}によって配置されます。
+
+@subsection C#モードでの入力ファイルの位置
+
+@table @samp
+@item -r @var{resource}
+@itemx --resource=@var{resource}
+@opindex -r@r{, @code{msgunfmt} option}
+@opindex --resource@r{, @code{msgunfmt} option}
+リソース名を指定します。
+
+@item -l @var{locale}
+@itemx --locale=@var{locale}
+@opindex -l@r{, @code{msgunfmt} option}
+@opindex --locale@r{, @code{msgunfmt} option}
+locale名を指定します。@var{ll}形式による言語指定と、国と言語指定を組み合わせた@var{ll_CC}のどちらでも指定できます。
+
+@item -d @var{directory}
+@opindex -d@r{, @code{msgunfmt} option}
+localeに依存する@file{.dll}ファイルを出力するベースディレクトリーを指定します。
+
+@end table
+
+@samp{-l}と@samp{-d}が必須オプションです。@file{.msg}ファイルは、locale
+に依存した名前の指定ディレクトリーのサブディレクトリーに配置されています。
+
+@subsection Tclモードでの入力ファイルの位置
+
+@table @samp
+@item -l @var{locale}
+@itemx --locale=@var{locale}
+@opindex -l@r{, @code{msgunfmt} option}
+@opindex --locale@r{, @code{msgunfmt} option}
+locale名を指定します。@var{ll}形式による言語指定と、国と言語指定を組み合わせた@var{ll_CC}のどちらでも指定できます。
+
+@item -d @var{directory}
+@opindex -d@r{, @code{msgunfmt} option}
+メッセージカタログ@file{.msg}のベースディレクトリーを指定します。
+
+@end table
+
+@samp{-l}と@samp{-d}は必須オプションです。@file{.msg}は指定されたディレクトリーに配置されています。
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -o @var{file}
+@itemx --output-file=@var{file}
+@opindex -o@r{, @code{msgunfmt} option}
+@opindex --output-file@r{, @code{msgunfmt} option}
+指定されたファイルに出力を書き込みます。
+
+@end table
+
+出力ファイルが指定されていない、または@samp{-}が指定された場合、結果は標準出力に出力されます。
+
+@subsection 出力の詳細
+
+@c --no-escape and --escape omitted on purpose.  They are not useful.
+
+@table @samp
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{msgunfmt} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{msgunfmt} option}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item --force-po
+@opindex --force-po@r{, @code{msgunfmt} option}
+メッセージが何も含まれていない場合でも、常に出力ファイルに書き込みます。
+
+@item -i
+@itemx --indent
+@opindex -i@r{, @code{msgunfmt} option}
+@opindex --indent@r{, @code{msgunfmt} option}
+インデントされた形式で.poファイルを書き込みます。
+
+@item --strict
+@opindex --strict@r{, @code{msgunfmt} option}
+Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。
+
+@item -p
+@itemx --properties-output
+@opindex -p@r{, @code{msgunfmt} option}
+@opindex --properties-output@r{, @code{msgunfmt} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、陳腐化したメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{msgunfmt} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{msgunfmt} option}
+@opindex --width@r{, @code{msgunfmt} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{msgunfmt} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@item -s
+@itemx --sort-output
+@opindex -s@r{, @code{msgunfmt} option}
+@opindex --sort-output@r{, @code{msgunfmt} option}
+@cindex sorting @code{msgunfmt} output
+ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msgunfmt} option}
+@opindex --help@r{, @code{msgunfmt} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msgunfmt} option}
+@opindex --version@r{, @code{msgunfmt} option}
+バージョン情報を表示して終了します。
+
+@item -v
+@itemx --verbose
+@opindex -v@r{, @code{msgunfmt} option}
+@opindex --verbose@r{, @code{msgunfmt} option}
+診断レベルを上げます。
+
+@end table

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>config.h.in (GNU gettext utilities)</title>
+
+<meta name="description" content="config.h.in (GNU gettext utilities)">
+<meta name="keywords" content="config.h.in (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Adjusting-Files.html#Adjusting-Files" rel="up" title="Adjusting Files">
+<link href="Makefile.html#Makefile" rel="next" title="Makefile">
+<link href="aclocal.html#aclocal" rel="prev" title="aclocal">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="config_002eh_002ein"></span><div class="header">
+<p>
+Next: <a href="Makefile.html#Makefile" accesskey="n" rel="next">Makefile</a>, Previous: <a href="aclocal.html#aclocal" accesskey="p" rel="prev">aclocal</a>, Up: <a href="Adjusting-Files.html#Adjusting-Files" accesskey="u" rel="up">Adjusting Files</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="totupureberunoconfig_002eh_002ein"></span><h4 class="subsection">13.4.9 トップレベルの<samp>config.h.in</samp></h4>
+<span id="index-config_002eh_002ein-file"></span>
+
+<p><code>configure</code>により定義されるCマクロを保持するインクルードファイルのテンプレートを、通常は<samp>config.h.in</samp>と呼び、手動または自動で保守されるかもしれません。
+</p>
+<p>プログラム&lsquo;<samp>autoheader</samp>&rsquo;を使って自動的に保守されている場合、なにも行う必要はありません。これは特にGNU
+<code>automake</code>を使っているケースです。
+</p>
+<p>手動で保守する場合は、<samp>config.h.in</samp>に以下の行を追加することにより、回避できます:
+</p>
+<div class="example">
+<pre class="example">/* Define to 1 if translation of program messages to the user's
+   native language is requested. */
+#undef ENABLE_NLS
+</pre></div>
+
+
+
+
+</body>
+</html>

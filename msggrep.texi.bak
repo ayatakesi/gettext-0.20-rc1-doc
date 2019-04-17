@@ -1,0 +1,289 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msggrep
+@cindex @code{msggrep} program, usage
+@example
+msggrep [@var{option}] [@var{inputfile}]
+@end example
+
+@cindex search messages in a catalog
+@code{msggrep}は翻訳カタログから、指定したパターン、指定したソースファイルに属するすべてのメッセージを抽出するプログラムです。
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item @var{inputfile}
+入力となるPOファイルです。
+
+@item -D @var{directory}
+@itemx --directory=@var{directory}
+@opindex -D@r{, @code{msggrep} option}
+@opindex --directory@r{, @code{msggrep} option}
+ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストよりソースファイルを検索します。しかし@file{.po}ファイルが出力されるのは、カレントディレクトリーです。
+
+@end table
+
+@var{inputfile}が指定されていないか、@samp{-}が指定された場合は、標準入力から読み込みます。
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -o @var{file}
+@itemx --output-file=@var{file}
+@opindex -o@r{, @code{msggrep} option}
+@opindex --output-file@r{, @code{msggrep} option}
+指定されたファイルに出力を書き込みます。
+
+@end table
+
+出力ファイルが指定されていない、または@samp{-}が指定された場合、結果は標準出力に出力されます。
+
+@subsection メッセージ選択
+
+@example
+  [-N @var{sourcefile}]... [-M @var{domainname}]...
+  [-J @var{msgctxt-pattern}] [-K @var{msgid-pattern}] [-T @var{msgstr-pattern}]
+  [-C @var{comment-pattern}]
+@end example
+
+以下のような場合、メッセージが選択されます
+@itemize @bullet
+@item 指定したソースファイルのいずれかに属するメッセージの場合
+@item 指定したdomainのいずれかに属するメッセージの場合
+@item @samp{-J}が指定されていて、メッセージのコンテキスト(msgctxt)が
+@var{msgctxt-pattern}にマッチする場合
+@item @samp{-K}が指定されていて、メッセージのキー(msgid または msgid_plural)が
+@var{msgid-pattern}にマッチする場合
+@item @samp{-T}が指定されていて、翻訳(msgstr)が
+@var{msgstr-pattern}にマッチする場合
+@item @samp{-C}が指定されていて、翻訳者のコメントが
+@var{comment-pattern}にマッチする場合
+@end itemize
+
+1つ以上の条件を指定した場合には、それぞれの条件に適合するメッセージのがすべて選択されます。
+
+@var{msgctxt-pattern}、@var{msgid-pattern}、@var{msgstr-pattern}の書式です:
+@example
+  [-E | -F] [-e @var{pattern} | -f @var{file}]...
+@end example
+@var{pattern}にはデフォルトでは標準の正規表現(POSIX Basic Regular Expressions: grep
+-eと同等)を指定します。拡張された正規表現(POSIX Extended Regular Expressions: egrep, grep
+-Eと同等)の場合は-Eを、固定文字列の場合(Fixed String search: fgrep, grep -Fと同等)には-Fを指定してください。
+
+@table @samp
+@item -N @var{sourcefile}
+@itemx --location=@var{sourcefile}
+@opindex -N@r{, @code{msggrep} option}
+@opindex --location@r{, @code{msggrep} option}
+@var{sourcefile}から抽出されたメッセージを選択します。@var{sourcefile}にはファイル名の文字列、またはワイルドカード文字列を指定できます。
+
+@item -M @var{domainname}
+@itemx --domain=@var{domainname}
+@opindex -M@r{, @code{msggrep} option}
+@opindex --domain@r{, @code{msggrep} option}
+ドメイン@var{domainname}に属するメッセージを選択します。
+
+@item -J
+@itemx --msgctxt
+@opindex -J@r{, @code{msggrep} option}
+@opindex --msgctxt@r{, @code{msggrep} option}
+msgctxtを選択するためのパターンの開始を宣言します。
+
+@item -K
+@itemx --msgid
+@opindex -K@r{, @code{msggrep} option}
+@opindex --msgid@r{, @code{msggrep} option}
+msgidを選択するためのパターンの開始を宣言します。
+
+@item -T
+@itemx --msgstr
+@opindex -T@r{, @code{msggrep} option}
+@opindex --msgstr@r{, @code{msggrep} option}
+msgstrを選択するためのパターンの開始を宣言します。
+
+@item -C
+@itemx --comment
+@opindex -C@r{, @code{msggrep} option}
+@opindex --comment@r{, @code{msggrep} option}
+翻訳者コメントを選択するためのパターンの開始を宣言します。
+
+@item -X
+@itemx --extracted-comment
+@opindex -X@r{, @code{msggrep} option}
+@opindex --extracted-comment@r{, @code{msggrep} option}
+抽出コメントを選択するためのパターンの開始を宣言します。
+
+@item -E
+@itemx --extended-regexp
+@opindex -E@r{, @code{msggrep} option}
+@opindex --extended-regexp@r{, @code{msggrep} option}
+@var{pattern}が、拡張された正規表現であることを指定します。
+
+@item -F
+@itemx --fixed-strings
+@opindex -F@r{, @code{msggrep} option}
+@opindex --fixed-strings@r{, @code{msggrep} option}
+@var{pattern}が、改行で区切られた一連の文字列であることを指定します。
+
+@item -e @var{pattern}
+@itemx --regexp=@var{pattern}
+@opindex -e@r{, @code{msggrep} option}
+@opindex --regexp=@r{, @code{msggrep} option}
+@var{pattern}を、正規表現として使用します。
+
+@item -f @var{file}
+@itemx --file=@var{file}
+@opindex -f@r{, @code{msggrep} option}
+@opindex --file@r{, @code{msggrep} option}
+@var{pattern}を、@var{file}から取得します。
+
+@item -i
+@itemx --ignore-case
+@opindex -i@r{, @code{msggrep} option}
+@opindex --ignore-case@r{, @code{msggrep} option}
+大文字と小文字を区別しません。
+
+@item -v
+@itemx --invert-match
+@opindex -v@r{, @code{msggrep} option}
+@opindex --invert-match@r{, @code{msggrep} option}
+条件に一致するメッセージではなく、一致しないメッセージだけを出力します。
+
+@end table
+
+@subsection 入力ファイルの構文
+
+@table @samp
+@item -P
+@itemx --properties-input
+@opindex -P@r{, @code{msggrep} option}
+@opindex --properties-input@r{, @code{msggrep} option}
+入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava
+ResourceBundleファイルだとみなします。
+
+@item --stringtable-input
+@opindex --stringtable-input@r{, @code{msggrep} option}
+入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized
+resourceの@code{.strings}の構文にのっとったファイルだとみなします。
+
+@end table
+
+@subsection 出力の詳細
+
+@c --no-escape and --escape omitted on purpose.  They are not useful.
+
+@table @samp
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{msggrep} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{msggrep} option}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item --force-po
+@opindex --force-po@r{, @code{msggrep} option}
+メッセージが何も含まれていない場合でも、常に出力ファイルに書き込みます。
+
+@item --indent
+@opindex --indent@r{, @code{msggrep} option}
+インデントされた形式で.poファイルを書き込みます。
+
+@item --no-location
+@opindex --no-location@r{, @code{msggrep} option}
+@samp{#: @var{filename}:@var{line}}という行を書き込みません。
+
+@item -n
+@itemx --add-location=@var{type}
+@opindex --add-location@r{, @code{msggrep} option}
+@samp{#: @var{filename}:@var{line}}という行を生成します(デフォルト)。
+
+@var{type}はオプションで、@samp{full}、@samp{file}、または@samp{never}を指定できます。オプションが指定されない、または@samp{full}の場合は、ファイル名と行番号のの両方が生成されます。@samp{file}の場合、行番号は省略されます。@samp{never}の場合は、完全にこの行を抑制します(@code{--no-location}と同じです)。
+
+@item --strict
+@opindex --strict@r{, @code{msggrep} option}
+Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。
+
+@item -p
+@itemx --properties-output
+@opindex -p@r{, @code{msggrep} option}
+@opindex --properties-output@r{, @code{msggrep} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、陳腐化したメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{msggrep} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{msggrep} option}
+@opindex --width@r{, @code{msggrep} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{msggrep} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@item --sort-output
+@opindex --sort-output@r{, @code{msggrep} option}
+ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。
+
+@item --sort-by-file
+@opindex --sort-by-file@r{, @code{msggrep} option}
+ファイルの場所により出力をソートします。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msggrep} option}
+@opindex --help@r{, @code{msggrep} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msggrep} option}
+@opindex --version@r{, @code{msggrep} option}
+バージョン情報を表示して終了します。
+
+@end table
+
+@subsection 例
+
+@code{gnulib-lib/error.c}と@code{gnulib-lib/getopt.c}というソースファイルからメッセージを抽出する場合:
+
+@smallexample
+msggrep -N gnulib-lib/error.c -N gnulib-lib/getopt.c input.po
+@end smallexample
+
+``Please specify''という文字列が含まれるメッセージを抽出する場合:
+
+@smallexample
+msggrep --msgid -F -e 'Please specify' input.po
+@end smallexample
+
+``Menu>File''、``Menu>Edit''またはそれらのサブメニューであることを指定するコンテキストをもつメッセージを抽出する場合:
+
+@smallexample
+msggrep --msgctxt -E -e '^Menu>(File|Edit)' input.po
+@end smallexample
+
+翻訳文字列に@code{wordlist.txt}というファイル中の文字列を含むメッセージを抽出する場合:
+
+@smallexample
+msggrep --msgstr -F -f wordlist.txt input.po
+@end smallexample

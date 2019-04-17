@@ -1,0 +1,131 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@code{gettextize}プログラムは、GNU
+@code{gettext}によりインターナショナライズされたパッケージのメンテナーを助けるための対話的なツールで、2つの目的のために使用されます:
+
+@itemize @bullet
+@item
+最初に、GNU @code{gettext}を使ってパッケージをするときは、ウィザードとして使用されます。
+
+@item
+パッケージ内でのGNU @code{gettext}サポートを、以前のGNU
+@code{gettext}から新しいバージョンにアップグレードするための、移行ツールとして使用します。
+@end itemize
+
+このプログラムは以下のタスクを処理します:
+
+@itemize @bullet
+@item
+GNU @code{gettext}によりインターナショナライズされた、すべてのパッケージで必要なファイルをパッケージにコピーします。
+
+@item 次のセクション
+@ref{Adjusting Files}で説明する多くのタスクを、できるだけ自動的に処理します。
+
+@item 以前のバージョンのGNU 
+@code{gettext}で使われていた陳腐化したファイルやイディオムを削除して、現在のバージョンのGNU
+@code{gettext}で推奨される形式にします。
+
+@item 手動で行うべきタスクや、
+@code{gettextize}で自動的に処理できないタスクの要約をプリントします。
+@end itemize
+
+呼び出し方は以下のようになります:
+
+@pindex gettextize
+@cindex @code{gettextize} program, usage
+@example
+gettextize [ @var{option}@dots{} ] [ @var{directory} ]
+@end example
+
+@noindent
+以下のオプションを指定できます:
+
+@table @samp
+@item -f
+@itemx --force
+@opindex -f@r{, @code{gettextize} option}
+@opindex --force@r{, @code{gettextize} option}
+すでに存在するファイルを強制的に置き換えます。
+
+@item --po-dir=@var{dir}
+@opindex --po-dir@r{, @code{gettextize} option}
+POファイルを含むディレクトリを指定します。このようなディレクトリーには、特定のPOTファイルをさまざまな言語に翻訳したファイルが含まれています。このオプションは、翻訳ドメインどとに複数回指定することができます。指定されなかったときは、@file{po/}というディレクトリーが更新されます。
+
+@item --no-changelog
+@opindex --no-changelog@r{, @code{gettextize} option}
+ChangeLogの作成・更新をしません。デフォルトでは@code{gettextize}は、影響を受けるディレクトリーごとの@samp{ChangeLog}というファイルに、すべての変更(ファイルの追加・変更・削除)を記録します。
+
+@item --symlink
+@opindex --symlink@r{, @code{gettextize} option}
+必要なファイルをコピーするかわりに、シンボリックリンクを作成します。これはディスク容量を数キロバイト節約するのには便利ですが、自分自身を含む形式のtarballの作成には特別な配慮が必要になり、メンテナーがソースに適用できるいくつかの機能が使えなくなり、システムに新しいバージョンの@code{gettext}がインストールされたときにバグ(のような状態)を招きます。
+
+@item -n
+@itemx --dry-run
+@opindex -d@r{, @code{gettextize} option}
+@opindex --dry-run@r{, @code{gettextize} option}
+変更を出力しますが、処理は行いません。普通に@code{gettextize}を実行したときのアクションはすべて抑止され、かわりにリストが標準出力に出力されるだけになります。
+
+@item --help
+@opindex --help@r{, @code{gettextize} option}
+このヘルプを表示して終了します。
+
+@item --version
+@opindex --version@r{, @code{gettextize} option}
+バージョン情報を表示して終了します。
+
+@end table
+
+@var{directory}を指定した場合、そのディレクトリーはGNU
+@code{gettext}を使う準備をしたいパッケージの、トップレベルのディレクトリーになります。
+
+プログラム@code{gettextize}は、以下のファイルを提供します。しかし@code{--force}
+(@code{-f})オプションを指定しなければ、既存のファイルは置き換えられません。
+
+@enumerate
+@item
+@file{ABOUT-NLS}ファイルは、あなたのパッケージのメインディレクトリー(トップレベルのディレクトリー)にコピーされます。このファイルには、GNU
+gettextドキュメントへの参照が含まれます。これはパッケージ内でAutomakeのオプション@samp{gnu}や@samp{gnits}を使用する際の、エラー``error:
+required file './ABOUT-NLS' not found''も回避します。
+
+@item
+作成された@file{po/}ディレクトリーには、最終的にはすべての翻訳用ファイルが保持されますが、初期状態ではGNU
+@code{gettext}による@file{po/Makefile.in.in}(ファイル名に@samp{.in}が2つあることに注意してください)と、いくつかの予備ファイルしか含まれていません。すでに@file{po/}というディレクトリーがあるときは、そのディレクトリーのファイルは保持され、@file{Makefile.in.in}と予備ファイルだけが上書きされます。
+
+@samp{--po-dir}が指定されたときは、@file{po/}のかわりに@samp{--po-dir}で指定されたそれぞれのディレクトリーに配置されます。
+
+@item
+ファイル@file{config.rpath}は、設定サポートファイルを含むディレクトリーにコピーされます。このファイルは、autoconfマクロ@code{AM_GNU_GETTEXT}で必要です。
+
+@item
+プロジェクトがGNU
+@code{automake}しか使っていないときは、@code{autoconf}の一連のマクロファイルが、パッケージの@code{autoconf}マクロのレポジトリー(通常は@file{m4/}というディレクトリー)にコピーされます。
+@end enumerate
+
+シンボリックリンクがサポートされている場合、@code{gettextize}はパッケージのディレクトリーへは実際にコピーはされず、かわりにシンボリックリンクが作成されます。これによりすべてのパッケージで必要なファイルによる重複を避けることができます。単に@samp{-h}オプションを指定すると、配布物の@code{tar}アーカイブを作成するときには、それらのリンクが解決されて実際のファイルが配布物のアーカイブにコピーされます。そのため、メインの@file{Makefile.in}のゴール@code{dist}にたいする@code{tar}のオプションには、@samp{-h}を使う必要があることを強調しておきましょう
+
+それだけではなく、@code{gettextize}は、影響を受ける各ディレクトリーの@file{Makefile.am}をすべて更新し、同様にトップレベルの@file{configure.ac}(または@file{configure.in})も更新します。
+
+パッケージのサブディレクトリー@file{po/}と@file{m4/}にコピーされる、GNU
+@code{gettext}をサポートするための最新のファイルを理解するのも、興味深いでしょう。これらのディレクトリーには、依然として主にパッケージ依存のファイルが含まれることになるでしょう。
+
+@code{gettextize}プログラムは、置換または変更するファイルのバックアップを作成して、それらの変更をChangeLogに書き込みます。この方法により、注意深いメンテナーは@code{gettextize}を実行した後に、それによる変更が許容できるか確認して、可能なら調整することができます。このルールの例外は@file{intl/}ディレクトリーで、このディレクトリーがまだ存在するなら、完全に削除されます。
+
+@code{gettextize}が、GNU
+@code{gettext}を使うパッケージのための調整すべてを処理できる訳ではないことを理解するのことも重要です。残っている作業の量は、パッケージがGNU
+@code{automake}を使うか否かによります。それでも大抵の場合、メンテナーは@code{gettextize}を呼び出した後、@ref{Adjusting
+Files}を読む必要があるでしょう。
+
+特に@samp{gettexize}を使った後は、@samp{AC_COMPILE_IFELSE was called before
+AC_GNU_SOURCE}、または@samp{AC_RUN_IFELSE was called before
+AC_GNU_SOURCE}というエラーが発生するかもしれません。このエラーは@ref{configure.ac}で説明している方法で@file{configure.ac}を変更することにより修正できます。
+
+@code{gettextize}は、GNU build
+systemの一部ではないので、自動的には呼び出されず、パッケージメンテナーとしての責任を持たない人も呼び出さないことを理解しておくのも重要です。後者の目的のためには個別にツールが準備されています。詳細は@ref{autopoint
+Invocation}を参照してください。

@@ -1,0 +1,169 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msgconv
+@cindex @code{msgconv} program, usage
+@example
+msgconv [@var{option}] [@var{inputfile}]
+@end example
+
+@cindex convert translations to a different encoding
+@code{msgconv}は、ある翻訳カタログを別の文字エンコーディングに変換するプログラムです。
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item @var{inputfile}
+入力となるPOファイルです。
+
+@item -D @var{directory}
+@itemx --directory=@var{directory}
+@opindex -D@r{, @code{msgconv} option}
+@opindex --directory@r{, @code{msgconv} option}
+ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストよりソースファイルを検索します。しかし@file{.po}ファイルが出力されるのは、カレントディレクトリーです。
+
+@end table
+
+@var{inputfile}が指定されていないか、@samp{-}が指定された場合は、標準入力から読み込みます。
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -o @var{file}
+@itemx --output-file=@var{file}
+@opindex -o@r{, @code{msgconv} option}
+@opindex --output-file@r{, @code{msgconv} option}
+指定されたファイルに出力を書き込みます。
+
+@end table
+
+出力ファイルが指定されていない、または@samp{-}が指定された場合、結果は標準出力に出力されます。
+
+@subsection 変換する対象
+
+@table @samp
+@item -t
+@itemx --to-code=@var{name}
+@opindex -t@r{, @code{msgconv} option}
+@opindex --to-code@r{, @code{msgconv} option}
+出力のエンコーディングを指定します。
+
+@end table
+
+デフォルトのエンコーディングは、現在のロケールのエンコーディングです。
+
+@subsection 入力ファイルの構文
+
+@table @samp
+@item -P
+@itemx --properties-input
+@opindex -P@r{, @code{msgconv} option}
+@opindex --properties-input@r{, @code{msgconv} option}
+入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava
+ResourceBundleファイルだとみなします。
+
+@item --stringtable-input
+@opindex --stringtable-input@r{, @code{msgonv} option}
+入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized
+resourceの@code{.strings}の構文にのっとったファイルだとみなします。
+
+@end table
+
+@subsection 出力の詳細
+
+@c --no-escape and --escape omitted on purpose.  They are not useful.
+
+@table @samp
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{msgconv} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{msgconv} option}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item --force-po
+@opindex --force-po@r{, @code{msgconv} option}
+メッセージが何も含まれていない場合でも、常に出力ファイルに書き込みます。
+
+@item -i
+@itemx --indent
+@opindex -i@r{, @code{msgconv} option}
+@opindex --indent@r{, @code{msgconv} option}
+インデントされた形式で.poファイルを書き込みます。
+
+@item --no-location
+@opindex --no-location@r{, @code{msgconv} option}
+@samp{#: @var{filename}:@var{line}}という行を書き込みません。
+
+@item -n
+@itemx --add-location=@var{type}
+@opindex --add-location@r{, @code{msgconv} option}
+@samp{#: @var{filename}:@var{line}}という行を生成します(デフォルト)。
+
+@var{type}はオプションで、@samp{full}、@samp{file}、または@samp{never}を指定できます。オプションが指定されない、または@samp{full}の場合は、ファイル名と行番号のの両方が生成されます。@samp{file}の場合、行番号は省略されます。@samp{never}の場合は、完全にこの行を抑制します(@code{--no-location}と同じです)。
+
+@item --strict
+@opindex --strict@r{, @code{msgconv} option}
+Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。
+
+@item -p
+@itemx --properties-output
+@opindex -p@r{, @code{msgconv} option}
+@opindex --properties-output@r{, @code{msgconv} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、陳腐化したメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{msgconv} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{msgconv} option}
+@opindex --width@r{, @code{msgconv} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{msgconv} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@item -s
+@itemx --sort-output
+@opindex -s@r{, @code{msgconv} option}
+@opindex --sort-output@r{, @code{msgconv} option}
+ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。
+
+@item -F
+@itemx --sort-by-file
+@opindex -F@r{, @code{msgconv} option}
+@opindex --sort-by-file@r{, @code{msgconv} option}
+ファイルの場所により出力をソートします。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msgconv} option}
+@opindex --help@r{, @code{msgconv} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msgconv} option}
+@opindex --version@r{, @code{msgconv} option}
+バージョン情報を表示して終了します。
+
+@end table

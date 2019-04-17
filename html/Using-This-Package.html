@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Using This Package (GNU gettext utilities)</title>
+
+<meta name="description" content="Using This Package (GNU gettext utilities)">
+<meta name="keywords" content="Using This Package (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="The-original-ABOUT_002dNLS.html#The-original-ABOUT_002dNLS" rel="up" title="The original ABOUT-NLS">
+<link href="Translating-Teams.html#Translating-Teams" rel="next" title="Translating Teams">
+<link href="INSTALL-Matters.html#INSTALL-Matters" rel="prev" title="INSTALL Matters">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Using-This-Package"></span><div class="header">
+<p>
+Next: <a href="Translating-Teams.html#Translating-Teams" accesskey="n" rel="next">Translating Teams</a>, Previous: <a href="INSTALL-Matters.html#INSTALL-Matters" accesskey="p" rel="prev">INSTALL Matters</a>, Up: <a href="The-original-ABOUT_002dNLS.html#The-original-ABOUT_002dNLS" accesskey="u" rel="up">The original ABOUT-NLS</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="Using-This-Package-1"></span><h4 class="subsection">17.2.2 Using This Package</h4>
+
+<p>As a user, if your language has been installed for this package, you
+only have to set the <code>LANG</code> environment variable to the appropriate
+&lsquo;<samp><var>ll</var>_<var>CC</var></samp>&rsquo; combination.  If you happen to have the <code>LC_ALL</code>
+or some other <code>LC_xxx</code> environment variables set, you should unset them
+before setting <code>LANG</code>, otherwise the setting of <code>LANG</code> will not
+have the desired effect.  Here &lsquo;<samp><var>ll</var></samp>&rsquo; is an
+ISO&nbsp;639<!-- /@w --> two-letter language code, and &lsquo;<samp><var>CC</var></samp>&rsquo; is an
+ISO&nbsp;3166<!-- /@w --> two-letter country code.  For example, let&rsquo;s suppose that you
+speak German and live in Germany.  At the shell prompt, merely execute
+&lsquo;<samp>setenv&nbsp;LANG&nbsp;<span class="nolinebreak">de_DE</span></samp>&rsquo;<!-- /@w --> (in <code>csh</code>),
+&lsquo;<samp>export&nbsp;LANG;&nbsp;<span class="nolinebreak">LANG=de_DE</span></samp>&rsquo;<!-- /@w --> (in <code>sh</code>) or
+&lsquo;<samp>export&nbsp;<span class="nolinebreak">LANG=de_DE</span></samp>&rsquo;<!-- /@w --> (in <code>bash</code>).  This can be done from your
+<samp>.login</samp> or <samp>.profile</samp> file, once and for all.
+</p>
+<p>You might think that the country code specification is redundant.  But in
+fact, some languages have dialects in different countries.  For example,
+&lsquo;<samp>de_AT</samp>&rsquo; is used for Austria, and &lsquo;<samp>pt_BR</samp>&rsquo; for Brazil.  The country
+code serves to distinguish the dialects.
+</p>
+<p>The locale naming convention of &lsquo;<samp><var>ll</var>_<var>CC</var></samp>&rsquo;, with
+&lsquo;<samp><var>ll</var></samp>&rsquo; denoting the language and &lsquo;<samp><var>CC</var></samp>&rsquo; denoting the
+country, is the one use on systems based on GNU libc.  On other systems,
+some variations of this scheme are used, such as &lsquo;<samp><var>ll</var></samp>&rsquo; or
+&lsquo;<samp><var>ll</var>_<var>CC</var>.<var>encoding</var></samp>&rsquo;.  You can get the list of
+locales supported by your system for your language by running the command
+&lsquo;<samp>locale -a | grep '^<var>ll</var>'</samp>&rsquo;.
+</p>
+<p>Not all programs have translations for all languages.  By default, an
+English message is shown in place of a nonexistent translation.  If you
+understand other languages, you can set up a priority list of languages.
+This is done through a different environment variable, called
+<code>LANGUAGE</code>.  GNU <code>gettext</code> gives preference to <code>LANGUAGE</code>
+over <code>LANG</code> for the purpose of message handling, but you still
+need to have <code>LANG</code> set to the primary language; this is required
+by other parts of the system libraries.
+For example, some Swedish users who would rather read translations in
+German than English for when Swedish is not available, set <code>LANGUAGE</code>
+to &lsquo;<samp>sv:de</samp>&rsquo; while leaving <code>LANG</code> to &lsquo;<samp>sv_SE</samp>&rsquo;.
+</p>
+<p>Special advice for Norwegian users: The language code for Norwegian
+bokm&aring;l changed from &lsquo;<samp>no</samp>&rsquo; to &lsquo;<samp>nb</samp>&rsquo; recently (in 2003).
+During the transition period, while some message catalogs for this language
+are installed under &lsquo;<samp>nb</samp>&rsquo; and some older ones under &lsquo;<samp>no</samp>&rsquo;, it&rsquo;s
+recommended for Norwegian users to set <code>LANGUAGE</code> to &lsquo;<samp>nb:no</samp>&rsquo; so that
+both newer and older translations are used.
+</p>
+<p>In the <code>LANGUAGE</code> environment variable, but not in the <code>LANG</code>
+environment variable, &lsquo;<samp><var>ll</var>_<var>CC</var></samp>&rsquo; combinations can be
+abbreviated as &lsquo;<samp><var>ll</var></samp>&rsquo; to denote the language&rsquo;s main dialect.
+For example, &lsquo;<samp>de</samp>&rsquo; is equivalent to &lsquo;<samp>de_DE</samp>&rsquo; (German as spoken in
+Germany), and &lsquo;<samp>pt</samp>&rsquo; to &lsquo;<samp>pt_PT</samp>&rsquo; (Portuguese as spoken in Portugal)
+in this context.
+</p>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Translating-Teams.html#Translating-Teams" accesskey="n" rel="next">Translating Teams</a>, Previous: <a href="INSTALL-Matters.html#INSTALL-Matters" accesskey="p" rel="prev">INSTALL Matters</a>, Up: <a href="The-original-ABOUT_002dNLS.html#The-original-ABOUT_002dNLS" accesskey="u" rel="up">The original ABOUT-NLS</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>

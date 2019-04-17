@@ -1,0 +1,166 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msgen
+@cindex @code{msgen} program, usage
+@example
+msgen [@var{option}] @var{inputfile}
+@end example
+
+@cindex generate translation catalog in English
+@code{msgen}は、Englishの翻訳カタログを作成するプログラムです。最後に作成されたEnglishのPOファイル、またはPO
+Template(xgettext により生成されます)を入力とし、未翻訳エントリーの翻訳に、msgidと同じ文字列を割り当てます。
+
+注意: @samp{msginit --no-translator
+--locale=en}でも、同じような処理を行うことができます。異なるのは、@code{msginit}はヘッダーエントリーにたいして特別な配慮を払いますが、@code{msgen}は異なるという点です。
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item @var{inputfile}
+入力となるPOまたはPOTファイルです。
+
+@item -D @var{directory}
+@itemx --directory=@var{directory}
+@opindex -D@r{, @code{msgen} option}
+@opindex --directory@r{, @code{msgen} option}
+ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストよりソースファイルを検索します。しかし@file{.po}ファイルが出力されるのは、カレントディレクトリーです。
+
+@end table
+
+@var{inputfile}に@samp{-}が指定された場合は、標準入力から読み込みます。
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -o @var{file}
+@itemx --output-file=@var{file}
+@opindex -o@r{, @code{msgen} option}
+@opindex --output-file@r{, @code{msgen} option}
+指定されたファイルに出力を書き込みます。
+
+@end table
+
+出力ファイルが指定されていない、または@samp{-}が指定された場合、結果は標準出力に出力されます。
+
+@subsection 入力ファイルの構文
+
+@table @samp
+@item -P
+@itemx --properties-input
+@opindex -P@r{, @code{msgen} option}
+@opindex --properties-input@r{, @code{msgen} option}
+入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava
+ResourceBundleファイルだとみなします。
+
+@item --stringtable-input
+@opindex --stringtable-input@r{, @code{msgen} option}
+入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized
+resourceの@code{.strings}の構文にのっとったファイルだとみなします。
+
+@end table
+
+@subsection 出力の詳細
+
+@c --no-escape and --escape omitted on purpose.  They are not useful.
+
+@table @samp
+@item --lang=@var{catalogname}
+@opindex --lang@r{, @code{msgen} option}
+ヘッダーエントリーで使用される、@samp{Language}フィールドを指定します。このフィールドの意味については、@ref{Header
+Entry}を参照してください。注意:
+このオプションでは、@samp{Language-Team}と@samp{Plural-Forms}はセットされません。
+
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{msgen} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{msgen} option}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item --force-po
+@opindex --force-po@r{, @code{msgen} option}
+メッセージが何も含まれていない場合でも、常に出力ファイルに書き込みます。
+
+@item -i
+@itemx --indent
+@opindex -i@r{, @code{msgen} option}
+@opindex --indent@r{, @code{msgen} option}
+インデントされた形式で.poファイルを書き込みます。
+
+@item --no-location
+@opindex --no-location@r{, @code{msgen} option}
+@samp{#: @var{filename}:@var{line}}という行を書き込みません。
+
+@item -n
+@itemx --add-location=@var{type}
+@opindex --add-location@r{, @code{msgen} option}
+@samp{#: @var{filename}:@var{line}}という行を生成します(デフォルト)。
+
+@var{type}はオプションで、@samp{full}、@samp{file}、または@samp{never}を指定できます。オプションが指定されない、または@samp{full}の場合は、ファイル名と行番号のの両方が生成されます。@samp{file}の場合、行番号は省略されます。@samp{never}の場合は、完全にこの行を抑制します(@code{--no-location}と同じです)。
+
+@item --strict
+@opindex --strict@r{, @code{msgen} option}
+Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。
+
+@item -p
+@itemx --properties-output
+@opindex -p@r{, @code{msgen} option}
+@opindex --properties-output@r{, @code{msgen} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、陳腐化したメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{msgen} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{msgen} option}
+@opindex --width@r{, @code{msgen} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{msgen} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@item -s
+@itemx --sort-output
+@opindex -s@r{, @code{msgen} option}
+@opindex --sort-output@r{, @code{msgen} option}
+ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。
+
+@item -F
+@itemx --sort-by-file
+@opindex -F@r{, @code{msgen} option}
+@opindex --sort-by-file@r{, @code{msgen} option}
+ファイルの場所により出力をソートします。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msgen} option}
+@opindex --help@r{, @code{msgen} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msgen} option}
+@opindex --version@r{, @code{msgen} option}
+バージョン情報を表示して終了します。
+
+@end table

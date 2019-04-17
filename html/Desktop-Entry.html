@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Desktop Entry (GNU gettext utilities)</title>
+
+<meta name="description" content="Desktop Entry (GNU gettext utilities)">
+<meta name="keywords" content="Desktop Entry (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Localized-Data.html#Localized-Data" rel="up" title="Localized Data">
+<link href="XML.html#XML" rel="next" title="XML">
+<link href="Qt-message-catalog.html#Qt-message-catalog" rel="prev" title="Qt message catalog">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Desktop-Entry"></span><div class="header">
+<p>
+Next: <a href="XML.html#XML" accesskey="n" rel="next">XML</a>, Previous: <a href="Compiled-Message-Catalogs.html#Compiled-Message-Catalogs" accesskey="p" rel="prev">Compiled Message Catalogs</a>, Up: <a href="Localized-Data.html#Localized-Data" accesskey="u" rel="up">Localized Data</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="Desktop-Entry-files"></span><h4 class="subsection">16.2.3 Desktop Entry files</h4>
+
+<p>プログラマーは英語文字列のみの、デスクトップエントリーファイルテンプレートを生成します。これらの文字列は、<code>xgettext</code>により(通常は<code>po/POTFILES.in</code>内のテンプレートをリストすることにより)POTファイル内に含まれます。翻訳者は、各言語にたいしてそれぞれ、POファイルを生成します。最後に<code>msgfmt
+--desktop</code>呼び出しが、デスクトップエントリーファイル内のすべての翻訳を収集します。
+</p>
+<p>詳細は、<code>hello-c-gnome3</code>の例を参照してください。
+</p>
+
+
+
+</body>
+</html>

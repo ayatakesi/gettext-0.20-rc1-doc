@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>configure.ac (GNU gettext utilities)</title>
+
+<meta name="description" content="configure.ac (GNU gettext utilities)">
+<meta name="keywords" content="configure.ac (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Adjusting-Files.html#Adjusting-Files" rel="up" title="Adjusting Files">
+<link href="config_002eguess.html#config_002eguess" rel="next" title="config.guess">
+<link href="po_002fRules_002d_002a.html#po_002fRules_002d_002a" rel="prev" title="po/Rules-*">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="configure_002eac"></span><div class="header">
+<p>
+Next: <a href="config_002eguess.html#config_002eguess" accesskey="n" rel="next">config.guess</a>, Previous: <a href="po_002fRules_002d_002a.html#po_002fRules_002d_002a" accesskey="p" rel="prev">po/Rules-*</a>, Up: <a href="Adjusting-Files.html#Adjusting-Files" accesskey="u" rel="up">Adjusting Files</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="totupureberunoconfigure_002eac"></span><h4 class="subsection">13.4.5 トップレベルの<samp>configure.ac</samp></h4>
+
+<p><samp>configure.ac</samp>または<samp>configure.in</samp> &ndash;
+これは<code>autoconf</code>が<samp>configure</samp>スクリプトを生成するときのソースになるファイルです。
+</p>
+<ol>
+<li> パッケージとバージョンを宣言します。
+<span id="index-package-and-version-declaration-in-configure_002eac"></span>
+
+<p>これは以下のように宣言します:
+</p>
+<div class="example">
+<pre class="example">PACKAGE=gettext
+VERSION=0.20-rc1
+AC_DEFINE_UNQUOTED(PACKAGE, &quot;$PACKAGE&quot;)
+AC_DEFINE_UNQUOTED(VERSION, &quot;$VERSION&quot;)
+AC_SUBST(PACKAGE)
+AC_SUBST(VERSION)
+</pre></div>
+
+<p>GNU <code>automake</code>を使っている場合は、以下のようになるでしょう:
+</p>
+<div class="example">
+<pre class="example">AM_INIT_AUTOMAKE(gettext, 0.20-rc1)
+</pre></div>
+
+<p>もちろん、パッケージ名の&lsquo;<samp>gettext</samp>&rsquo;と、バージョン番号の&lsquo;<samp>0.20-rc1</samp>&rsquo;は、あなたのパッケージの名前とバージョン番号で置き換えます。これらは配布物のパッケージされた<code>tar</code>のファイル名(この例では<samp>gettext-0.20-rc1.tar.gz</samp>)にそのまま使用されます。
+</p>
+</li><li> インターナショナリゼーションにたいするサポートのチェック。
+
+<p>以下のマクロは、インターナショナリゼーションにたいするサポートを発動するためにメインとなる、<code>m4</code>のマクロです。この行を<samp>configure.ac</samp>に追加します:
+</p>
+<div class="example">
+<pre class="example">AM_GNU_GETTEXT([external])
+</pre></div>
+
+<p>マクロはconfigure時に多くのチェックと処理を行いますが、呼び出しは故意に単純にしています。
+</p>
+</li><li> 出力ファイルの作成。
+
+<p>AC_OUTPUT命令は<samp>configure.ac</samp>ファイルの最後にあり、以下の2つの方法で変更する必要があります:
+</p>
+<div class="example">
+<pre class="example">AC_OUTPUT([<var>existing configuration files</var> po/Makefile.in],
+[<var>existing additional actions</var>])
+</pre></div>
+
+<p><code>AC_OUTPUT</code>の最初の引数の変更は、<samp>po/</samp>ディレクトリーを置き換えるための変更です。接尾辞&lsquo;<samp>.in</samp>&rsquo;は、<samp>po/</samp>だけに使用されることに注意してください。これにより配布される本当のファイルは<samp>po/Makefile.in.in</samp>であることがわかります。
+</p>
+</li></ol>
+
+
+
+
+</body>
+</html>

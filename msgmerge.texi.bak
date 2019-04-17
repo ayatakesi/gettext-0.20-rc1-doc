@@ -1,0 +1,260 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msgmerge
+@cindex @code{msgmerge} program, usage
+@example
+msgmerge [@var{option}] @var{def}.po @var{ref}.pot
+@end example
+
+@code{msgmerge}プログラムは、Uniforumスタイルの2つの.poファイルをマージして1つにします。@var{def}.poファイルは既存のPOファイルで、メッセージが一致していれば既存の翻訳は新しいファイルに引き継がれます。その際、コメントは残されますが、抽出されたコメントやファイル内の位置などは破棄されます。@var{ref}.potは、最新のソースより作られたPOファイルですが、古い翻訳や、(通常は@code{xgettext}により作成された)PO
+Templateファイルを参照するため、ドットコメント(訳注:プログラマーから翻訳者へのコメント#.のこと)やファイル内の位置情報は保存されますが、ファイル内のいくつかの翻訳やコメントは、破棄されるでしょう。完全に一致するメッセージが見つからない場合、より良い結果を生成するためにfuzzy一致が使用されます。
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item @var{def}.po
+古いソースを参照する翻訳です。
+
+@item @var{ref}.pot
+新しいソースへの参照です。
+
+@item -D @var{directory}
+@itemx --directory=@var{directory}
+@opindex -D@r{, @code{msgmerge} option}
+@opindex --directory@r{, @code{msgmerge} option}
+ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストよりソースファイルを検索します。しかし@file{.po}ファイルが出力されるのは、カレントディレクトリーです。
+
+@item -C @var{file}
+@itemx --compendium=@var{file}
+@opindex -C@r{, @code{msgmerge} option}
+@opindex --compendium@r{, @code{msgmerge} option}
+メッセージを翻訳するための追加のライブラリーを指定します。@ref{Compendium}を参照してください。このオプションは複数指定することができます。
+
+@end table
+
+@subsection オペレーションモード
+
+@table @samp
+@item -U
+@itemx --update
+@opindex -U@r{, @code{msgmerge} option}
+@opindex --update@r{, @code{msgmerge} option}
+@var{def}.poファイルを更新します。すでに@var{def}.poが最新の場合は何もしません。
+
+@end table
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -o @var{file}
+@itemx --output-file=@var{file}
+@opindex -o@r{, @code{msgmerge} option}
+@opindex --output-file@r{, @code{msgmerge} option}
+指定されたファイルに出力を書き込みます。
+
+@end table
+
+@cindex standard output, and @code{msgmerge} program
+出力ファイルが指定されていない、または@samp{-}が指定された場合、結果は標準出力に出力されます。
+
+@subsection 更新モードでの出力ファイルの位置
+
+処理結果は@var{def}.poファイルに書き戻されます。
+
+@table @samp
+@item --backup=@var{control}
+@opindex --backup@r{, @code{msgmerge} option}
+@cindex backup old file, and @code{msgmerge} program
+@var{def}.poのバックアップを作成します。
+
+@item --suffix=@var{suffix}
+@opindex --suffix@r{, @code{msgmerge} option}
+通常使用されるバックアップの接尾辞を上書きします。
+
+@end table
+
+@cindex version control for backup files, @code{msgmerge}
+@code{--backup}オプション、もしくは環境変数@code{VERSION_CONTROL}を通じてバージョン管理の方式を選択します。以下の値が指定できます:
+
+@table @samp
+@item none
+@itemx off
+(@code{--backup}オプションが指定されていたとしても)バックアップを作成しません。
+
+@item numbered
+@itemx t
+番号付きのバックアップを作成します。
+
+@item existing
+@itemx nil
+このファイルの番号付きのバックアップがすでに存在する場合、番号付きバックアップを作成し、そうでなければ単純なバックアップを作成します。
+
+@item simple
+@itemx never
+常に単純なバックアップを作成します。
+
+@end table
+
+@code{--suffix}または環境変数@code{SIMPLE_BACKUP_SUFFIX}が設定されていない場合は、バックアップの接尾辞として@samp{~}を使用します。
+
+@subsection オペレーションの修飾
+
+@table @samp
+@item -m
+@itemx --multi-domain
+@opindex -m@r{, @code{msgmerge} option}
+@opindex --multi-domain@r{, @code{msgmerge} option}
+@var{def}.po内の各ドメインにたいして、@var{ref}.potを適用します。
+
+@item --for-msgfmt
+@opindex --for-msgfmt@r{, @code{msgmerge} option}
+翻訳者向けではなく、@code{msgfmt}用のためだけのPOファイルを生成します。このオプションは、未翻訳、fuzzy(ヘッダーエントリーを除く)、obsoleteのメッセージを出力から省きます。さらに、出力から翻訳者コメントと@samp{#:
+@var{filename}:@var{line}}の行も省きます。特にこのオプションは、暗に@samp{--no-fuzzy-matching}を意味します。
+
+@item -N
+@itemx --no-fuzzy-matching
+@opindex -N@r{, @code{msgmerge} option}
+@opindex --no-fuzzy-matching@r{, @code{msgmerge} option}
+完全に一致するものが見つからない場合、fuzzyマッチングを行いません。これにより処理のスピードが大幅に改善されます。
+
+@item --previous
+@opindex --previous@r{, @code{msgmerge} option}
+翻訳されたメッセージをもつ古いmsgidにたいしてfuzzyマーカーを追加するときに、@samp{#|}マークをつけて古いメッセージを保持します。
+@end table
+
+@subsection 入力ファイルの構文
+
+@table @samp
+@item -P
+@itemx --properties-input
+@opindex -P@r{, @code{msgmerge} option}
+@opindex --properties-input@r{, @code{msgmerge} option}
+入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava
+ResourceBundleファイルだとみなします。
+
+@item --stringtable-input
+@opindex --stringtable-input@r{, @code{msgmerge} option}
+入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized
+resourceの@code{.strings}の構文にのっとったファイルだとみなします。
+
+@end table
+
+@subsection 出力の詳細
+
+@c --no-escape and --escape omitted on purpose.  They are not useful.
+
+@table @samp
+@item --lang=@var{catalogname}
+@opindex --lang@r{, @code{msgmerge} option}
+ヘッダーのエントリーで使用される@samp{Language}フィールドを指定します。このフィールドの意味については@ref{Header
+Entry}を参照してください。@samp{Language-Team}と@samp{Plural-Forms}のフィールドは変更されないことに注意してください。このオプションを指定しない場合、@samp{Language-Team}フィールドから最適なものを推測して、@samp{Language}フィールドに入力します。
+
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{msgmerge} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{msgmerge} option}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item --force-po
+@opindex --force-po@r{, @code{msgmerge} option}
+メッセージが何も含まれていない場合でも、常に出力ファイルに書き込みます。
+
+@item -i
+@itemx --indent
+@opindex -i@r{, @code{msgmerge} option}
+@opindex --indent@r{, @code{msgmerge} option}
+インデントされた形式で.poファイルを書き込みます。
+
+@item --no-location
+@opindex --no-location@r{, @code{msgmerge} option}
+@samp{#: @var{filename}:@var{line}}という行を書き込みません。
+
+@item -n
+@itemx --add-location=@var{type}
+@opindex --add-location@r{, @code{msgmerge} option}
+@samp{#: @var{filename}:@var{line}}という行を生成します(デフォルト)。
+
+@var{type}はオプションで、@samp{full}、@samp{file}、または@samp{never}を指定できます。オプションが指定されない、または@samp{full}の場合は、ファイル名と行番号のの両方が生成されます。@samp{file}の場合、行番号は省略されます。@samp{never}の場合は、完全にこの行を抑制します(@code{--no-location}と同じです)。
+
+@item --strict
+@opindex --strict@r{, @code{msgmerge} option}
+Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。
+
+@item -p
+@itemx --properties-output
+@opindex -p@r{, @code{msgmerge} option}
+@opindex --properties-output@r{, @code{msgmerge} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、廃止されたメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{msgmerge} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{msgmerge} option}
+@opindex --width@r{, @code{msgmerge} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{msgmerge} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@item -s
+@itemx --sort-output
+@opindex -s@r{, @code{msgmerge} option}
+@opindex --sort-output@r{, @code{msgmerge} option}
+@cindex sorting @code{msgmerge} output
+ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。
+
+@item -F
+@itemx --sort-by-file
+@opindex -F@r{, @code{msgmerge} option}
+@opindex --sort-by-file@r{, @code{msgmerge} option}
+ファイルの場所により出力をソートします。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msgmerge} option}
+@opindex --help@r{, @code{msgmerge} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msgmerge} option}
+@opindex --version@r{, @code{msgmerge} option}
+バージョン情報を表示して終了します。
+
+@item -v
+@itemx --verbose
+@opindex -v@r{, @code{msgmerge} option}
+@opindex --verbose@r{, @code{msgmerge} option}
+診断レベルを上げます。
+
+@item -q
+@itemx --quiet
+@itemx --silent
+@opindex -q@r{, @code{msgmerge} option}
+@opindex --quiet@r{, @code{msgmerge} option}
+@opindex --silent@r{, @code{msgmerge} option}
+プログレスインジケーターを表示しません。
+
+@end table

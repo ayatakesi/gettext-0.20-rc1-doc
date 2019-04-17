@@ -1,0 +1,67 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex gettext
+@cindex @code{gettext} program, usage
+@example
+gettext [@var{option}] [[@var{textdomain}] @var{msgid}]
+gettext [@var{option}] -s [@var{msgid}]...
+@end example
+
+@cindex lookup message translation
+@code{gettext}は、母国語に翻訳されたテキストメッセージを表示するプログラムです。
+
+@noindent @strong{Arguments}
+
+@table @samp
+@item -c @var{context}
+@itemx --context=@var{context}
+@opindex -c@r{, @code{gettext} option}
+@opindex --context@r{, @code{gettext} option}
+翻訳されるメッセージのコンテキストを指定します。@ref{Contexts}を参照してください。
+
+@item -d @var{textdomain}
+@itemx --domain=@var{textdomain}
+@opindex -d@r{, @code{gettext} option}
+@opindex --domain@r{, @code{gettext} option}
+@var{textdomain}から、翻訳されたメッセージを取得します。@var{textdomain}は通常、パッケージか、プログラムやプログラムのモジュールと一致します。
+
+@item -e
+@opindex -e@r{, @code{gettext} option}
+いくつかのエスケープシーケンスの展開を可能にします。これはechoプログラムややシェルのビルトインコマンドにたいする互換のためのオプションです。対象となるエスケープシーケンスは@samp{\a}、@samp{\b}、@samp{\c}、@samp{\f}、@samp{\n}、@samp{\r}、@samp{\t}、@samp{\v}、@samp{\\}、および@samp{\}と、その後の3桁以内の8進数です(これらはSystem
+Vの@samp{echo}と同様に処理されます)。
+
+@item -E
+@opindex -E@r{, @code{gettext} option}
+このオプションは@samp{echo}プログラムとシェルのビルトインコマンドとの互換性のためだけのもので、何の効果も及ぼしません。
+
+@item -h
+@itemx --help
+@opindex -h@r{, @code{gettext} option}
+@opindex --help@r{, @code{gettext} option}
+このヘルプを表示して終了します。
+
+@item -n
+@opindex -n@r{, @code{gettext} option}
+行末の改行を抑止します。デフォルトでは、@code{gettext}は出力に改行を付与します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{gettext} option}
+@opindex --version@r{, @code{gettext} option}
+バージョン情報を表示して終了します。
+
+@item [@var{textdomain}] @var{msgid}
+@var{textdomain}から、@var{msgid}に対応する翻訳されたメッセージを取得します。
+
+@end table
+
+パラメーター@var{textdomain}を指定しなかった場合、環境変数@code{TEXTDOMAIN}によりdomainが決定されます。メッセージカタログが標準のディレクトリーで見つからなかった場合には、環境変数@code{TEXTDOMAINDIR}で他の場所を指定できます。
+
+@code{-s}オプションを使うと、プログラムは@samp{echo}コマンドのように振る舞います。しかし、このプログラムは引数を単に標準出力にコピーするのではなく、選択されたカタログにメッセージが見つかった場合は翻訳されたメッセージを出力します。

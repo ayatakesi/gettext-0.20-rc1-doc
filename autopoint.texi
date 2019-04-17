@@ -1,0 +1,60 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex autopoint
+@cindex @code{autopoint} program, usage
+@example
+autopoint [@var{option}]...
+@end example
+
+@code{autopoint}は、gettextの基礎となるファイルを、ソースパッケージにコピーするプログラムです。このプログラムは@code{AM_GNU_GETTEXT_VERSION(@var{version})}の形式で呼び出されるマクロにより、パッケージの@file{configure.in}(または@file{configure.ac})ファイルからパッケージで使用されるgettextのバージョンを抽出して、そのバージョンに該当する基礎となるファイルをパッケージにコピーします。
+
+要求されるバージョンを満たす利用可能な最新のインフラストラクチャーを抽出するために、かわりにフォーム@code{AM_GNU_GETTEXT_REQUIRE_VERSION(@var{version})}を使用できます。たとえばgettextの@value{ARCHIVE-VERSION}がシステムにインストールされていて、@code{0.19.1}が要求される場合、バージョン@value{ARCHIVE-VERSION}のインフラストラクチャーファイルが、ソースパッケージにコピーされます。
+
+@subsubsection Options
+
+@table @samp
+@item -f
+@itemx --force
+@opindex -f@r{, @code{autopoint} option}
+@opindex --force@r{, @code{autopoint} option}
+既存のファイルを強制的に上書きします。
+
+@item -n
+@itemx --dry-run
+@opindex -d@r{, @code{autopoint} option}
+@opindex --dry-run@r{, @code{autopoint} option}
+変更を出力しますが、処理は行いません。普通に@code{autopoint}を実行したことによるファイルのコピーはすべて抑止され、かわりに標準出力にリストが出力されます。
+
+@end table
+
+@subsubsection Informative output
+
+@table @samp
+@item --help
+@opindex --help@r{, @code{autopoint} option}
+このヘルプを表示して終了します。
+
+@item --version
+@opindex --version@r{, @code{autopoint} option}
+バージョン情報を表示して終了します。
+
+@end table
+
+@code{autopoint}は、GNU
+@code{gettext}のバージョン0.10.35から、現在の@value{ARCHIVE-VERSION}までをサポートします。@value{ARCHIVE-VERSION}より新しいバージョンの@code{gettext}を使用してパッケージに@code{autopoint}を適用するためには、少なくとも同じバージョンのGNU
+@code{gettext}をインストールする必要があります。
+
+GNU
+@code{automake}を使用するパッケージでの@code{autopoint}の呼び出しは、@code{aclocal}呼び出しの後に行い、その後で@code{autoconf}および@code{autoheader}を呼び出します。これは、@code{autopoint}が@file{aclocal.m4}を作成するために、@code{autopoint}がいくつかのautoconfマクロをインストールするのが理由です。この
+aclocal.m4 は、autoconf によるパッケージの configure スクリプトを作成と、autoheader
+によるパッケージのインクルードファイルのテンプレート config.h.in
+を作成するために使用されます。このマクロファイルは@file{aclocal.m4}を作成するために@code{aclocal}により使用され、@file{aclocal.m4}はパッケージの@file{configure}を作成するために@code{aclocal}により使用され、インクルードファイルテンプレートであるパッケージの@file{config.h.in}を作成するために@code{autoheader}により使用されます。
+
+@samp{autopoint}という名前は@samp{auto-po-intl-m4}を省略したものです。以前のバージョンでは、このツールは主に@file{po}、@file{intl}、@file{m4}ディレクトリーのファイルをコピーまたは更新していました。

@@ -1,0 +1,208 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msgcat
+@cindex @code{msgcat} program, usage
+@example
+msgcat [@var{option}] [@var{inputfile}]...
+@end example
+
+@cindex concatenate PO files
+@cindex merge PO files
+@code{msgcat}プログラムは、指定されたPOファイルを結合・マージするプログラムです。プログラムは、指定された複数のPOファイルの中から、2つ以上のファイルで使用されている共通のメッセージを見つけます。@code{--more-than}オプションを使うと、指定したファイル数より多くのファイルで共通のメッセージを出力するか指定できます。反対に@code{--less-than}オプションでは、指定したファイル数より少ないファイルで共通のメッセージを出力するか指定できます(例@:
+@samp{--less-than=2}
+と指定すると一意なメッセージだけが出力されます)。翻訳やコメントは累積されますが、@code{--use-first}を指定した場合は、指定されたPOファイルのうちで最初のものを採用します。すべてのPOファイルの位置情報も累積されます。
+
+@code{msgcat}は指定されたPOTファイル内の未定義charsetを選択するでしょうから、POTファイルの結合には@code{msgcat}より@code{xgettext}を使用するほうがよいでしょう。
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item @var{inputfile} @dots{}
+入力ファイルです。
+
+@item -f @var{file}
+@itemx --files-from=@var{file}
+@opindex -f@r{, @code{msgcat} option}
+@opindex --files-from@r{, @code{msgcat} option}
+入力ファイルの名前を、コマンドラインからではなく、@var{file}から読み込みます。
+
+@item -D @var{directory}
+@itemx --directory=@var{directory}
+@opindex -D@r{, @code{msgcat} option}
+@opindex --directory@r{, @code{msgcat} option}
+ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストよりソースファイルを検索します。しかし@file{.po}ファイルが出力されるのは、カレントディレクトリーです。
+
+@end table
+
+@var{inputfile}に@samp{-}が指定された場合は、標準入力から読み込みます。
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -o @var{file}
+@itemx --output-file=@var{file}
+@opindex -o@r{, @code{msgcat} option}
+@opindex --output-file@r{, @code{msgcat} option}
+指定されたファイルに出力を書き込みます。
+
+@end table
+
+@cindex standard output, and @code{msgcat}
+出力ファイルが指定されていない、または@samp{-}が指定された場合、結果は標準出力に出力されます。
+
+@subsection メッセージ選択
+
+@table @samp
+@item -< @var{number}
+@itemx --less-than=@var{number}
+@opindex -<@r{, @code{msgcat} option}
+@opindex --less-than@r{, @code{msgcat} option}
+@var{number}に指定した数より少ないメッセージを出力します。指定しなかった場合のデフォルトは無限大です。
+
+@item -> @var{number}
+@itemx --more-than=@var{number}
+@opindex ->@r{, @code{msgcat} option}
+@opindex --more-than@r{, @code{msgcat} option}
+@var{number}に指定した数より大きいメッセージを出力します。指定しなかった場合のデフォルトは0です。
+
+@item -u
+@itemx --unique
+@opindex -u@r{, @code{msgcat} option}
+@opindex --unique@r{, @code{msgcat} option}
+@samp{--less-than=2}の省略指定です。一意なメッセージだけを出力します。
+
+@end table
+
+@subsection 入力ファイルの構文
+
+@table @samp
+@item -P
+@itemx --properties-input
+@opindex -P@r{, @code{msgcat} option}
+@opindex --properties-input@r{, @code{msgcat} option}
+入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava
+ResourceBundleファイルだとみなします。
+
+@item --stringtable-input
+@opindex --stringtable-input@r{, @code{msgcat} option}
+入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized
+resourceの@code{.strings}の構文にのっとったファイルだとみなします。
+
+@end table
+
+@subsection 出力の詳細
+
+@c --no-escape and --escape omitted on purpose.  They are not useful.
+
+@table @samp
+@item -t
+@itemx --to-code=@var{name}
+@opindex -t@r{, @code{msgcat} option}
+@opindex --to-code@r{, @code{msgcat} option}
+出力のエンコーディングを指定します。
+
+@item --use-first
+@opindex --use-first@r{, @code{msgcat} option}
+各メッセージで利用可能な最初のメッセージを使用します。複数の翻訳を1つにマージしません。
+
+@item --lang=@var{catalogname}
+@opindex --lang@r{, @code{msgcat} option}
+ヘッダーのエントリーで使用される、@samp{Language}フィールドを指定します。このフィールドの意味については、@ref{Header
+Entry}を参照してください。@samp{Language-Team}と@samp{Plural-Forms}のフィールドは変更されないことに注意してください。
+
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{msgcat} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{msgcat} オプション}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item --force-po
+@opindex --force-po@r{, @code{msgcat} option}
+メッセージが何も含まれていない場合でも、常に出力ファイルに書き込みます。
+
+@item -i
+@itemx --indent
+@opindex -i@r{, @code{msgcat} option}
+@opindex --indent@r{, @code{msgcat} option}
+インデントされた形式で.poファイルを書き込みます。
+
+@item --no-location
+@opindex --no-location@r{, @code{msgcat} option}
+@samp{#: @var{filename}:@var{line}}という行を書き込みません。
+
+@item -n
+@itemx --add-location=@var{type}
+@opindex -n@r{, @code{msgcat} option}
+@opindex --add-location@r{, @code{msgcat} option}
+@samp{#: @var{filename}:@var{line}}という行を生成します(デフォルト)。
+
+@var{type}はオプションで、@samp{full}、@samp{file}、または@samp{never}を指定できます。オプションが指定されない、または@samp{full}の場合は、ファイル名と行番号のの両方が生成されます。@samp{file}の場合、行番号は省略されます。@samp{never}の場合は、完全にこの行を抑制します(@code{--no-location}と同じです)。
+
+@item --strict
+@opindex --strict@r{, @code{msgcat} option}
+Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。
+
+@item -p
+@itemx --properties-output
+@opindex -p@r{, @code{msgcat} option}
+@opindex --properties-output@r{, @code{msgcat} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、陳腐化したメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{msgcat} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{msgcat} option}
+@opindex --width@r{, @code{msgcat} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{msgcat} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@item -s
+@itemx --sort-output
+@opindex -s@r{, @code{msgcat} option}
+@opindex --sort-output@r{, @code{msgcat} option}
+@cindex sorting @code{msgcat} output
+ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。
+
+@item -F
+@itemx --sort-by-file
+@opindex -F@r{, @code{msgcat} option}
+@opindex --sort-by-file@r{, @code{msgcat} option}
+ファイルの場所により出力をソートします。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msgcat} option}
+@opindex --help@r{, @code{msgcat} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msgcat} option}
+@opindex --version@r{, @code{msgcat} option}
+バージョン情報を表示して終了します。
+
+@end table

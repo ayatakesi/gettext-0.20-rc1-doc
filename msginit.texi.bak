@@ -1,0 +1,153 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c This file is part of the GNU gettext manual.
+@c Copyright (C) 1995-2019 Free Software Foundation, Inc.
+@c See the file gettext.texi for copying conditions.
+
+@pindex msginit
+@cindex @code{msginit} program, usage
+@example
+msginit [@var{option}]
+@end example
+
+@cindex create new PO file
+@cindex initialize new PO file
+@code{msginit}プログラムは、新しいPOファイルを作成して、メタ情報をユーザーの環境にもとづいて初期化します。
+
+以下はその詳細です。POファイルの以下のヘッダーフィールドは、もし可能なら自動的に充填されます。
+
+@table @samp
+@item Project-Id-Version
+この値は@code{configure}スクリプト、またはカレントディレクトリー内の他のファイルから推測されます。
+
+@item PO-Revision-Date
+値はPOTファイルの@code{PO-Creation-Data}、または現在の日時から取得されます。
+
+@item Last-Translator
+値はユーザーのpasswordファイルとメール設定ファイルから取得されます。
+
+@item Language-Team, Language
+これらの値は、カレントlocaleと、翻訳チームの事前に定義されたリストから取得されます。
+
+@item MIME-Version, Content-Type, Content-Transfer-Encoding
+これらの値は、POTファイルの内容と、カレントlocaleからセットされます。POTファイルがcharset=UTF-8を含む場合、そのPOTファイルは非ASCII文字を含むことを意味するので、UTF-8エンコーディングを維持します。それ以外では、POTファイルがプレーンASCIIの場合は、そのlocaleのエンコーディングを使用します。
+
+@item Plural-Forms
+値は最初に埋め込みテーブルから見つかったものです。
+
+実験的な機能として、環境変数@code{GETTEXTCLDRDIR}をセットすることにより、@code{msginit}にUnicode
+CLDRの情報を使用するように指示できます。プログラムはそのディレクトリー配下で@code{common/supplemental/plurals.xml}という名前のファイルを探します。CLDRデータは、@url{http://cldr.unicode.org/}から取得できます。
+
+@end table
+
+@subsection 入力ファイルの位置
+
+@table @samp
+@item -i @var{inputfile}
+@itemx --input=@var{inputfile}
+@opindex -i@r{, @code{msginit} option}
+@opindex --input@r{, @code{msginit} option}
+入力となるPOTファイルです。
+
+@end table
+
+@var{inputfile}が指定されなかった場合、カレントディレクトリからPOTファイルを検索します。@samp{-}を指定すると、標準入力から読み込みます。
+
+@subsection 出力ファイルの位置
+
+@table @samp
+@item -o @var{file}
+@itemx --output-file=@var{file}
+@opindex -o@r{, @code{msginit} option}
+@opindex --output-file@r{, @code{msginit} option}
+指定されたPOファイルに出力を書き込みます。
+
+@end table
+
+出力ファイルが指定されなかった場合は、ユーザーのロケール設定の@samp{--locale}オプションに依存します。@samp{-}を指定すると、出力は標準出力に書き込まれます。
+
+@subsection 入力ファイルの構文
+
+@table @samp
+@item -P
+@itemx --properties-input
+@opindex -P@r{, @code{msginit} option}
+@opindex --properties-input@r{, @code{msginit} option}
+入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava
+ResourceBundleファイルだとみなします。
+
+@item --stringtable-input
+@opindex --stringtable-input@r{, @code{msginit} option}
+入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized
+resourceの@code{.strings}の構文にのっとったファイルだとみなします。
+
+@end table
+
+@subsection 出力の詳細
+
+@table @samp
+@item -l @var{ll_CC[.encoding]}
+@itemx --locale=@var{ll_CC[.encoding]}
+@opindex -l@r{, @code{msginit} option}
+@opindex --locale@r{, @code{msginit} option}
+対象のlocaleを設定します。@var{ll}にはlanguage codeを、@var{CC}にはcountry
+codeを設定する必要があります。オプションパート@var{.encoding}は、そ〜おlocaleのエンコーディングを指定します。このパートはほとんどの場合は@code{.UTF-8}です。インストールされているすべてのlocaleのリストを出力するには、@samp{locale
+-a}コマンドを使用できます。デフォルトはユーザーのlocale設定が使用されます。
+
+@item --no-translator
+@opindex --no-translator@r{, @code{msginit} option}
+POファイルが翻訳者の手で作成されたものではなく、自動的に生成されたものであることを宣言します。
+
+@item --color
+@itemx --color=@var{when}
+@opindex --color@r{, @code{msginit} option}
+色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。
+
+@item --style=@var{style_file}
+@opindex --style@r{, @code{msginit} option}
+@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style
+option}を参照してください。
+
+@item -p
+@itemx --properties-output
+@opindex -p@r{, @code{msginit} option}
+@opindex --properties-output@r{, @code{msginit} option}
+Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural
+formをサポートせず、廃止されたメッセージを暗黙で除去することに注意してください。
+
+@item --stringtable-output
+@opindex --stringtable-output@r{, @code{msginit} option}
+@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural
+formをサポートしないことに注意してください。
+
+@item -w @var{number}
+@itemx --width=@var{number}
+@opindex -w@r{, @code{msginit} option}
+@opindex --width@r{, @code{msginit} option}
+出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。
+
+@item --no-wrap
+@opindex --no-wrap@r{, @code{msginit} option}
+長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。
+
+@end table
+
+@subsection 情報的な出力
+
+@table @samp
+@item -h
+@itemx --help
+@opindex -h@r{, @code{msginit} option}
+@opindex --help@r{, @code{msginit} option}
+このヘルプを表示して終了します。
+
+@item -V
+@itemx --version
+@opindex -V@r{, @code{msginit} option}
+@opindex --version@r{, @code{msginit} option}
+バージョン情報を表示して終了します。
+
+@end table

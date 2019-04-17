@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.6, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Using Compendia (GNU gettext utilities)</title>
+
+<meta name="description" content="Using Compendia (GNU gettext utilities)">
+<meta name="keywords" content="Using Compendia (GNU gettext utilities)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Program-Index.html#Program-Index" rel="index" title="Program Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Compendium.html#Compendium" rel="up" title="Compendium">
+<link href="Manipulating.html#Manipulating" rel="next" title="Manipulating">
+<link href="Creating-Compendia.html#Creating-Compendia" rel="prev" title="Creating Compendia">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Using-Compendia"></span><div class="header">
+<p>
+Previous: <a href="Creating-Compendia.html#Creating-Compendia" accesskey="p" rel="prev">Creating Compendia</a>, Up: <a href="Compendium.html#Compendium" accesskey="u" rel="up">Compendium</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Program-Index.html#Program-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="compendianoShi-Yong-"></span><h4 class="subsection">8.4.2 compendiaの使用</h4>
+
+<p>compendiumファイルを使用して、スクラッチから翻訳を初期化したり、既存の翻訳を更新できます。
+</p>
+<span id="Xin-siiFan-Yi-huairunoChu-Qi-Hua-"></span><h4 class="subsubsection">8.4.2.1 新しい翻訳ファイルの初期化</h4>
+<span id="index-compendiumdeFan-Yi-woChu-Qi-Hua-suru"></span>
+
+<p>まだ翻訳されたPOファイルが存在しないときは、&ldquo;古い&rdquo;翻訳済みファイルとして<samp>/dev/null</samp>を使用できます。
+</p>
+<div class="example">
+<pre class="example">msgmerge --compendium compendium.po -o file.po /dev/null file.pot
+</pre></div>
+
+<span id="Ji-Cun-noFan-Yi-huairunoGeng-Xin-"></span><h4 class="subsubsection">8.4.2.2 既存の翻訳ファイルの更新</h4>
+<span id="index-update-translations-from-a-compendium"></span>
+
+<p>compendiumファイルと既存のPOファイルを結合した後、それをマージしてPOTファイルを作成し、陳腐化したエントリーを削除します(これは任意です。ここでは&lsquo;<samp>msgattrib</samp>&rsquo;が使用されています)。
+</p>
+<div class="example">
+<pre class="example">msgcat --use-first -o update.po compendium1.po compendium2.po file.po
+msgmerge update.po file.pot | msgattrib --no-obsolete &gt; file.po
+</pre></div>
+
+
+
+
+</body>
+</html>
