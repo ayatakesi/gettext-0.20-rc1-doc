@@ -1,0 +1,507 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:24+0900\n"
+"PO-Revision-Date: 2019-04-17 10:38+0900\n"
+"Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
+"Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: pindex
+#: original_texis/msginit.texi:5
+#, no-wrap
+msgid "msginit"
+msgstr "msginit"
+
+#. type: cindex
+#: original_texis/msginit.texi:6
+#, no-wrap
+msgid "@code{msginit} program, usage"
+msgstr "@code{msginit} program, usage"
+
+#. type: example
+#: original_texis/msginit.texi:9
+#, no-wrap
+msgid "msginit [@var{option}]\n"
+msgstr "msginit [@var{option}]\n"
+
+#. type: cindex
+#: original_texis/msginit.texi:11
+#, no-wrap
+msgid "create new PO file"
+msgstr "create new PO file"
+
+#. type: cindex
+#: original_texis/msginit.texi:12
+#, no-wrap
+msgid "initialize new PO file"
+msgstr "initialize new PO file"
+
+#. type: Plain text
+#: original_texis/msginit.texi:15
+msgid "The @code{msginit} program creates a new PO file, initializing the meta information with values from the user's environment."
+msgstr "@code{msginit}プログラムは、新しいPOファイルを作成して、メタ情報をユーザーの環境にもとづいて初期化します。"
+
+#. type: Plain text
+#: original_texis/msginit.texi:18
+msgid "Here are more details.  The following header fields of a PO file are automatically filled, when possible."
+msgstr "以下はその詳細です。POファイルの以下のヘッダーフィールドは、もし可能なら自動的に充填されます。"
+
+#. type: item
+#: original_texis/msginit.texi:20
+#, no-wrap
+msgid "Project-Id-Version"
+msgstr "Project-Id-Version"
+
+#. type: table
+#: original_texis/msginit.texi:23
+msgid "The value is guessed from the @code{configure} script or any other files in the current directory."
+msgstr "この値は@code{configure}スクリプト、またはカレントディレクトリー内の他のファイルから推測されます。"
+
+#. type: item
+#: original_texis/msginit.texi:24
+#, no-wrap
+msgid "PO-Revision-Date"
+msgstr "PO-Revision-Date"
+
+#. type: table
+#: original_texis/msginit.texi:27
+msgid "The value is taken from the @code{PO-Creation-Data} in the input POT file, or the current date is used."
+msgstr "値はPOTファイルの@code{PO-Creation-Data}、または現在の日時から取得されます。"
+
+#. type: item
+#: original_texis/msginit.texi:28
+#, no-wrap
+msgid "Last-Translator"
+msgstr "Last-Translator"
+
+#. type: table
+#: original_texis/msginit.texi:31
+msgid "The value is taken from user's password file entry and the mailer configuration files."
+msgstr "値はユーザーのpasswordファイルとメール設定ファイルから取得されます。"
+
+#. type: item
+#: original_texis/msginit.texi:32
+#, no-wrap
+msgid "Language-Team, Language"
+msgstr "Language-Team, Language"
+
+#. type: table
+#: original_texis/msginit.texi:35
+msgid "These values are set according to the current locale and the predefined list of translation teams."
+msgstr "これらの値は、カレントlocaleと、翻訳チームの事前に定義されたリストから取得されます。"
+
+#. type: item
+#: original_texis/msginit.texi:36
+#, no-wrap
+msgid "MIME-Version, Content-Type, Content-Transfer-Encoding"
+msgstr "MIME-Version, Content-Type, Content-Transfer-Encoding"
+
+#. type: table
+#: original_texis/msginit.texi:42
+msgid "These values are set according to the content of the POT file and the current locale.  If the POT file contains charset=UTF-8, it means that the POT file contains non-ASCII characters, and we keep the UTF-8 encoding.  Otherwise, when the POT file is plain ASCII, we use the locale's encoding."
+msgstr "これらの値は、POTファイルの内容と、カレントlocaleからセットされます。POTファイルがcharset=UTF-8を含む場合、そのPOTファイルは非ASCII文字を含むことを意味するので、UTF-8エンコーディングを維持します。それ以外では、POTファイルがプレーンASCIIの場合は、そのlocaleのエンコーディングを使用します。"
+
+#. type: item
+#: original_texis/msginit.texi:43
+#, no-wrap
+msgid "Plural-Forms"
+msgstr "Plural-Forms"
+
+#. type: table
+#: original_texis/msginit.texi:45
+msgid "The value is first looked up from the embedded table."
+msgstr "値は最初に埋め込みテーブルから見つかったものです。"
+
+#. type: table
+#: original_texis/msginit.texi:51
+msgid "As an experimental feature, you can instruct @code{msginit} to use the information from Unicode CLDR, by setting the @code{GETTEXTCLDRDIR} environment variable.  The program will look for a file named @code{common/supplemental/plurals.xml} under that directory.  You can get the CLDR data from @url{http://cldr.unicode.org/}."
+msgstr "実験的な機能として、環境変数@code{GETTEXTCLDRDIR}をセットすることにより、@code{msginit}にUnicode CLDRの情報を使用するように指示できます。プログラムはそのディレクトリー配下で@code{common/supplemental/plurals.xml}という名前のファイルを探します。CLDRデータは、@url{http://cldr.unicode.org/}から取得できます。"
+
+#. type: subsection
+#: original_texis/msginit.texi:54
+#, no-wrap
+msgid "Input file location"
+msgstr "Input file location"
+
+#. type: item
+#: original_texis/msginit.texi:57
+#, no-wrap
+msgid "-i @var{inputfile}"
+msgstr "-i @var{inputfile}"
+
+#. type: itemx
+#: original_texis/msginit.texi:58
+#, no-wrap
+msgid "--input=@var{inputfile}"
+msgstr "--input=@var{inputfile}"
+
+#. type: opindex
+#: original_texis/msginit.texi:59
+#, no-wrap
+msgid "-i@r{, @code{msginit} option}"
+msgstr "-i@r{, @code{msginit} option}"
+
+#. type: opindex
+#: original_texis/msginit.texi:60
+#, no-wrap
+msgid "--input@r{, @code{msginit} option}"
+msgstr "--input@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:62
+msgid "Input POT file."
+msgstr "入力となるPOTファイルです。"
+
+#. type: Plain text
+#: original_texis/msginit.texi:67
+msgid "If no @var{inputfile} is given, the current directory is searched for the POT file.  If it is @samp{-}, standard input is read."
+msgstr "@var{inputfile}が指定されなかった場合、カレントディレクトリからPOTファイルを検索します。@samp{-}を指定すると、標準入力から読み込みます。"
+
+#. type: subsection
+#: original_texis/msginit.texi:68
+#, no-wrap
+msgid "Output file location"
+msgstr "Output file location"
+
+#. type: item
+#: original_texis/msginit.texi:71
+#, no-wrap
+msgid "-o @var{file}"
+msgstr "-o @var{file}"
+
+#. type: itemx
+#: original_texis/msginit.texi:72
+#, no-wrap
+msgid "--output-file=@var{file}"
+msgstr "--output-file=@var{file}"
+
+#. type: opindex
+#: original_texis/msginit.texi:73
+#, no-wrap
+msgid "-o@r{, @code{msginit} option}"
+msgstr "-o@r{, @code{msginit} option}"
+
+#. type: opindex
+#: original_texis/msginit.texi:74
+#, no-wrap
+msgid "--output-file@r{, @code{msginit} option}"
+msgstr "--output-file@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:76
+msgid "Write output to specified PO file."
+msgstr "指定されたPOファイルに出力を書き込みます。"
+
+#. type: Plain text
+#: original_texis/msginit.texi:82
+msgid "If no output file is given, it depends on the @samp{--locale} option or the user's locale setting.  If it is @samp{-}, the results are written to standard output."
+msgstr "出力ファイルが指定されなかった場合は、ユーザーのロケール設定の@samp{--locale}オプションに依存します。@samp{-}を指定すると、出力は標準出力に書き込まれます。"
+
+#. type: subsection
+#: original_texis/msginit.texi:83
+#, no-wrap
+msgid "Input file syntax"
+msgstr "Input file syntax"
+
+#. type: item
+#: original_texis/msginit.texi:86
+#, no-wrap
+msgid "-P"
+msgstr "-P"
+
+#. type: itemx
+#: original_texis/msginit.texi:87
+#, no-wrap
+msgid "--properties-input"
+msgstr "--properties-input"
+
+#. type: opindex
+#: original_texis/msginit.texi:88
+#, no-wrap
+msgid "-P@r{, @code{msginit} option}"
+msgstr "-P@r{, @code{msginit} option}"
+
+#. type: opindex
+#: original_texis/msginit.texi:89
+#, no-wrap
+msgid "--properties-input@r{, @code{msginit} option}"
+msgstr "--properties-input@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:92
+msgid "Assume the input file is a Java ResourceBundle in Java @code{.properties} syntax, not in PO file syntax."
+msgstr "入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava ResourceBundleファイルだとみなします。"
+
+#. type: item
+#: original_texis/msginit.texi:93
+#, no-wrap
+msgid "--stringtable-input"
+msgstr "--stringtable-input"
+
+#. type: opindex
+#: original_texis/msginit.texi:94
+#, no-wrap
+msgid "--stringtable-input@r{, @code{msginit} option}"
+msgstr "--stringtable-input@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:97
+msgid "Assume the input file is a NeXTstep/GNUstep localized resource file in @code{.strings} syntax, not in PO file syntax."
+msgstr "入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized resourceの@code{.strings}の構文にのっとったファイルだとみなします。"
+
+#. type: subsection
+#: original_texis/msginit.texi:100
+#, no-wrap
+msgid "Output details"
+msgstr "Output details"
+
+#. type: item
+#: original_texis/msginit.texi:103
+#, no-wrap
+msgid "-l @var{ll_CC[.encoding]}"
+msgstr "-l @var{ll_CC[.encoding]}"
+
+#. type: itemx
+#: original_texis/msginit.texi:104
+#, no-wrap
+msgid "--locale=@var{ll_CC[.encoding]}"
+msgstr "--locale=@var{ll_CC[.encoding]}"
+
+#. type: opindex
+#: original_texis/msginit.texi:105
+#, no-wrap
+msgid "-l@r{, @code{msginit} option}"
+msgstr "-l@r{, @code{msginit} option}"
+
+#. type: opindex
+#: original_texis/msginit.texi:106
+#, no-wrap
+msgid "--locale@r{, @code{msginit} option}"
+msgstr "--locale@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:112
+msgid "Set target locale.  @var{ll} should be a language code, and @var{CC} should be a country code.  The optional part @var{.encoding} specifies the encoding of the locale; most often this part is @code{.UTF-8}.  The command @samp{locale -a} can be used to output a list of all installed locales.  The default is the user's locale setting."
+msgstr "対象のlocaleを設定します。@var{ll}にはlanguage codeを、@var{CC}にはcountry codeを設定する必要があります。オプションパート@var{.encoding}は、そ〜おlocaleのエンコーディングを指定します。このパートはほとんどの場合は@code{.UTF-8}です。インストールされているすべてのlocaleのリストを出力するには、@samp{locale -a}コマンドを使用できます。デフォルトはユーザーのlocale設定が使用されます。"
+
+#. type: item
+#: original_texis/msginit.texi:113
+#, no-wrap
+msgid "--no-translator"
+msgstr "--no-translator"
+
+#. type: opindex
+#: original_texis/msginit.texi:114
+#, no-wrap
+msgid "--no-translator@r{, @code{msginit} option}"
+msgstr "--no-translator@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:117
+msgid "Declares that the PO file will not have a human translator and is instead automatically generated."
+msgstr "POファイルが翻訳者の手で作成されたものではなく、自動的に生成されたものであることを宣言します。"
+
+#. type: item
+#: original_texis/msginit.texi:118
+#, no-wrap
+msgid "--color"
+msgstr "--color"
+
+#. type: itemx
+#: original_texis/msginit.texi:119
+#, no-wrap
+msgid "--color=@var{when}"
+msgstr "--color=@var{when}"
+
+#. type: opindex
+#: original_texis/msginit.texi:120
+#, no-wrap
+msgid "--color@r{, @code{msginit} option}"
+msgstr "--color@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:123
+msgid "Specify whether or when to use colors and other text attributes.  See @ref{The --color option} for details."
+msgstr "色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。"
+
+#. type: item
+#: original_texis/msginit.texi:124
+#, no-wrap
+msgid "--style=@var{style_file}"
+msgstr "--style=@var{style_file}"
+
+#. type: opindex
+#: original_texis/msginit.texi:125
+#, no-wrap
+msgid "--style@r{, @code{msginit} option}"
+msgstr "--style@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:128
+msgid "Specify the CSS style rule file to use for @code{--color}.  See @ref{The --style option} for details."
+msgstr "@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style option}を参照してください。"
+
+#. type: item
+#: original_texis/msginit.texi:129
+#, no-wrap
+msgid "-p"
+msgstr "-p"
+
+#. type: itemx
+#: original_texis/msginit.texi:130
+#, no-wrap
+msgid "--properties-output"
+msgstr "--properties-output"
+
+#. type: opindex
+#: original_texis/msginit.texi:131
+#, no-wrap
+msgid "-p@r{, @code{msginit} option}"
+msgstr "-p@r{, @code{msginit} option}"
+
+#. type: opindex
+#: original_texis/msginit.texi:132
+#, no-wrap
+msgid "--properties-output@r{, @code{msginit} option}"
+msgstr "--properties-output@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:136
+msgid "Write out a Java ResourceBundle in Java @code{.properties} syntax.  Note that this file format doesn't support plural forms and silently drops obsolete messages."
+msgstr "Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural formをサポートせず、廃止されたメッセージを暗黙で除去することに注意してください。"
+
+#. type: item
+#: original_texis/msginit.texi:137
+#, no-wrap
+msgid "--stringtable-output"
+msgstr "--stringtable-output"
+
+#. type: opindex
+#: original_texis/msginit.texi:138
+#, no-wrap
+msgid "--stringtable-output@r{, @code{msginit} option}"
+msgstr "--stringtable-output@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:141
+msgid "Write out a NeXTstep/GNUstep localized resource file in @code{.strings} syntax.  Note that this file format doesn't support plural forms."
+msgstr "@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural formをサポートしないことに注意してください。"
+
+#. type: item
+#: original_texis/msginit.texi:142
+#, no-wrap
+msgid "-w @var{number}"
+msgstr "-w @var{number}"
+
+#. type: itemx
+#: original_texis/msginit.texi:143
+#, no-wrap
+msgid "--width=@var{number}"
+msgstr "--width=@var{number}"
+
+#. type: opindex
+#: original_texis/msginit.texi:144
+#, no-wrap
+msgid "-w@r{, @code{msginit} option}"
+msgstr "-w@r{, @code{msginit} option}"
+
+#. type: opindex
+#: original_texis/msginit.texi:145
+#, no-wrap
+msgid "--width@r{, @code{msginit} option}"
+msgstr "--width@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:149
+msgid "Set the output page width.  Long strings in the output files will be split across multiple lines in order to ensure that each line's width (= number of screen columns) is less or equal to the given @var{number}."
+msgstr "出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。"
+
+#. type: item
+#: original_texis/msginit.texi:150
+#, no-wrap
+msgid "--no-wrap"
+msgstr "--no-wrap"
+
+#. type: opindex
+#: original_texis/msginit.texi:151
+#, no-wrap
+msgid "--no-wrap@r{, @code{msginit} option}"
+msgstr "--no-wrap@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:155
+msgid "Do not break long message lines.  Message lines whose width exceeds the output page width will not be split into several lines.  Only file reference lines which are wider than the output page width will be split."
+msgstr "長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。"
+
+#. type: subsection
+#: original_texis/msginit.texi:158
+#, no-wrap
+msgid "Informative output"
+msgstr "Informative output"
+
+#. type: item
+#: original_texis/msginit.texi:161
+#, no-wrap
+msgid "-h"
+msgstr "-h"
+
+#. type: itemx
+#: original_texis/msginit.texi:162
+#, no-wrap
+msgid "--help"
+msgstr "--help"
+
+#. type: opindex
+#: original_texis/msginit.texi:163
+#, no-wrap
+msgid "-h@r{, @code{msginit} option}"
+msgstr "-h@r{, @code{msginit} option}"
+
+#. type: opindex
+#: original_texis/msginit.texi:164
+#, no-wrap
+msgid "--help@r{, @code{msginit} option}"
+msgstr "--help@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:166
+msgid "Display this help and exit."
+msgstr "このヘルプを表示して終了します。"
+
+#. type: item
+#: original_texis/msginit.texi:167
+#, no-wrap
+msgid "-V"
+msgstr "-V"
+
+#. type: itemx
+#: original_texis/msginit.texi:168
+#, no-wrap
+msgid "--version"
+msgstr "--version"
+
+#. type: opindex
+#: original_texis/msginit.texi:169
+#, no-wrap
+msgid "-V@r{, @code{msginit} option}"
+msgstr "-V@r{, @code{msginit} option}"
+
+#. type: opindex
+#: original_texis/msginit.texi:170
+#, no-wrap
+msgid "--version@r{, @code{msginit} option}"
+msgstr "--version@r{, @code{msginit} option}"
+
+#. type: table
+#: original_texis/msginit.texi:172
+msgid "Output version information and exit."
+msgstr "バージョン情報を表示して終了します。"

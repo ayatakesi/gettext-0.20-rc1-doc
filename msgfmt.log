@@ -1,0 +1,52 @@
+///////////////autopoint.texi.po
+25 translated messages, 1 fuzzy translation.
+///////////////gettext.texi.po
+gettext.texi.po:6154: 'msgid' and 'msgstr' entries do not both end with '\n'
+gettext.texi.po:11126: 'msgid' and 'msgstr' entries do not both end with '\n'
+gettext.texi.po:11142: 'msgid' and 'msgstr' entries do not both end with '\n'
+gettext.texi.po:13929: 'msgid' and 'msgstr' entries do not both end with '\n'
+msgfmt: found 4 fatal errors
+2944 translated messages, 124 fuzzy translations, 55 untranslated messages.
+///////////////gettextize.texi.po
+52 translated messages, 2 fuzzy translations, 1 untranslated message.
+///////////////msgattrib.texi.po
+161 translated messages.
+///////////////msgcat.texi.po
+130 translated messages, 1 untranslated message.
+///////////////msgcmp.texi.po
+52 translated messages.
+///////////////msgcomm.texi.po
+119 translated messages.
+///////////////msgconv.texi.po
+100 translated messages, 1 fuzzy translation.
+///////////////msgen.texi.po
+98 translated messages.
+///////////////msgexec.texi.po
+53 translated messages.
+///////////////msgfilter.texi.po
+147 translated messages.
+///////////////msgfmt.texi.po
+189 translated messages.
+///////////////msggrep.texi.po
+179 translated messages.
+///////////////msginit.texi.po
+82 translated messages, 4 fuzzy translations.
+///////////////msgmerge.texi.po
+160 translated messages, 1 fuzzy translation, 2 untranslated messages.
+///////////////msgunfmt.texi.po
+112 translated messages.
+///////////////msguniq.texi.po
+115 translated messages.
+///////////////rt-envsubst.texi.po
+25 translated messages.
+///////////////rt-gettext.texi.po
+33 translated messages, 4 fuzzy translations, 1 untranslated message.
+///////////////rt-ngettext.texi.po
+33 translated messages, 4 fuzzy translations, 1 untranslated message.
+///////////////xgettext.texi.po
+xgettext.texi.po:880: 'msgid' and 'msgstr' entries do not both end with '\n'
+xgettext.texi.po:903: 'msgid' and 'msgstr' entries do not both end with '\n'
+xgettext.texi.po:926: 'msgid' and 'msgstr' entries do not both end with '\n'
+xgettext.texi.po:949: 'msgid' and 'msgstr' entries do not both end with '\n'
+msgfmt: found 4 fatal errors
+278 translated messages, 2 fuzzy translations.

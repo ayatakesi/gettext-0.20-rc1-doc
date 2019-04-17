@@ -1,0 +1,1047 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:23+0900\n"
+"PO-Revision-Date: 2016-08-22 16:39+0900\n"
+"Last-Translator: Takeshi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
+"Language-Team: Japanese <takeshi.ayanokoji@gmail.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: pindex
+#: original_texis/msggrep.texi:5
+#, no-wrap
+msgid "msggrep"
+msgstr "msggrep"
+
+#. type: cindex
+#: original_texis/msggrep.texi:6
+#, no-wrap
+msgid "@code{msggrep} program, usage"
+msgstr "@code{msggrep} program, usage"
+
+#. type: example
+#: original_texis/msggrep.texi:9
+#, no-wrap
+msgid "msggrep [@var{option}] [@var{inputfile}]\n"
+msgstr "msggrep [@var{option}] [@var{inputfile}]\n"
+
+#. type: cindex
+#: original_texis/msggrep.texi:11
+#, no-wrap
+msgid "search messages in a catalog"
+msgstr "search messages in a catalog"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:14
+msgid "The @code{msggrep} program extracts all messages of a translation catalog that match a given pattern or belong to some given source files."
+msgstr "@code{msggrep}は翻訳カタログから、指定したパターン、指定したソースファイルに属するすべてのメッセージを抽出するプログラムです。"
+
+#. type: subsection
+#: original_texis/msggrep.texi:15
+#, no-wrap
+msgid "Input file location"
+msgstr "Input file location"
+
+#. type: var{#1}
+#: original_texis/msggrep.texi:18
+#, no-wrap
+msgid "inputfile"
+msgstr "inputfile"
+
+#. type: table
+#: original_texis/msggrep.texi:20
+msgid "Input PO file."
+msgstr "入力となるPOファイルです。"
+
+#. type: item
+#: original_texis/msggrep.texi:21
+#, no-wrap
+msgid "-D @var{directory}"
+msgstr "-D @var{directory}"
+
+#. type: itemx
+#: original_texis/msggrep.texi:22
+#, no-wrap
+msgid "--directory=@var{directory}"
+msgstr "--directory=@var{directory}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:23
+#, no-wrap
+msgid "-D@r{, @code{msggrep} option}"
+msgstr "-D@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:24
+#, no-wrap
+msgid "--directory@r{, @code{msggrep} option}"
+msgstr "--directory@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:28
+msgid "Add @var{directory} to the list of directories.  Source files are searched relative to this list of directories.  The resulting @file{.po} file will be written relative to the current directory, though."
+msgstr "ディレクトリーのリストに@var{directory}を追加します。このディレクトリーのリストよりソースファイルを検索します。しかし@file{.po}ファイルが出力されるのは、カレントディレクトリーです。"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:32
+msgid "If no @var{inputfile} is given or if it is @samp{-}, standard input is read."
+msgstr "@var{inputfile}が指定されていないか、@samp{-}が指定された場合は、標準入力から読み込みます。"
+
+#. type: subsection
+#: original_texis/msggrep.texi:33
+#, no-wrap
+msgid "Output file location"
+msgstr "Output file location"
+
+#. type: item
+#: original_texis/msggrep.texi:36
+#, no-wrap
+msgid "-o @var{file}"
+msgstr "-o @var{file}"
+
+#. type: itemx
+#: original_texis/msggrep.texi:37
+#, no-wrap
+msgid "--output-file=@var{file}"
+msgstr "--output-file=@var{file}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:38
+#, no-wrap
+msgid "-o@r{, @code{msggrep} option}"
+msgstr "-o@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:39
+#, no-wrap
+msgid "--output-file@r{, @code{msggrep} option}"
+msgstr "--output-file@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:41
+msgid "Write output to specified file."
+msgstr "指定されたファイルに出力を書き込みます。"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:46
+msgid "The results are written to standard output if no output file is specified or if it is @samp{-}."
+msgstr "出力ファイルが指定されていない、または@samp{-}が指定された場合、結果は標準出力に出力されます。"
+
+#. type: subsection
+#: original_texis/msggrep.texi:47
+#, no-wrap
+msgid "Message selection"
+msgstr "Message selection"
+
+#. type: example
+#: original_texis/msggrep.texi:53
+#, no-wrap
+msgid ""
+"  [-N @var{sourcefile}]... [-M @var{domainname}]...\n"
+"  [-J @var{msgctxt-pattern}] [-K @var{msgid-pattern}] [-T @var{msgstr-pattern}]\n"
+"  [-C @var{comment-pattern}]\n"
+msgstr ""
+"  [-N @var{sourcefile}]... [-M @var{domainname}]...\n"
+"  [-J @var{msgctxt-pattern}] [-K @var{msgid-pattern}] [-T @var{msgstr-pattern}]\n"
+"  [-C @var{comment-pattern}]\n"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:56
+msgid "A message is selected if"
+msgstr "以下のような場合、メッセージが選択されます"
+
+#. type: item
+#: original_texis/msggrep.texi:57
+#, no-wrap
+msgid "it comes from one of the specified source files,"
+msgstr "指定したソースファイルのいずれかに属するメッセージの場合"
+
+#. type: item
+#: original_texis/msggrep.texi:58
+#, no-wrap
+msgid "or if it comes from one of the specified domains,"
+msgstr "指定したdomainのいずれかに属するメッセージの場合"
+
+#. type: item
+#: original_texis/msggrep.texi:59
+#, no-wrap
+msgid "or if @samp{-J} is given and its context (msgctxt) matches"
+msgstr "@samp{-J}が指定されていて、メッセージのコンテキスト(msgctxt)が"
+
+#. type: itemize
+#: original_texis/msggrep.texi:61
+msgid "@var{msgctxt-pattern},"
+msgstr "@var{msgctxt-pattern}にマッチする場合"
+
+#. type: item
+#: original_texis/msggrep.texi:61
+#, no-wrap
+msgid "or if @samp{-K} is given and its key (msgid or msgid_plural) matches"
+msgstr "@samp{-K}が指定されていて、メッセージのキー(msgid または msgid_plural)が"
+
+#. type: itemize
+#: original_texis/msggrep.texi:63
+msgid "@var{msgid-pattern},"
+msgstr "@var{msgid-pattern}にマッチする場合"
+
+#. type: item
+#: original_texis/msggrep.texi:63
+#, no-wrap
+msgid "or if @samp{-T} is given and its translation (msgstr) matches"
+msgstr "@samp{-T}が指定されていて、翻訳(msgstr)が"
+
+#. type: itemize
+#: original_texis/msggrep.texi:65
+msgid "@var{msgstr-pattern},"
+msgstr "@var{msgstr-pattern}にマッチする場合"
+
+#. type: item
+#: original_texis/msggrep.texi:65
+#, no-wrap
+msgid "or if @samp{-C} is given and the translator's comment matches"
+msgstr "@samp{-C}が指定されていて、翻訳者のコメントが"
+
+#. type: itemize
+#: original_texis/msggrep.texi:67
+msgid "@var{comment-pattern}."
+msgstr "@var{comment-pattern}にマッチする場合"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:71
+msgid "When more than one selection criterion is specified, the set of selected messages is the union of the selected messages of each criterion."
+msgstr "1つ以上の条件を指定した場合には、それぞれの条件に適合するメッセージのがすべて選択されます。"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:73
+msgid "@var{msgctxt-pattern} or @var{msgid-pattern} or @var{msgstr-pattern} syntax:"
+msgstr "@var{msgctxt-pattern}、@var{msgid-pattern}、@var{msgstr-pattern}の書式です:"
+
+#. type: example
+#: original_texis/msggrep.texi:75
+#, no-wrap
+msgid "  [-E | -F] [-e @var{pattern} | -f @var{file}]...\n"
+msgstr "  [-E | -F] [-e @var{pattern} | -f @var{file}]...\n"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:78
+msgid "@var{pattern}s are basic regular expressions by default, or extended regular expressions if -E is given, or fixed strings if -F is given."
+msgstr "@var{pattern}にはデフォルトでは標準の正規表現(POSIX Basic Regular Expressions: grep -eと同等)を指定します。拡張された正規表現(POSIX Extended Regular Expressions: egrep, grep -Eと同等)の場合は-Eを、固定文字列の場合(Fixed String search: fgrep, grep -Fと同等)には-Fを指定してください。"
+
+#. type: item
+#: original_texis/msggrep.texi:80
+#, no-wrap
+msgid "-N @var{sourcefile}"
+msgstr "-N @var{sourcefile}"
+
+#. type: itemx
+#: original_texis/msggrep.texi:81
+#, no-wrap
+msgid "--location=@var{sourcefile}"
+msgstr "--location=@var{sourcefile}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:82
+#, no-wrap
+msgid "-N@r{, @code{msggrep} option}"
+msgstr "-N@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:83
+#, no-wrap
+msgid "--location@r{, @code{msggrep} option}"
+msgstr "--location@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:86
+msgid "Select messages extracted from @var{sourcefile}.  @var{sourcefile} can be either a literal file name or a wildcard pattern."
+msgstr "@var{sourcefile}から抽出されたメッセージを選択します。@var{sourcefile}にはファイル名の文字列、またはワイルドカード文字列を指定できます。"
+
+#. type: item
+#: original_texis/msggrep.texi:87
+#, no-wrap
+msgid "-M @var{domainname}"
+msgstr "-M @var{domainname}"
+
+#. type: itemx
+#: original_texis/msggrep.texi:88
+#, no-wrap
+msgid "--domain=@var{domainname}"
+msgstr "--domain=@var{domainname}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:89
+#, no-wrap
+msgid "-M@r{, @code{msggrep} option}"
+msgstr "-M@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:90
+#, no-wrap
+msgid "--domain@r{, @code{msggrep} option}"
+msgstr "--domain@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:92
+msgid "Select messages belonging to domain @var{domainname}."
+msgstr "ドメイン@var{domainname}に属するメッセージを選択します。"
+
+#. type: item
+#: original_texis/msggrep.texi:93
+#, no-wrap
+msgid "-J"
+msgstr "-J"
+
+#. type: itemx
+#: original_texis/msggrep.texi:94
+#, no-wrap
+msgid "--msgctxt"
+msgstr "--msgctxt"
+
+#. type: opindex
+#: original_texis/msggrep.texi:95
+#, no-wrap
+msgid "-J@r{, @code{msggrep} option}"
+msgstr "-J@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:96
+#, no-wrap
+msgid "--msgctxt@r{, @code{msggrep} option}"
+msgstr "--msgctxt@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:98
+msgid "Start of patterns for the msgctxt."
+msgstr "msgctxtを選択するためのパターンの開始を宣言します。"
+
+#. type: item
+#: original_texis/msggrep.texi:99
+#, no-wrap
+msgid "-K"
+msgstr "-K"
+
+#. type: itemx
+#: original_texis/msggrep.texi:100
+#, no-wrap
+msgid "--msgid"
+msgstr "--msgid"
+
+#. type: opindex
+#: original_texis/msggrep.texi:101
+#, no-wrap
+msgid "-K@r{, @code{msggrep} option}"
+msgstr "-K@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:102
+#, no-wrap
+msgid "--msgid@r{, @code{msggrep} option}"
+msgstr "--msgid@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:104
+msgid "Start of patterns for the msgid."
+msgstr "msgidを選択するためのパターンの開始を宣言します。"
+
+#. type: item
+#: original_texis/msggrep.texi:105
+#, no-wrap
+msgid "-T"
+msgstr "-T"
+
+#. type: itemx
+#: original_texis/msggrep.texi:106
+#, no-wrap
+msgid "--msgstr"
+msgstr "--msgstr"
+
+#. type: opindex
+#: original_texis/msggrep.texi:107
+#, no-wrap
+msgid "-T@r{, @code{msggrep} option}"
+msgstr "-T@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:108
+#, no-wrap
+msgid "--msgstr@r{, @code{msggrep} option}"
+msgstr "--msgstr@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:110
+msgid "Start of patterns for the msgstr."
+msgstr "msgstrを選択するためのパターンの開始を宣言します。"
+
+#. type: item
+#: original_texis/msggrep.texi:111
+#, no-wrap
+msgid "-C"
+msgstr "-C"
+
+#. type: itemx
+#: original_texis/msggrep.texi:112
+#, no-wrap
+msgid "--comment"
+msgstr "--comment"
+
+#. type: opindex
+#: original_texis/msggrep.texi:113
+#, no-wrap
+msgid "-C@r{, @code{msggrep} option}"
+msgstr "-C@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:114
+#, no-wrap
+msgid "--comment@r{, @code{msggrep} option}"
+msgstr "--comment@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:116
+msgid "Start of patterns for the translator's comment."
+msgstr "翻訳者コメントを選択するためのパターンの開始を宣言します。"
+
+#. type: item
+#: original_texis/msggrep.texi:117
+#, no-wrap
+msgid "-X"
+msgstr "-X"
+
+#. type: itemx
+#: original_texis/msggrep.texi:118
+#, no-wrap
+msgid "--extracted-comment"
+msgstr "--extracted-comment"
+
+#. type: opindex
+#: original_texis/msggrep.texi:119
+#, no-wrap
+msgid "-X@r{, @code{msggrep} option}"
+msgstr "-X@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:120
+#, no-wrap
+msgid "--extracted-comment@r{, @code{msggrep} option}"
+msgstr "--extracted-comment@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:122
+msgid "Start of patterns for the extracted comments."
+msgstr "抽出コメントを選択するためのパターンの開始を宣言します。"
+
+#. type: item
+#: original_texis/msggrep.texi:123
+#, no-wrap
+msgid "-E"
+msgstr "-E"
+
+#. type: itemx
+#: original_texis/msggrep.texi:124
+#, no-wrap
+msgid "--extended-regexp"
+msgstr "--extended-regexp"
+
+#. type: opindex
+#: original_texis/msggrep.texi:125
+#, no-wrap
+msgid "-E@r{, @code{msggrep} option}"
+msgstr "-E@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:126
+#, no-wrap
+msgid "--extended-regexp@r{, @code{msggrep} option}"
+msgstr "--extended-regexp@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:128
+msgid "Specify that @var{pattern} is an extended regular expression."
+msgstr "@var{pattern}が、拡張された正規表現であることを指定します。"
+
+#. type: item
+#: original_texis/msggrep.texi:129
+#, no-wrap
+msgid "-F"
+msgstr "-F"
+
+#. type: itemx
+#: original_texis/msggrep.texi:130
+#, no-wrap
+msgid "--fixed-strings"
+msgstr "--fixed-strings"
+
+#. type: opindex
+#: original_texis/msggrep.texi:131
+#, no-wrap
+msgid "-F@r{, @code{msggrep} option}"
+msgstr "-F@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:132
+#, no-wrap
+msgid "--fixed-strings@r{, @code{msggrep} option}"
+msgstr "--fixed-strings@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:134
+msgid "Specify that @var{pattern} is a set of newline-separated strings."
+msgstr "@var{pattern}が、改行で区切られた一連の文字列であることを指定します。"
+
+#. type: item
+#: original_texis/msggrep.texi:135
+#, no-wrap
+msgid "-e @var{pattern}"
+msgstr "-e @var{pattern}"
+
+#. type: itemx
+#: original_texis/msggrep.texi:136
+#, no-wrap
+msgid "--regexp=@var{pattern}"
+msgstr "--regexp=@var{pattern}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:137
+#, no-wrap
+msgid "-e@r{, @code{msggrep} option}"
+msgstr "-e@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:138
+#, no-wrap
+msgid "--regexp=@r{, @code{msggrep} option}"
+msgstr "--regexp=@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:140
+msgid "Use @var{pattern} as a regular expression."
+msgstr "@var{pattern}を、正規表現として使用します。"
+
+#. type: item
+#: original_texis/msggrep.texi:141
+#, no-wrap
+msgid "-f @var{file}"
+msgstr "-f @var{file}"
+
+#. type: itemx
+#: original_texis/msggrep.texi:142
+#, no-wrap
+msgid "--file=@var{file}"
+msgstr "--file=@var{file}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:143
+#, no-wrap
+msgid "-f@r{, @code{msggrep} option}"
+msgstr "-f@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:144
+#, no-wrap
+msgid "--file@r{, @code{msggrep} option}"
+msgstr "--file@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:146
+msgid "Obtain @var{pattern} from @var{file}."
+msgstr "@var{pattern}を、@var{file}から取得します。"
+
+#. type: item
+#: original_texis/msggrep.texi:147
+#, no-wrap
+msgid "-i"
+msgstr "-i"
+
+#. type: itemx
+#: original_texis/msggrep.texi:148
+#, no-wrap
+msgid "--ignore-case"
+msgstr "--ignore-case"
+
+#. type: opindex
+#: original_texis/msggrep.texi:149
+#, no-wrap
+msgid "-i@r{, @code{msggrep} option}"
+msgstr "-i@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:150
+#, no-wrap
+msgid "--ignore-case@r{, @code{msggrep} option}"
+msgstr "--ignore-case@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:152
+msgid "Ignore case distinctions."
+msgstr "大文字と小文字を区別しません。"
+
+#. type: item
+#: original_texis/msggrep.texi:153
+#, no-wrap
+msgid "-v"
+msgstr "-v"
+
+#. type: itemx
+#: original_texis/msggrep.texi:154
+#, no-wrap
+msgid "--invert-match"
+msgstr "--invert-match"
+
+#. type: opindex
+#: original_texis/msggrep.texi:155
+#, no-wrap
+msgid "-v@r{, @code{msggrep} option}"
+msgstr "-v@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:156
+#, no-wrap
+msgid "--invert-match@r{, @code{msggrep} option}"
+msgstr "--invert-match@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:159
+msgid "Output only the messages that do not match any selection criterion, instead of the messages that match a selection criterion."
+msgstr "条件に一致するメッセージではなく、一致しないメッセージだけを出力します。"
+
+#. type: subsection
+#: original_texis/msggrep.texi:162
+#, no-wrap
+msgid "Input file syntax"
+msgstr "Input file syntax"
+
+#. type: item
+#: original_texis/msggrep.texi:165
+#, no-wrap
+msgid "-P"
+msgstr "-P"
+
+#. type: itemx
+#: original_texis/msggrep.texi:166
+#, no-wrap
+msgid "--properties-input"
+msgstr "--properties-input"
+
+#. type: opindex
+#: original_texis/msggrep.texi:167
+#, no-wrap
+msgid "-P@r{, @code{msggrep} option}"
+msgstr "-P@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:168
+#, no-wrap
+msgid "--properties-input@r{, @code{msggrep} option}"
+msgstr "--properties-input@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:171
+msgid "Assume the input file is a Java ResourceBundle in Java @code{.properties} syntax, not in PO file syntax."
+msgstr "入力ファイルがPOファイルの構文ではなく、Javaの@code{.properties}の構文にのっとったJava ResourceBundleファイルだとみなします。"
+
+#. type: item
+#: original_texis/msggrep.texi:172
+#, no-wrap
+msgid "--stringtable-input"
+msgstr "--stringtable-input"
+
+#. type: opindex
+#: original_texis/msggrep.texi:173
+#, no-wrap
+msgid "--stringtable-input@r{, @code{msggrep} option}"
+msgstr "--stringtable-input@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:176
+msgid "Assume the input file is a NeXTstep/GNUstep localized resource file in @code{.strings} syntax, not in PO file syntax."
+msgstr "入力ファイルがPOファイルの構文ではなく、NeXTstep/GNUstepのlocalized resourceの@code{.strings}の構文にのっとったファイルだとみなします。"
+
+#. type: subsection
+#: original_texis/msggrep.texi:179
+#, no-wrap
+msgid "Output details"
+msgstr "Output details"
+
+#. type: item
+#: original_texis/msggrep.texi:184
+#, no-wrap
+msgid "--color"
+msgstr "--color"
+
+#. type: itemx
+#: original_texis/msggrep.texi:185
+#, no-wrap
+msgid "--color=@var{when}"
+msgstr "--color=@var{when}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:186
+#, no-wrap
+msgid "--color@r{, @code{msggrep} option}"
+msgstr "--color@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:189
+msgid "Specify whether or when to use colors and other text attributes.  See @ref{The --color option} for details."
+msgstr "色や色以外のテキスト属性を使うか、いつ使うかを指定します。詳細は@ref{The --color option}を参照してください。"
+
+#. type: item
+#: original_texis/msggrep.texi:190
+#, no-wrap
+msgid "--style=@var{style_file}"
+msgstr "--style=@var{style_file}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:191
+#, no-wrap
+msgid "--style@r{, @code{msggrep} option}"
+msgstr "--style@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:194
+msgid "Specify the CSS style rule file to use for @code{--color}.  See @ref{The --style option} for details."
+msgstr "@code{--color}にたいしてCSS style ruleファイルを使うかを指定します。詳細は@ref{The --style option}を参照してください。"
+
+#. type: item
+#: original_texis/msggrep.texi:195
+#, no-wrap
+msgid "--force-po"
+msgstr "--force-po"
+
+#. type: opindex
+#: original_texis/msggrep.texi:196
+#, no-wrap
+msgid "--force-po@r{, @code{msggrep} option}"
+msgstr "--force-po@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:198
+msgid "Always write an output file even if it contains no message."
+msgstr "メッセージが何も含まれていない場合でも、常に出力ファイルに書き込みます。"
+
+#. type: item
+#: original_texis/msggrep.texi:199
+#, no-wrap
+msgid "--indent"
+msgstr "--indent"
+
+#. type: opindex
+#: original_texis/msggrep.texi:200
+#, no-wrap
+msgid "--indent@r{, @code{msggrep} option}"
+msgstr "--indent@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:202
+msgid "Write the .po file using indented style."
+msgstr "インデントされた形式で.poファイルを書き込みます。"
+
+#. type: item
+#: original_texis/msggrep.texi:203
+#, no-wrap
+msgid "--no-location"
+msgstr "--no-location"
+
+#. type: opindex
+#: original_texis/msggrep.texi:204
+#, no-wrap
+msgid "--no-location@r{, @code{msggrep} option}"
+msgstr "--no-location@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:206
+msgid "Do not write @samp{#: @var{filename}:@var{line}} lines."
+msgstr "@samp{#: @var{filename}:@var{line}}という行を書き込みません。"
+
+#. type: item
+#: original_texis/msggrep.texi:207
+#, no-wrap
+msgid "-n"
+msgstr "-n"
+
+#. type: itemx
+#: original_texis/msggrep.texi:208
+#, no-wrap
+msgid "--add-location=@var{type}"
+msgstr "--add-location=@var{type}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:209
+#, no-wrap
+msgid "--add-location@r{, @code{msggrep} option}"
+msgstr "--add-location@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:211
+msgid "Generate @samp{#: @var{filename}:@var{line}} lines (default)."
+msgstr "@samp{#: @var{filename}:@var{line}}という行を生成します(デフォルト)。"
+
+#. type: table
+#: original_texis/msggrep.texi:217
+msgid "The optional @var{type} can be either @samp{full}, @samp{file}, or @samp{never}.  If it is not given or @samp{full}, it generates the lines with both file name and line number.  If it is @samp{file}, the line number part is omitted.  If it is @samp{never}, it completely suppresses the lines (same as @code{--no-location})."
+msgstr "@var{type}はオプションで、@samp{full}、@samp{file}、または@samp{never}を指定できます。オプションが指定されない、または@samp{full}の場合は、ファイル名と行番号のの両方が生成されます。@samp{file}の場合、行番号は省略されます。@samp{never}の場合は、完全にこの行を抑制します(@code{--no-location}と同じです)。"
+
+#. type: item
+#: original_texis/msggrep.texi:218
+#, no-wrap
+msgid "--strict"
+msgstr "--strict"
+
+#. type: opindex
+#: original_texis/msggrep.texi:219
+#, no-wrap
+msgid "--strict@r{, @code{msggrep} option}"
+msgstr "--strict@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:223
+msgid "Write out a strict Uniforum conforming PO file.  Note that this Uniforum format should be avoided because it doesn't support the GNU extensions."
+msgstr "Uniforumに厳密に準拠したPOファイルを出力します。このUniforum形式はGNUの拡張をサポートしないため避けたほうがよいでしょう。"
+
+#. type: item
+#: original_texis/msggrep.texi:224
+#, no-wrap
+msgid "-p"
+msgstr "-p"
+
+#. type: itemx
+#: original_texis/msggrep.texi:225
+#, no-wrap
+msgid "--properties-output"
+msgstr "--properties-output"
+
+#. type: opindex
+#: original_texis/msggrep.texi:226
+#, no-wrap
+msgid "-p@r{, @code{msggrep} option}"
+msgstr "-p@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:227
+#, no-wrap
+msgid "--properties-output@r{, @code{msggrep} option}"
+msgstr "--properties-output@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:231
+msgid "Write out a Java ResourceBundle in Java @code{.properties} syntax.  Note that this file format doesn't support plural forms and silently drops obsolete messages."
+msgstr "Javaの@code{.properties}の書式で、Java ResourceBundleを出力します。このファイル形式はplural formをサポートせず、陳腐化したメッセージを暗黙で除去することに注意してください。"
+
+#. type: item
+#: original_texis/msggrep.texi:232
+#, no-wrap
+msgid "--stringtable-output"
+msgstr "--stringtable-output"
+
+#. type: opindex
+#: original_texis/msggrep.texi:233
+#, no-wrap
+msgid "--stringtable-output@r{, @code{msggrep} option}"
+msgstr "--stringtable-output@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:236
+msgid "Write out a NeXTstep/GNUstep localized resource file in @code{.strings} syntax.  Note that this file format doesn't support plural forms."
+msgstr "@code{.strings}の書式で、NeXTstep/GNUstepのローカライズされたリソースファイルを出力します。このファイル形式はplural formをサポートしないことに注意してください。"
+
+#. type: item
+#: original_texis/msggrep.texi:237
+#, no-wrap
+msgid "-w @var{number}"
+msgstr "-w @var{number}"
+
+#. type: itemx
+#: original_texis/msggrep.texi:238
+#, no-wrap
+msgid "--width=@var{number}"
+msgstr "--width=@var{number}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:239
+#, no-wrap
+msgid "-w@r{, @code{msggrep} option}"
+msgstr "-w@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:240
+#, no-wrap
+msgid "--width@r{, @code{msggrep} option}"
+msgstr "--width@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:244
+msgid "Set the output page width.  Long strings in the output files will be split across multiple lines in order to ensure that each line's width (= number of screen columns) is less or equal to the given @var{number}."
+msgstr "出力ページの幅をセットします。これにより出力ファイル中の長い文字列が指定した幅(例:スクリーンの列数)に収まるように、各行の長さが@var{number}以下のような複数の行に分割されます。"
+
+#. type: item
+#: original_texis/msggrep.texi:245
+#, no-wrap
+msgid "--no-wrap"
+msgstr "--no-wrap"
+
+#. type: opindex
+#: original_texis/msggrep.texi:246
+#, no-wrap
+msgid "--no-wrap@r{, @code{msggrep} option}"
+msgstr "--no-wrap@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:250
+msgid "Do not break long message lines.  Message lines whose width exceeds the output page width will not be split into several lines.  Only file reference lines which are wider than the output page width will be split."
+msgstr "長いメッセージ行を分割しません。出力ページの幅を超えるようなメッセージ行も、複数行に分割されません。出力ページの幅を超えるファイル参照行だけが分割されます。"
+
+#. type: item
+#: original_texis/msggrep.texi:251
+#, no-wrap
+msgid "--sort-output"
+msgstr "--sort-output"
+
+#. type: opindex
+#: original_texis/msggrep.texi:252
+#, no-wrap
+msgid "--sort-output@r{, @code{msggrep} option}"
+msgstr "--sort-output@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:255
+msgid "Generate sorted output.  Note that using this option makes it much harder for the translator to understand each message's context."
+msgstr "ソートされた出力を生成します。このオプションを使用することにより翻訳者が、メッセージがどのようなコンテキストで使用されるかを理解するのが、困難になることに注意してください。"
+
+#. type: item
+#: original_texis/msggrep.texi:256
+#, no-wrap
+msgid "--sort-by-file"
+msgstr "--sort-by-file"
+
+#. type: opindex
+#: original_texis/msggrep.texi:257
+#, no-wrap
+msgid "--sort-by-file@r{, @code{msggrep} option}"
+msgstr "--sort-by-file@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:259
+msgid "Sort output by file location."
+msgstr "ファイルの場所により出力をソートします。"
+
+#. type: subsection
+#: original_texis/msggrep.texi:262
+#, no-wrap
+msgid "Informative output"
+msgstr "Informative output"
+
+#. type: item
+#: original_texis/msggrep.texi:265
+#, no-wrap
+msgid "-h"
+msgstr "-h"
+
+#. type: itemx
+#: original_texis/msggrep.texi:266
+#, no-wrap
+msgid "--help"
+msgstr "--help"
+
+#. type: opindex
+#: original_texis/msggrep.texi:267
+#, no-wrap
+msgid "-h@r{, @code{msggrep} option}"
+msgstr "-h@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:268
+#, no-wrap
+msgid "--help@r{, @code{msggrep} option}"
+msgstr "--help@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:270
+msgid "Display this help and exit."
+msgstr "このヘルプを表示して終了します。"
+
+#. type: item
+#: original_texis/msggrep.texi:271
+#, no-wrap
+msgid "-V"
+msgstr "-V"
+
+#. type: itemx
+#: original_texis/msggrep.texi:272
+#, no-wrap
+msgid "--version"
+msgstr "--version"
+
+#. type: opindex
+#: original_texis/msggrep.texi:273
+#, no-wrap
+msgid "-V@r{, @code{msggrep} option}"
+msgstr "-V@r{, @code{msggrep} option}"
+
+#. type: opindex
+#: original_texis/msggrep.texi:274
+#, no-wrap
+msgid "--version@r{, @code{msggrep} option}"
+msgstr "--version@r{, @code{msggrep} option}"
+
+#. type: table
+#: original_texis/msggrep.texi:276
+msgid "Output version information and exit."
+msgstr "バージョン情報を表示して終了します。"
+
+#. type: subsection
+#: original_texis/msggrep.texi:279
+#, no-wrap
+msgid "Examples"
+msgstr "Examples"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:283
+msgid "To extract the messages that come from the source files @code{gnulib-lib/error.c} and @code{gnulib-lib/getopt.c}:"
+msgstr "@code{gnulib-lib/error.c}と@code{gnulib-lib/getopt.c}というソースファイルからメッセージを抽出する場合:"
+
+#. type: smallexample
+#: original_texis/msggrep.texi:286
+#, no-wrap
+msgid "msggrep -N gnulib-lib/error.c -N gnulib-lib/getopt.c input.po\n"
+msgstr "msggrep -N gnulib-lib/error.c -N gnulib-lib/getopt.c input.po\n"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:290
+msgid "To extract the messages that contain the string ``Please specify'' in the original string:"
+msgstr "``Please specify''という文字列が含まれるメッセージを抽出する場合:"
+
+#. type: smallexample
+#: original_texis/msggrep.texi:293
+#, no-wrap
+msgid "msggrep --msgid -F -e 'Please specify' input.po\n"
+msgstr "msggrep --msgid -F -e 'Please specify' input.po\n"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:297
+msgid "To extract the messages that have a context specifier of either ``Menu>File'' or ``Menu>Edit'' or a submenu of them:"
+msgstr "``Menu>File''、``Menu>Edit''またはそれらのサブメニューであることを指定するコンテキストをもつメッセージを抽出する場合:"
+
+#. type: smallexample
+#: original_texis/msggrep.texi:300
+#, no-wrap
+msgid "msggrep --msgctxt -E -e '^Menu>(File|Edit)' input.po\n"
+msgstr "msggrep --msgctxt -E -e '^Menu>(File|Edit)' input.po\n"
+
+#. type: Plain text
+#: original_texis/msggrep.texi:304
+msgid "To extract the messages whose translation contains one of the strings in the file @code{wordlist.txt}:"
+msgstr "翻訳文字列に@code{wordlist.txt}というファイル中の文字列を含むメッセージを抽出する場合:"
+
+#. type: smallexample
+#: original_texis/msggrep.texi:307
+#, no-wrap
+msgid "msggrep --msgstr -F -f wordlist.txt input.po\n"
+msgstr "msggrep --msgstr -F -f wordlist.txt input.po\n"

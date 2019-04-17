@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: pindex
+#: original_texis/msgcmp.texi:5
+#, no-wrap
+msgid "msgcmp"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgcmp.texi:6
+#, no-wrap
+msgid "@code{msgcmp} program, usage"
+msgstr ""
+
+#. type: example
+#: original_texis/msgcmp.texi:9
+#, no-wrap
+msgid "msgcmp [@var{option}] @var{def}.po @var{ref}.pot\n"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgcmp.texi:11
+#, no-wrap
+msgid "compare PO files"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgcmp.texi:19
+msgid ""
+"The @code{msgcmp} program compares two Uniforum style .po files to check "
+"that both contain the same set of msgid strings.  The @var{def}.po file is "
+"an existing PO file with the translations.  The @var{ref}.pot file is the "
+"last created PO file, or a PO Template file (generally created by "
+"@code{xgettext}).  This is useful for checking that you have translated each "
+"and every message in your program.  Where an exact match cannot be found, "
+"fuzzy matching is used to produce better diagnostics."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgcmp.texi:20
+#, no-wrap
+msgid "Input file location"
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:23
+#, no-wrap
+msgid "@var{def}.po"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:25
+msgid "Translations."
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:26
+#, no-wrap
+msgid "@var{ref}.pot"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:28
+msgid "References to the sources."
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:29
+#, no-wrap
+msgid "-D @var{directory}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgcmp.texi:30
+#, no-wrap
+msgid "--directory=@var{directory}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:31
+#, no-wrap
+msgid "-D@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:32
+#, no-wrap
+msgid "--directory@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:35
+msgid ""
+"Add @var{directory} to the list of directories.  Source files are searched "
+"relative to this list of directories."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgcmp.texi:38
+#, no-wrap
+msgid "Operation modifiers"
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:41
+#, no-wrap
+msgid "-m"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgcmp.texi:42
+#, no-wrap
+msgid "--multi-domain"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:43
+#, no-wrap
+msgid "-m@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:44
+#, no-wrap
+msgid "--multi-domain@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:46
+msgid "Apply @var{ref}.pot to each of the domains in @var{def}.po."
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:47
+#, no-wrap
+msgid "-N"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgcmp.texi:48
+#, no-wrap
+msgid "--no-fuzzy-matching"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:49
+#, no-wrap
+msgid "-N@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:50
+#, no-wrap
+msgid "--no-fuzzy-matching@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:53
+msgid ""
+"Do not use fuzzy matching when an exact match is not found.  This may speed "
+"up the operation considerably."
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:54
+#, no-wrap
+msgid "--use-fuzzy"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:55
+#, no-wrap
+msgid "--use-fuzzy@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:59
+msgid ""
+"Consider fuzzy messages in the @var{def}.po file like translated messages.  "
+"Note that using this option is usually wrong, because fuzzy messages are "
+"exactly those which have not been validated by a human translator."
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:60
+#, no-wrap
+msgid "--use-untranslated"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:61
+#, no-wrap
+msgid "--use-untranslated@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:64
+msgid ""
+"Consider untranslated messages in the @var{def}.po file like translated "
+"messages.  Note that using this option is usually wrong."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgcmp.texi:67
+#, no-wrap
+msgid "Input file syntax"
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:70
+#, no-wrap
+msgid "-P"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgcmp.texi:71
+#, no-wrap
+msgid "--properties-input"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:72
+#, no-wrap
+msgid "-P@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:73
+#, no-wrap
+msgid "--properties-input@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:76
+msgid ""
+"Assume the input files are Java ResourceBundles in Java @code{.properties} "
+"syntax, not in PO file syntax."
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:77
+#, no-wrap
+msgid "--stringtable-input"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:78
+#, no-wrap
+msgid "--stringtable-input@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:81
+msgid ""
+"Assume the input files are NeXTstep/GNUstep localized resource files in "
+"@code{.strings} syntax, not in PO file syntax."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgcmp.texi:84
+#, no-wrap
+msgid "Informative output"
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:87
+#, no-wrap
+msgid "-h"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgcmp.texi:88
+#, no-wrap
+msgid "--help"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:89
+#, no-wrap
+msgid "-h@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:90
+#, no-wrap
+msgid "--help@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:92
+msgid "Display this help and exit."
+msgstr ""
+
+#. type: item
+#: original_texis/msgcmp.texi:93
+#, no-wrap
+msgid "-V"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgcmp.texi:94
+#, no-wrap
+msgid "--version"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:95
+#, no-wrap
+msgid "-V@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgcmp.texi:96
+#, no-wrap
+msgid "--version@r{, @code{msgcmp} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgcmp.texi:98
+msgid "Output version information and exit."
+msgstr ""

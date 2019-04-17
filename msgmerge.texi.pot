@@ -1,0 +1,1019 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:24+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: pindex
+#: original_texis/msgmerge.texi:5
+#, no-wrap
+msgid "msgmerge"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgmerge.texi:6
+#, no-wrap
+msgid "@code{msgmerge} program, usage"
+msgstr ""
+
+#. type: example
+#: original_texis/msgmerge.texi:9
+#, no-wrap
+msgid "msgmerge [@var{option}] @var{def}.po @var{ref}.pot\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgmerge.texi:21
+msgid ""
+"The @code{msgmerge} program merges two Uniforum style .po files together.  "
+"The @var{def}.po file is an existing PO file with translations which will be "
+"taken over to the newly created file as long as they still match; comments "
+"will be preserved, but extracted comments and file positions will be "
+"discarded.  The @var{ref}.pot file is the last created PO file with "
+"up-to-date source references but old translations, or a PO Template file "
+"(generally created by @code{xgettext}); any translations or comments in the "
+"file will be discarded, however dot comments and file positions will be "
+"preserved.  Where an exact match cannot be found, fuzzy matching is used to "
+"produce better results."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgmerge.texi:22
+#, no-wrap
+msgid "Input file location"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:25
+#, no-wrap
+msgid "@var{def}.po"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:27
+msgid "Translations referring to old sources."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:28
+#, no-wrap
+msgid "@var{ref}.pot"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:30
+msgid "References to the new sources."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:31
+#, no-wrap
+msgid "-D @var{directory}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:32
+#, no-wrap
+msgid "--directory=@var{directory}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:33
+#, no-wrap
+msgid "-D@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:34
+#, no-wrap
+msgid "--directory@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:38
+msgid ""
+"Add @var{directory} to the list of directories.  Source files are searched "
+"relative to this list of directories.  The resulting @file{.po} file will be "
+"written relative to the current directory, though."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:39
+#, no-wrap
+msgid "-C @var{file}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:40
+#, no-wrap
+msgid "--compendium=@var{file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:41
+#, no-wrap
+msgid "-C@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:42
+#, no-wrap
+msgid "--compendium@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:45
+msgid ""
+"Specify an additional library of message translations.  @xref{Compendium}.  "
+"This option may be specified more than once."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgmerge.texi:48
+#, no-wrap
+msgid "Operation mode"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:51
+#, no-wrap
+msgid "-U"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:52
+#, no-wrap
+msgid "--update"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:53
+#, no-wrap
+msgid "-U@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:54
+#, no-wrap
+msgid "--update@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:56
+msgid "Update @var{def}.po.  Do nothing if @var{def}.po is already up to date."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgmerge.texi:59
+#, no-wrap
+msgid "Output file location"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:62
+#, no-wrap
+msgid "-o @var{file}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:63
+#, no-wrap
+msgid "--output-file=@var{file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:64
+#, no-wrap
+msgid "-o@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:65
+#, no-wrap
+msgid "--output-file@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:67
+msgid "Write output to specified file."
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgmerge.texi:70
+#, no-wrap
+msgid "standard output, and @code{msgmerge} program"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgmerge.texi:73
+msgid ""
+"The results are written to standard output if no output file is specified or "
+"if it is @samp{-}."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgmerge.texi:74
+#, no-wrap
+msgid "Output file location in update mode"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgmerge.texi:77
+msgid "The result is written back to @var{def}.po."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:79
+#, no-wrap
+msgid "--backup=@var{control}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:80
+#, no-wrap
+msgid "--backup@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgmerge.texi:81
+#, no-wrap
+msgid "backup old file, and @code{msgmerge} program"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:83
+msgid "Make a backup of @var{def}.po"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:84
+#, no-wrap
+msgid "--suffix=@var{suffix}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:85
+#, no-wrap
+msgid "--suffix@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:87
+msgid "Override the usual backup suffix."
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgmerge.texi:90
+#, no-wrap
+msgid "version control for backup files, @code{msgmerge}"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgmerge.texi:94
+msgid ""
+"The version control method may be selected via the @code{--backup} option or "
+"through the @code{VERSION_CONTROL} environment variable.  Here are the "
+"values:"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:96
+#, no-wrap
+msgid "none"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:97
+#, no-wrap
+msgid "off"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:99
+msgid "Never make backups (even if @code{--backup} is given)."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:100
+#, no-wrap
+msgid "numbered"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:101
+#, no-wrap
+msgid "t"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:103
+msgid "Make numbered backups."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:104
+#, no-wrap
+msgid "existing"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:105
+#, no-wrap
+msgid "nil"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:108
+msgid ""
+"Make numbered backups if numbered backups for this file already exist, "
+"otherwise make simple backups."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:109
+#, no-wrap
+msgid "simple"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:110
+#, no-wrap
+msgid "never"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:112
+msgid "Always make simple backups."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgmerge.texi:117
+msgid ""
+"The backup suffix is @samp{~}, unless set with @code{--suffix} or the "
+"@code{SIMPLE_BACKUP_SUFFIX} environment variable."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgmerge.texi:118
+#, no-wrap
+msgid "Operation modifiers"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:121
+#, no-wrap
+msgid "-m"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:122
+#, no-wrap
+msgid "--multi-domain"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:123
+#, no-wrap
+msgid "-m@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:124
+#, no-wrap
+msgid "--multi-domain@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:126
+msgid "Apply @var{ref}.pot to each of the domains in @var{def}.po."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:127
+#, no-wrap
+msgid "--for-msgfmt"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:128
+#, no-wrap
+msgid "--for-msgfmt@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:134
+msgid ""
+"Produce a PO file meant for @code{msgfmt} only, not for a translator.  This "
+"option omits untranslated messages, fuzzy messages (except the header "
+"entry), and obsolete messages from the output.  Also, it omits translator "
+"comments and @samp{#: @var{filename}:@var{line}} lines from the output.  In "
+"particular, this option implies @samp{--no-fuzzy-matching}."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:135
+#, no-wrap
+msgid "-N"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:136
+#, no-wrap
+msgid "--no-fuzzy-matching"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:137
+#, no-wrap
+msgid "-N@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:138
+#, no-wrap
+msgid "--no-fuzzy-matching@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:141
+msgid ""
+"Do not use fuzzy matching when an exact match is not found.  This may speed "
+"up the operation considerably."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:142
+#, no-wrap
+msgid "--previous"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:143
+#, no-wrap
+msgid "--previous@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:146
+msgid ""
+"Keep the previous msgids of translated messages, marked with @samp{#|}, when "
+"adding the fuzzy marker to such messages."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgmerge.texi:148
+#, no-wrap
+msgid "Input file syntax"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:151
+#, no-wrap
+msgid "-P"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:152
+#, no-wrap
+msgid "--properties-input"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:153
+#, no-wrap
+msgid "-P@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:154
+#, no-wrap
+msgid "--properties-input@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:157
+msgid ""
+"Assume the input files are Java ResourceBundles in Java @code{.properties} "
+"syntax, not in PO file syntax."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:158
+#, no-wrap
+msgid "--stringtable-input"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:159
+#, no-wrap
+msgid "--stringtable-input@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:162
+msgid ""
+"Assume the input files are NeXTstep/GNUstep localized resource files in "
+"@code{.strings} syntax, not in PO file syntax."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgmerge.texi:165
+#, no-wrap
+msgid "Output details"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:170
+#, no-wrap
+msgid "--lang=@var{catalogname}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:171
+#, no-wrap
+msgid "--lang@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:177
+msgid ""
+"Specify the @samp{Language} field to be used in the header entry.  See "
+"@ref{Header Entry} for the meaning of this field.  Note: The "
+"@samp{Language-Team} and @samp{Plural-Forms} fields are left unchanged.  If "
+"this option is not specified, the @samp{Language} field is inferred, as best "
+"as possible, from the @samp{Language-Team} field."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:178
+#, no-wrap
+msgid "--color"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:179
+#, no-wrap
+msgid "--color=@var{when}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:180
+#, no-wrap
+msgid "--color@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:183
+msgid ""
+"Specify whether or when to use colors and other text attributes.  See "
+"@ref{The --color option} for details."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:184
+#, no-wrap
+msgid "--style=@var{style_file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:185
+#, no-wrap
+msgid "--style@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:188
+msgid ""
+"Specify the CSS style rule file to use for @code{--color}.  See @ref{The "
+"--style option} for details."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:189
+#, no-wrap
+msgid "--force-po"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:190
+#, no-wrap
+msgid "--force-po@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:192
+msgid "Always write an output file even if it contains no message."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:193
+#, no-wrap
+msgid "-i"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:194
+#, no-wrap
+msgid "--indent"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:195
+#, no-wrap
+msgid "-i@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:196
+#, no-wrap
+msgid "--indent@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:198
+msgid "Write the .po file using indented style."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:199
+#, no-wrap
+msgid "--no-location"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:200
+#, no-wrap
+msgid "--no-location@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:202
+msgid "Do not write @samp{#: @var{filename}:@var{line}} lines."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:203
+#, no-wrap
+msgid "-n"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:204
+#, no-wrap
+msgid "--add-location=@var{type}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:205
+#, no-wrap
+msgid "--add-location@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:207
+msgid "Generate @samp{#: @var{filename}:@var{line}} lines (default)."
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:213
+msgid ""
+"The optional @var{type} can be either @samp{full}, @samp{file}, or "
+"@samp{never}.  If it is not given or @samp{full}, it generates the lines "
+"with both file name and line number.  If it is @samp{file}, the line number "
+"part is omitted.  If it is @samp{never}, it completely suppresses the lines "
+"(same as @code{--no-location})."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:214
+#, no-wrap
+msgid "--strict"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:215
+#, no-wrap
+msgid "--strict@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:219
+msgid ""
+"Write out a strict Uniforum conforming PO file.  Note that this Uniforum "
+"format should be avoided because it doesn't support the GNU extensions."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:220
+#, no-wrap
+msgid "-p"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:221
+#, no-wrap
+msgid "--properties-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:222
+#, no-wrap
+msgid "-p@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:223
+#, no-wrap
+msgid "--properties-output@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:227
+msgid ""
+"Write out a Java ResourceBundle in Java @code{.properties} syntax.  Note "
+"that this file format doesn't support plural forms and silently drops "
+"obsolete messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:228
+#, no-wrap
+msgid "--stringtable-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:229
+#, no-wrap
+msgid "--stringtable-output@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:232
+msgid ""
+"Write out a NeXTstep/GNUstep localized resource file in @code{.strings} "
+"syntax.  Note that this file format doesn't support plural forms."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:233
+#, no-wrap
+msgid "-w @var{number}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:234
+#, no-wrap
+msgid "--width=@var{number}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:235
+#, no-wrap
+msgid "-w@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:236
+#, no-wrap
+msgid "--width@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:240
+msgid ""
+"Set the output page width.  Long strings in the output files will be split "
+"across multiple lines in order to ensure that each line's width (= number of "
+"screen columns) is less or equal to the given @var{number}."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:241
+#, no-wrap
+msgid "--no-wrap"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:242
+#, no-wrap
+msgid "--no-wrap@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:246
+msgid ""
+"Do not break long message lines.  Message lines whose width exceeds the "
+"output page width will not be split into several lines.  Only file reference "
+"lines which are wider than the output page width will be split."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:247
+#, no-wrap
+msgid "-s"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:248
+#, no-wrap
+msgid "--sort-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:249
+#, no-wrap
+msgid "-s@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:250
+#, no-wrap
+msgid "--sort-output@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgmerge.texi:251
+#, no-wrap
+msgid "sorting @code{msgmerge} output"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:254
+msgid ""
+"Generate sorted output.  Note that using this option makes it much harder "
+"for the translator to understand each message's context."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:255
+#, no-wrap
+msgid "-F"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:256
+#, no-wrap
+msgid "--sort-by-file"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:257
+#, no-wrap
+msgid "-F@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:258
+#, no-wrap
+msgid "--sort-by-file@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:260
+msgid "Sort output by file location."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgmerge.texi:263
+#, no-wrap
+msgid "Informative output"
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:266
+#, no-wrap
+msgid "-h"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:267
+#, no-wrap
+msgid "--help"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:268
+#, no-wrap
+msgid "-h@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:269
+#, no-wrap
+msgid "--help@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:271
+msgid "Display this help and exit."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:272
+#, no-wrap
+msgid "-V"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:273
+#, no-wrap
+msgid "--version"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:274
+#, no-wrap
+msgid "-V@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:275
+#, no-wrap
+msgid "--version@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:277
+msgid "Output version information and exit."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:278
+#, no-wrap
+msgid "-v"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:279
+#, no-wrap
+msgid "--verbose"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:280
+#, no-wrap
+msgid "-v@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:281
+#, no-wrap
+msgid "--verbose@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:283
+msgid "Increase verbosity level."
+msgstr ""
+
+#. type: item
+#: original_texis/msgmerge.texi:284
+#, no-wrap
+msgid "-q"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:285
+#, no-wrap
+msgid "--quiet"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgmerge.texi:286
+#, no-wrap
+msgid "--silent"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:287
+#, no-wrap
+msgid "-q@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:288
+#, no-wrap
+msgid "--quiet@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgmerge.texi:289
+#, no-wrap
+msgid "--silent@r{, @code{msgmerge} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgmerge.texi:291
+msgid "Suppress progress indicators."
+msgstr ""

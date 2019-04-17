@@ -1,0 +1,237 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:24+0900\n"
+"PO-Revision-Date: 2019-04-17 10:48+0900\n"
+"Last-Translator: Takesi Ayanokoji <takeshi.ayanokoji@gmail.com>\n"
+"Language-Team: Japanese <h1r0p@outlook.jp>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: pindex
+#: original_texis/rt-gettext.texi:5
+#, no-wrap
+msgid "gettext"
+msgstr "gettext"
+
+#. type: cindex
+#: original_texis/rt-gettext.texi:6
+#, no-wrap
+msgid "@code{gettext} program, usage"
+msgstr "@code{gettext} program, usage"
+
+#. type: example
+#: original_texis/rt-gettext.texi:10
+#, no-wrap
+msgid ""
+"gettext [@var{option}] [[@var{textdomain}] @var{msgid}]\n"
+"gettext [@var{option}] -s [@var{msgid}]...\n"
+msgstr ""
+"gettext [@var{option}] [[@var{textdomain}] @var{msgid}]\n"
+"gettext [@var{option}] -s [@var{msgid}]...\n"
+
+#. type: cindex
+#: original_texis/rt-gettext.texi:12
+#, no-wrap
+msgid "lookup message translation"
+msgstr "lookup message translation"
+
+#. type: Plain text
+#: original_texis/rt-gettext.texi:15
+msgid "The @code{gettext} program displays the native language translation of a textual message."
+msgstr "@code{gettext}は、母国語に翻訳されたテキストメッセージを表示するプログラムです。"
+
+#. type: item
+#: original_texis/rt-gettext.texi:19
+#, no-wrap
+msgid "-c @var{context}"
+msgstr "-c @var{context}"
+
+#. type: itemx
+#: original_texis/rt-gettext.texi:20
+#, no-wrap
+msgid "--context=@var{context}"
+msgstr "--context=@var{context}"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:21
+#, no-wrap
+msgid "-c@r{, @code{gettext} option}"
+msgstr "-c@r{, @code{gettext} option}"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:22
+#, no-wrap
+msgid "--context@r{, @code{gettext} option}"
+msgstr "--context@r{, @code{gettext} option}"
+
+#. type: table
+#: original_texis/rt-gettext.texi:25
+msgid "Specify the context for the messages to be translated.  See @ref{Contexts} for details."
+msgstr "翻訳されるメッセージのコンテキストを指定します。@ref{Contexts}を参照してください。"
+
+#. type: item
+#: original_texis/rt-gettext.texi:26
+#, no-wrap
+msgid "-d @var{textdomain}"
+msgstr "-d @var{textdomain}"
+
+#. type: itemx
+#: original_texis/rt-gettext.texi:27
+#, no-wrap
+msgid "--domain=@var{textdomain}"
+msgstr "--domain=@var{textdomain}"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:28
+#, no-wrap
+msgid "-d@r{, @code{gettext} option}"
+msgstr "-d@r{, @code{gettext} option}"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:29
+#, no-wrap
+msgid "--domain@r{, @code{gettext} option}"
+msgstr "--domain@r{, @code{gettext} option}"
+
+#. type: table
+#: original_texis/rt-gettext.texi:32
+msgid "Retrieve translated messages from @var{textdomain}.  Usually a @var{textdomain} corresponds to a package, a program, or a module of a program."
+msgstr "@var{textdomain}から、翻訳されたメッセージを取得します。@var{textdomain}は通常、パッケージか、プログラムやプログラムのモジュールと一致します。"
+
+#. type: item
+#: original_texis/rt-gettext.texi:33
+#, no-wrap
+msgid "-e"
+msgstr "-e"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:34
+#, no-wrap
+msgid "-e@r{, @code{gettext} option}"
+msgstr "-e@r{, @code{gettext} option}"
+
+#. type: table
+#: original_texis/rt-gettext.texi:40
+msgid "Enable expansion of some escape sequences.  This option is for compatibility with the @samp{echo} program or shell built-in.  The escape sequences @samp{\\a}, @samp{\\b}, @samp{\\c}, @samp{\\f}, @samp{\\n}, @samp{\\r}, @samp{\\t}, @samp{\\v}, @samp{\\\\}, and @samp{\\} followed by one to three octal digits, are interpreted like the System V @samp{echo} program did."
+msgstr "いくつかのエスケープシーケンスの展開を可能にします。これはechoプログラムややシェルのビルトインコマンドにたいする互換のためのオプションです。対象となるエスケープシーケンスは@samp{\\a}、@samp{\\b}、@samp{\\c}、@samp{\\f}、@samp{\\n}、@samp{\\r}、@samp{\\t}、@samp{\\v}、@samp{\\\\}、および@samp{\\}と、その後の3桁以内の8進数です(これらはSystem Vの@samp{echo}と同様に処理されます)。"
+
+#. type: item
+#: original_texis/rt-gettext.texi:41
+#, no-wrap
+msgid "-E"
+msgstr "-E"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:42
+#, no-wrap
+msgid "-E@r{, @code{gettext} option}"
+msgstr "-E@r{, @code{gettext} option}"
+
+#. type: table
+#: original_texis/rt-gettext.texi:45
+msgid "This option is only for compatibility with the @samp{echo} program or shell built-in.  It has no effect."
+msgstr "このオプションは@samp{echo}プログラムとシェルのビルトインコマンドとの互換性のためだけのもので、何の効果も及ぼしません。"
+
+#. type: item
+#: original_texis/rt-gettext.texi:46
+#, no-wrap
+msgid "-h"
+msgstr "-h"
+
+#. type: itemx
+#: original_texis/rt-gettext.texi:47
+#, no-wrap
+msgid "--help"
+msgstr "--help"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:48
+#, no-wrap
+msgid "-h@r{, @code{gettext} option}"
+msgstr "-h@r{, @code{gettext} option}"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:49
+#, no-wrap
+msgid "--help@r{, @code{gettext} option}"
+msgstr "--help@r{, @code{gettext} option}"
+
+#. type: table
+#: original_texis/rt-gettext.texi:51
+msgid "Display this help and exit."
+msgstr "このヘルプを表示して終了します。"
+
+#. type: item
+#: original_texis/rt-gettext.texi:52
+#, no-wrap
+msgid "-n"
+msgstr "-n"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:53
+#, no-wrap
+msgid "-n@r{, @code{gettext} option}"
+msgstr "-n@r{, @code{gettext} option}"
+
+#. type: table
+#: original_texis/rt-gettext.texi:56
+msgid "Suppress trailing newline.  By default, @code{gettext} adds a newline to the output."
+msgstr "行末の改行を抑止します。デフォルトでは、@code{gettext}は出力に改行を付与します。"
+
+#. type: item
+#: original_texis/rt-gettext.texi:57
+#, no-wrap
+msgid "-V"
+msgstr "-V"
+
+#. type: itemx
+#: original_texis/rt-gettext.texi:58
+#, no-wrap
+msgid "--version"
+msgstr "--version"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:59
+#, no-wrap
+msgid "-V@r{, @code{gettext} option}"
+msgstr "-V@r{, @code{gettext} option}"
+
+#. type: opindex
+#: original_texis/rt-gettext.texi:60
+#, no-wrap
+msgid "--version@r{, @code{gettext} option}"
+msgstr "--version@r{, @code{gettext} option}"
+
+#. type: table
+#: original_texis/rt-gettext.texi:62
+msgid "Output version information and exit."
+msgstr "バージョン情報を表示して終了します。"
+
+#. type: item
+#: original_texis/rt-gettext.texi:63
+#, no-wrap
+msgid "[@var{textdomain}] @var{msgid}"
+msgstr "[@var{textdomain}] @var{msgid}"
+
+#. type: table
+#: original_texis/rt-gettext.texi:65
+msgid "Retrieve translated message corresponding to @var{msgid} from @var{textdomain}."
+msgstr "@var{textdomain}から、@var{msgid}に対応する翻訳されたメッセージを取得します。"
+
+#. type: Plain text
+#: original_texis/rt-gettext.texi:72
+msgid "If the @var{textdomain} parameter is not given, the domain is determined from the environment variable @code{TEXTDOMAIN}.  If the message catalog is not found in the regular directory, another location can be specified with the environment variable @code{TEXTDOMAINDIR}."
+msgstr "パラメーター@var{textdomain}を指定しなかった場合、環境変数@code{TEXTDOMAIN}によりdomainが決定されます。メッセージカタログが標準のディレクトリーで見つからなかった場合には、環境変数@code{TEXTDOMAINDIR}で他の場所を指定できます。"
+
+#. type: Plain text
+#: original_texis/rt-gettext.texi:75
+msgid "When used with the @code{-s} option the program behaves like the @samp{echo} command.  But it does not simply copy its arguments to stdout.  Instead those messages found in the selected catalog are translated."
+msgstr "@code{-s}オプションを使うと、プログラムは@samp{echo}コマンドのように振る舞います。しかし、このプログラムは引数を単に標準出力にコピーするのではなく、選択されたカタログにメッセージが見つかった場合は翻訳されたメッセージを出力します。"

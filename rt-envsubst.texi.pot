@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:24+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: pindex
+#: original_texis/rt-envsubst.texi:5
+#, no-wrap
+msgid "envsubst"
+msgstr ""
+
+#. type: cindex
+#: original_texis/rt-envsubst.texi:6
+#, no-wrap
+msgid "@code{envsubst} program, usage"
+msgstr ""
+
+#. type: example
+#: original_texis/rt-envsubst.texi:9
+#, no-wrap
+msgid "envsubst [@var{option}] [@var{shell-format}]\n"
+msgstr ""
+
+#. type: cindex
+#: original_texis/rt-envsubst.texi:11
+#, no-wrap
+msgid "shell format string"
+msgstr ""
+
+#. type: cindex
+#: original_texis/rt-envsubst.texi:12
+#, no-wrap
+msgid "dollar substitution"
+msgstr ""
+
+#. type: cindex
+#: original_texis/rt-envsubst.texi:13
+#, no-wrap
+msgid "environment variables"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/rt-envsubst.texi:15
+msgid "The @code{envsubst} program substitutes the values of environment variables."
+msgstr ""
+
+#. type: item
+#: original_texis/rt-envsubst.texi:19
+#, no-wrap
+msgid "-v"
+msgstr ""
+
+#. type: itemx
+#: original_texis/rt-envsubst.texi:20
+#, no-wrap
+msgid "--variables"
+msgstr ""
+
+#. type: opindex
+#: original_texis/rt-envsubst.texi:21
+#, no-wrap
+msgid "-v@r{, @code{envsubst} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/rt-envsubst.texi:22
+#, no-wrap
+msgid "--variables@r{, @code{envsubst} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/rt-envsubst.texi:24
+msgid "Output the variables occurring in @var{shell-format}."
+msgstr ""
+
+#. type: item
+#: original_texis/rt-envsubst.texi:30
+#, no-wrap
+msgid "-h"
+msgstr ""
+
+#. type: itemx
+#: original_texis/rt-envsubst.texi:31
+#, no-wrap
+msgid "--help"
+msgstr ""
+
+#. type: opindex
+#: original_texis/rt-envsubst.texi:32
+#, no-wrap
+msgid "-h@r{, @code{envsubst} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/rt-envsubst.texi:33
+#, no-wrap
+msgid "--help@r{, @code{envsubst} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/rt-envsubst.texi:35
+msgid "Display this help and exit."
+msgstr ""
+
+#. type: item
+#: original_texis/rt-envsubst.texi:36
+#, no-wrap
+msgid "-V"
+msgstr ""
+
+#. type: itemx
+#: original_texis/rt-envsubst.texi:37
+#, no-wrap
+msgid "--version"
+msgstr ""
+
+#. type: opindex
+#: original_texis/rt-envsubst.texi:38
+#, no-wrap
+msgid "-V@r{, @code{envsubst} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/rt-envsubst.texi:39
+#, no-wrap
+msgid "--version@r{, @code{envsubst} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/rt-envsubst.texi:41
+msgid "Output version information and exit."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/rt-envsubst.texi:50
+msgid ""
+"In normal operation mode, standard input is copied to standard output, with "
+"references to environment variables of the form @code{$VARIABLE} or "
+"@code{$@{VARIABLE@}} being replaced with the corresponding values.  If a "
+"@var{shell-format} is given, only those environment variables that are "
+"referenced in @var{shell-format} are substituted; otherwise all environment "
+"variables references occurring in standard input are substituted."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/rt-envsubst.texi:56
+msgid ""
+"These substitutions are a subset of the substitutions that a shell performs "
+"on unquoted and double-quoted strings.  Other kinds of substitutions done by "
+"a shell, such as @code{$@{@var{variable}-@var{default}@}} or "
+"@code{$(@var{command-list})} or @code{`@var{command-list}`}, are not "
+"performed by the @code{envsubst} program, due to security reasons."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/rt-envsubst.texi:59
+msgid ""
+"When @code{--variables} is used, standard input is ignored, and the output "
+"consists of the environment variables that are referenced in "
+"@var{shell-format}, one per line."
+msgstr ""

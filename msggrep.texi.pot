@@ -1,0 +1,1097 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: pindex
+#: original_texis/msggrep.texi:5
+#, no-wrap
+msgid "msggrep"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msggrep.texi:6
+#, no-wrap
+msgid "@code{msggrep} program, usage"
+msgstr ""
+
+#. type: example
+#: original_texis/msggrep.texi:9
+#, no-wrap
+msgid "msggrep [@var{option}] [@var{inputfile}]\n"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msggrep.texi:11
+#, no-wrap
+msgid "search messages in a catalog"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:14
+msgid ""
+"The @code{msggrep} program extracts all messages of a translation catalog "
+"that match a given pattern or belong to some given source files."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msggrep.texi:15
+#, no-wrap
+msgid "Input file location"
+msgstr ""
+
+#. type: var{#1}
+#: original_texis/msggrep.texi:18
+#, no-wrap
+msgid "inputfile"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:20
+msgid "Input PO file."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:21
+#, no-wrap
+msgid "-D @var{directory}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:22
+#, no-wrap
+msgid "--directory=@var{directory}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:23
+#, no-wrap
+msgid "-D@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:24
+#, no-wrap
+msgid "--directory@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:28
+msgid ""
+"Add @var{directory} to the list of directories.  Source files are searched "
+"relative to this list of directories.  The resulting @file{.po} file will be "
+"written relative to the current directory, though."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:32
+msgid "If no @var{inputfile} is given or if it is @samp{-}, standard input is read."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msggrep.texi:33
+#, no-wrap
+msgid "Output file location"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:36
+#, no-wrap
+msgid "-o @var{file}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:37
+#, no-wrap
+msgid "--output-file=@var{file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:38
+#, no-wrap
+msgid "-o@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:39
+#, no-wrap
+msgid "--output-file@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:41
+msgid "Write output to specified file."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:46
+msgid ""
+"The results are written to standard output if no output file is specified or "
+"if it is @samp{-}."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msggrep.texi:47
+#, no-wrap
+msgid "Message selection"
+msgstr ""
+
+#. type: example
+#: original_texis/msggrep.texi:53
+#, no-wrap
+msgid ""
+"  [-N @var{sourcefile}]... [-M @var{domainname}]...\n"
+"  [-J @var{msgctxt-pattern}] [-K @var{msgid-pattern}] [-T "
+"@var{msgstr-pattern}]\n"
+"  [-C @var{comment-pattern}]\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:56
+msgid "A message is selected if"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:57
+#, no-wrap
+msgid "it comes from one of the specified source files,"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:58
+#, no-wrap
+msgid "or if it comes from one of the specified domains,"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:59
+#, no-wrap
+msgid "or if @samp{-J} is given and its context (msgctxt) matches"
+msgstr ""
+
+#. type: itemize
+#: original_texis/msggrep.texi:61
+msgid "@var{msgctxt-pattern},"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:61
+#, no-wrap
+msgid "or if @samp{-K} is given and its key (msgid or msgid_plural) matches"
+msgstr ""
+
+#. type: itemize
+#: original_texis/msggrep.texi:63
+msgid "@var{msgid-pattern},"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:63
+#, no-wrap
+msgid "or if @samp{-T} is given and its translation (msgstr) matches"
+msgstr ""
+
+#. type: itemize
+#: original_texis/msggrep.texi:65
+msgid "@var{msgstr-pattern},"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:65
+#, no-wrap
+msgid "or if @samp{-C} is given and the translator's comment matches"
+msgstr ""
+
+#. type: itemize
+#: original_texis/msggrep.texi:67
+msgid "@var{comment-pattern}."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:71
+msgid ""
+"When more than one selection criterion is specified, the set of selected "
+"messages is the union of the selected messages of each criterion."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:73
+msgid "@var{msgctxt-pattern} or @var{msgid-pattern} or @var{msgstr-pattern} syntax:"
+msgstr ""
+
+#. type: example
+#: original_texis/msggrep.texi:75
+#, no-wrap
+msgid "  [-E | -F] [-e @var{pattern} | -f @var{file}]...\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:78
+msgid ""
+"@var{pattern}s are basic regular expressions by default, or extended regular "
+"expressions if -E is given, or fixed strings if -F is given."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:80
+#, no-wrap
+msgid "-N @var{sourcefile}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:81
+#, no-wrap
+msgid "--location=@var{sourcefile}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:82
+#, no-wrap
+msgid "-N@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:83
+#, no-wrap
+msgid "--location@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:86
+msgid ""
+"Select messages extracted from @var{sourcefile}.  @var{sourcefile} can be "
+"either a literal file name or a wildcard pattern."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:87
+#, no-wrap
+msgid "-M @var{domainname}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:88
+#, no-wrap
+msgid "--domain=@var{domainname}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:89
+#, no-wrap
+msgid "-M@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:90
+#, no-wrap
+msgid "--domain@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:92
+msgid "Select messages belonging to domain @var{domainname}."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:93
+#, no-wrap
+msgid "-J"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:94
+#, no-wrap
+msgid "--msgctxt"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:95
+#, no-wrap
+msgid "-J@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:96
+#, no-wrap
+msgid "--msgctxt@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:98
+msgid "Start of patterns for the msgctxt."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:99
+#, no-wrap
+msgid "-K"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:100
+#, no-wrap
+msgid "--msgid"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:101
+#, no-wrap
+msgid "-K@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:102
+#, no-wrap
+msgid "--msgid@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:104
+msgid "Start of patterns for the msgid."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:105
+#, no-wrap
+msgid "-T"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:106
+#, no-wrap
+msgid "--msgstr"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:107
+#, no-wrap
+msgid "-T@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:108
+#, no-wrap
+msgid "--msgstr@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:110
+msgid "Start of patterns for the msgstr."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:111
+#, no-wrap
+msgid "-C"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:112
+#, no-wrap
+msgid "--comment"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:113
+#, no-wrap
+msgid "-C@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:114
+#, no-wrap
+msgid "--comment@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:116
+msgid "Start of patterns for the translator's comment."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:117
+#, no-wrap
+msgid "-X"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:118
+#, no-wrap
+msgid "--extracted-comment"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:119
+#, no-wrap
+msgid "-X@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:120
+#, no-wrap
+msgid "--extracted-comment@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:122
+msgid "Start of patterns for the extracted comments."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:123
+#, no-wrap
+msgid "-E"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:124
+#, no-wrap
+msgid "--extended-regexp"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:125
+#, no-wrap
+msgid "-E@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:126
+#, no-wrap
+msgid "--extended-regexp@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:128
+msgid "Specify that @var{pattern} is an extended regular expression."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:129
+#, no-wrap
+msgid "-F"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:130
+#, no-wrap
+msgid "--fixed-strings"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:131
+#, no-wrap
+msgid "-F@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:132
+#, no-wrap
+msgid "--fixed-strings@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:134
+msgid "Specify that @var{pattern} is a set of newline-separated strings."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:135
+#, no-wrap
+msgid "-e @var{pattern}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:136
+#, no-wrap
+msgid "--regexp=@var{pattern}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:137
+#, no-wrap
+msgid "-e@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:138
+#, no-wrap
+msgid "--regexp=@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:140
+msgid "Use @var{pattern} as a regular expression."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:141
+#, no-wrap
+msgid "-f @var{file}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:142
+#, no-wrap
+msgid "--file=@var{file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:143
+#, no-wrap
+msgid "-f@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:144
+#, no-wrap
+msgid "--file@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:146
+msgid "Obtain @var{pattern} from @var{file}."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:147
+#, no-wrap
+msgid "-i"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:148
+#, no-wrap
+msgid "--ignore-case"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:149
+#, no-wrap
+msgid "-i@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:150
+#, no-wrap
+msgid "--ignore-case@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:152
+msgid "Ignore case distinctions."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:153
+#, no-wrap
+msgid "-v"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:154
+#, no-wrap
+msgid "--invert-match"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:155
+#, no-wrap
+msgid "-v@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:156
+#, no-wrap
+msgid "--invert-match@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:159
+msgid ""
+"Output only the messages that do not match any selection criterion, instead "
+"of the messages that match a selection criterion."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msggrep.texi:162
+#, no-wrap
+msgid "Input file syntax"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:165
+#, no-wrap
+msgid "-P"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:166
+#, no-wrap
+msgid "--properties-input"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:167
+#, no-wrap
+msgid "-P@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:168
+#, no-wrap
+msgid "--properties-input@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:171
+msgid ""
+"Assume the input file is a Java ResourceBundle in Java @code{.properties} "
+"syntax, not in PO file syntax."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:172
+#, no-wrap
+msgid "--stringtable-input"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:173
+#, no-wrap
+msgid "--stringtable-input@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:176
+msgid ""
+"Assume the input file is a NeXTstep/GNUstep localized resource file in "
+"@code{.strings} syntax, not in PO file syntax."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msggrep.texi:179
+#, no-wrap
+msgid "Output details"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:184
+#, no-wrap
+msgid "--color"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:185
+#, no-wrap
+msgid "--color=@var{when}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:186
+#, no-wrap
+msgid "--color@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:189
+msgid ""
+"Specify whether or when to use colors and other text attributes.  See "
+"@ref{The --color option} for details."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:190
+#, no-wrap
+msgid "--style=@var{style_file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:191
+#, no-wrap
+msgid "--style@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:194
+msgid ""
+"Specify the CSS style rule file to use for @code{--color}.  See @ref{The "
+"--style option} for details."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:195
+#, no-wrap
+msgid "--force-po"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:196
+#, no-wrap
+msgid "--force-po@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:198
+msgid "Always write an output file even if it contains no message."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:199
+#, no-wrap
+msgid "--indent"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:200
+#, no-wrap
+msgid "--indent@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:202
+msgid "Write the .po file using indented style."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:203
+#, no-wrap
+msgid "--no-location"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:204
+#, no-wrap
+msgid "--no-location@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:206
+msgid "Do not write @samp{#: @var{filename}:@var{line}} lines."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:207
+#, no-wrap
+msgid "-n"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:208
+#, no-wrap
+msgid "--add-location=@var{type}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:209
+#, no-wrap
+msgid "--add-location@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:211
+msgid "Generate @samp{#: @var{filename}:@var{line}} lines (default)."
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:217
+msgid ""
+"The optional @var{type} can be either @samp{full}, @samp{file}, or "
+"@samp{never}.  If it is not given or @samp{full}, it generates the lines "
+"with both file name and line number.  If it is @samp{file}, the line number "
+"part is omitted.  If it is @samp{never}, it completely suppresses the lines "
+"(same as @code{--no-location})."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:218
+#, no-wrap
+msgid "--strict"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:219
+#, no-wrap
+msgid "--strict@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:223
+msgid ""
+"Write out a strict Uniforum conforming PO file.  Note that this Uniforum "
+"format should be avoided because it doesn't support the GNU extensions."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:224
+#, no-wrap
+msgid "-p"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:225
+#, no-wrap
+msgid "--properties-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:226
+#, no-wrap
+msgid "-p@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:227
+#, no-wrap
+msgid "--properties-output@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:231
+msgid ""
+"Write out a Java ResourceBundle in Java @code{.properties} syntax.  Note "
+"that this file format doesn't support plural forms and silently drops "
+"obsolete messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:232
+#, no-wrap
+msgid "--stringtable-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:233
+#, no-wrap
+msgid "--stringtable-output@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:236
+msgid ""
+"Write out a NeXTstep/GNUstep localized resource file in @code{.strings} "
+"syntax.  Note that this file format doesn't support plural forms."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:237
+#, no-wrap
+msgid "-w @var{number}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:238
+#, no-wrap
+msgid "--width=@var{number}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:239
+#, no-wrap
+msgid "-w@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:240
+#, no-wrap
+msgid "--width@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:244
+msgid ""
+"Set the output page width.  Long strings in the output files will be split "
+"across multiple lines in order to ensure that each line's width (= number of "
+"screen columns) is less or equal to the given @var{number}."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:245
+#, no-wrap
+msgid "--no-wrap"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:246
+#, no-wrap
+msgid "--no-wrap@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:250
+msgid ""
+"Do not break long message lines.  Message lines whose width exceeds the "
+"output page width will not be split into several lines.  Only file reference "
+"lines which are wider than the output page width will be split."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:251
+#, no-wrap
+msgid "--sort-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:252
+#, no-wrap
+msgid "--sort-output@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:255
+msgid ""
+"Generate sorted output.  Note that using this option makes it much harder "
+"for the translator to understand each message's context."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:256
+#, no-wrap
+msgid "--sort-by-file"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:257
+#, no-wrap
+msgid "--sort-by-file@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:259
+msgid "Sort output by file location."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msggrep.texi:262
+#, no-wrap
+msgid "Informative output"
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:265
+#, no-wrap
+msgid "-h"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:266
+#, no-wrap
+msgid "--help"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:267
+#, no-wrap
+msgid "-h@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:268
+#, no-wrap
+msgid "--help@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:270
+msgid "Display this help and exit."
+msgstr ""
+
+#. type: item
+#: original_texis/msggrep.texi:271
+#, no-wrap
+msgid "-V"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msggrep.texi:272
+#, no-wrap
+msgid "--version"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:273
+#, no-wrap
+msgid "-V@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msggrep.texi:274
+#, no-wrap
+msgid "--version@r{, @code{msggrep} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msggrep.texi:276
+msgid "Output version information and exit."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msggrep.texi:279
+#, no-wrap
+msgid "Examples"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:283
+msgid ""
+"To extract the messages that come from the source files "
+"@code{gnulib-lib/error.c} and @code{gnulib-lib/getopt.c}:"
+msgstr ""
+
+#. type: smallexample
+#: original_texis/msggrep.texi:286
+#, no-wrap
+msgid "msggrep -N gnulib-lib/error.c -N gnulib-lib/getopt.c input.po\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:290
+msgid ""
+"To extract the messages that contain the string ``Please specify'' in the "
+"original string:"
+msgstr ""
+
+#. type: smallexample
+#: original_texis/msggrep.texi:293
+#, no-wrap
+msgid "msggrep --msgid -F -e 'Please specify' input.po\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:297
+msgid ""
+"To extract the messages that have a context specifier of either "
+"``Menu>File'' or ``Menu>Edit'' or a submenu of them:"
+msgstr ""
+
+#. type: smallexample
+#: original_texis/msggrep.texi:300
+#, no-wrap
+msgid "msggrep --msgctxt -E -e '^Menu>(File|Edit)' input.po\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msggrep.texi:304
+msgid ""
+"To extract the messages whose translation contains one of the strings in the "
+"file @code{wordlist.txt}:"
+msgstr ""
+
+#. type: smallexample
+#: original_texis/msggrep.texi:307
+#, no-wrap
+msgid "msggrep --msgstr -F -f wordlist.txt input.po\n"
+msgstr ""

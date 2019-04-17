@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: original_texis/gettextize.texi:8
+msgid ""
+"The @code{gettextize} program is an interactive tool that helps the "
+"maintainer of a package internationalized through GNU @code{gettext}.  It is "
+"used for two purposes:"
+msgstr ""
+
+#. type: itemize
+#: original_texis/gettextize.texi:13
+msgid ""
+"As a wizard, when a package is modified to use GNU @code{gettext} for the "
+"first time."
+msgstr ""
+
+#. type: itemize
+#: original_texis/gettextize.texi:17
+msgid ""
+"As a migration tool, for upgrading the GNU @code{gettext} support in a "
+"package from a previous to a newer version of GNU @code{gettext}."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:20
+msgid "This program performs the following tasks:"
+msgstr ""
+
+#. type: itemize
+#: original_texis/gettextize.texi:26
+msgid ""
+"It copies into the package some files that are consistently and identically "
+"needed in every package internationalized through GNU @code{gettext}."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:27
+#, no-wrap
+msgid "It performs as many of the tasks mentioned in the next section"
+msgstr ""
+
+#. type: itemize
+#: original_texis/gettextize.texi:29
+msgid "@ref{Adjusting Files} as can be performed automatically."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:30
+#, no-wrap
+msgid "It removes obsolete files and idioms used for previous GNU"
+msgstr ""
+
+#. type: itemize
+#: original_texis/gettextize.texi:33
+msgid ""
+"@code{gettext} versions to the form recommended for the current GNU "
+"@code{gettext} version."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:34
+#, no-wrap
+msgid "It prints a summary of the tasks that ought to be done manually"
+msgstr ""
+
+#. type: itemize
+#: original_texis/gettextize.texi:36
+msgid "and could not be done automatically by @code{gettextize}."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:39
+msgid "It can be invoked as follows:"
+msgstr ""
+
+#. type: pindex
+#: original_texis/gettextize.texi:40
+#, no-wrap
+msgid "gettextize"
+msgstr ""
+
+#. type: cindex
+#: original_texis/gettextize.texi:41
+#, no-wrap
+msgid "@code{gettextize} program, usage"
+msgstr ""
+
+#. type: example
+#: original_texis/gettextize.texi:44
+#, no-wrap
+msgid "gettextize [ @var{option}@dots{} ] [ @var{directory} ]\n"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:48
+msgid "and accepts the following options:"
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:50
+#, no-wrap
+msgid "-f"
+msgstr ""
+
+#. type: itemx
+#: original_texis/gettextize.texi:51
+#, no-wrap
+msgid "--force"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:52
+#, no-wrap
+msgid "-f@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:53
+#, no-wrap
+msgid "--force@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/gettextize.texi:55
+msgid "Force replacement of files which already exist."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:56
+#, no-wrap
+msgid "--po-dir=@var{dir}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:57
+#, no-wrap
+msgid "--po-dir@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/gettextize.texi:62
+msgid ""
+"Specify a directory containing PO files.  Such a directory contains the "
+"translations into various languages of a particular POT file.  This option "
+"can be specified multiple times, once for each translation domain.  If it is "
+"not specified, the directory named @file{po/} is updated."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:63
+#, no-wrap
+msgid "--no-changelog"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:64
+#, no-wrap
+msgid "--no-changelog@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/gettextize.texi:68
+msgid ""
+"Don't update or create ChangeLog files.  By default, @code{gettextize} logs "
+"all changes (file additions, modifications and removals) in a file called "
+"@samp{ChangeLog} in each affected directory."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:69
+#, no-wrap
+msgid "--symlink"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:70
+#, no-wrap
+msgid "--symlink@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/gettextize.texi:76
+msgid ""
+"Make symbolic links instead of copying the needed files.  This can be useful "
+"to save a few kilobytes of disk space, but it requires extra effort to "
+"create self-contained tarballs, it may disturb some mechanism the maintainer "
+"applies to the sources, and it is likely to introduce bugs when a newer "
+"version of @code{gettext} is installed on the system."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:77
+#, no-wrap
+msgid "-n"
+msgstr ""
+
+#. type: itemx
+#: original_texis/gettextize.texi:78
+#, no-wrap
+msgid "--dry-run"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:79
+#, no-wrap
+msgid "-d@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:80
+#, no-wrap
+msgid "--dry-run@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/gettextize.texi:84
+msgid ""
+"Print modifications but don't perform them.  All actions that "
+"@code{gettextize} would normally execute are inhibited and instead only "
+"listed on standard output."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:85
+#, no-wrap
+msgid "--help"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:86
+#, no-wrap
+msgid "--help@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/gettextize.texi:88
+msgid "Display this help and exit."
+msgstr ""
+
+#. type: item
+#: original_texis/gettextize.texi:89
+#, no-wrap
+msgid "--version"
+msgstr ""
+
+#. type: opindex
+#: original_texis/gettextize.texi:90
+#, no-wrap
+msgid "--version@r{, @code{gettextize} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/gettextize.texi:92
+msgid "Output version information and exit."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:99
+msgid ""
+"If @var{directory} is given, this is the top level directory of a package to "
+"prepare for using GNU @code{gettext}.  If not given, it is assumed that the "
+"current directory is the top level directory of such a package."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:103
+msgid ""
+"The program @code{gettextize} provides the following files.  However, no "
+"existing file will be replaced unless the option @code{--force} (@code{-f}) "
+"is specified."
+msgstr ""
+
+#. type: enumerate
+#: original_texis/gettextize.texi:111
+msgid ""
+"The @file{ABOUT-NLS} file is copied in the main directory of your package, "
+"the one being at the top level.  This file contains a reference to the GNU "
+"gettext documentation.  It also avoids an error from Automake in packages "
+"that use the Automake option @samp{gnu} or @samp{gnits}: ``error: required "
+"file './ABOUT-NLS' not found''."
+msgstr ""
+
+#. type: enumerate
+#: original_texis/gettextize.texi:120
+msgid ""
+"A @file{po/} directory is created for eventually holding all translation "
+"files, but initially only containing the file @file{po/Makefile.in.in} from "
+"the GNU @code{gettext} distribution (beware the double @samp{.in} in the "
+"file name) and a few auxiliary files.  If the @file{po/} directory already "
+"exists, it will be preserved along with the files it contains, and only "
+"@file{Makefile.in.in} and the auxiliary files will be overwritten."
+msgstr ""
+
+#. type: enumerate
+#: original_texis/gettextize.texi:123
+msgid ""
+"If @samp{--po-dir} has been specified, this holds for every directory "
+"specified through @samp{--po-dir}, instead of @file{po/}."
+msgstr ""
+
+#. type: enumerate
+#: original_texis/gettextize.texi:128
+msgid ""
+"The file @file{config.rpath} is copied into the directory containing "
+"configuration support files.  It is needed by the @code{AM_GNU_GETTEXT} "
+"autoconf macro."
+msgstr ""
+
+#. type: enumerate
+#: original_texis/gettextize.texi:133
+msgid ""
+"Only if the project is using GNU @code{automake}: A set of @code{autoconf} "
+"macro files is copied into the package's @code{autoconf} macro repository, "
+"usually in a directory called @file{m4/}."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:143
+msgid ""
+"If your site support symbolic links, @code{gettextize} will not actually "
+"copy the files into your package, but establish symbolic links instead.  "
+"This avoids duplicating the disk space needed in all packages.  Merely using "
+"the @samp{-h} option while creating the @code{tar} archive of your "
+"distribution will resolve each link by an actual copy in the distribution "
+"archive.  So, to insist, you really should use @samp{-h} option with "
+"@code{tar} within your @code{dist} goal of your main @file{Makefile.in}."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:147
+msgid ""
+"Furthermore, @code{gettextize} will update all @file{Makefile.am} files in "
+"each affected directory, as well as the top level @file{configure.ac} or "
+"@file{configure.in} file."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:152
+msgid ""
+"It is interesting to understand that most new files for supporting GNU "
+"@code{gettext} facilities in one package go in @file{po/} and @file{m4/} "
+"subdirectories.  Still, these directories will mostly contain package "
+"dependent files."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:159
+msgid ""
+"The @code{gettextize} program makes backup files for all files it replaces "
+"or changes, and also write ChangeLog entries about these changes.  This way, "
+"the careful maintainer can check after running @code{gettextize} whether its "
+"changes are acceptable to him, and possibly adjust them.  An exception to "
+"this rule is the @file{intl/} directory, which is removed as a whole if it "
+"still existed."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:165
+msgid ""
+"It is important to understand that @code{gettextize} can not do the entire "
+"job of adapting a package for using GNU @code{gettext}.  The amount of "
+"remaining work depends on whether the package uses GNU @code{automake} or "
+"not.  But in any case, the maintainer should still read the section "
+"@ref{Adjusting Files} after invoking @code{gettextize}."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:170
+msgid ""
+"In particular, if after using @samp{gettexize}, you get an error "
+"@samp{AC_COMPILE_IFELSE was called before AC_GNU_SOURCE} or "
+"@samp{AC_RUN_IFELSE was called before AC_GNU_SOURCE}, you can fix it by "
+"modifying @file{configure.ac}, as described in @ref{configure.ac}."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/gettextize.texi:175
+msgid ""
+"It is also important to understand that @code{gettextize} is not part of the "
+"GNU build system, in the sense that it should not be invoked automatically, "
+"and not be invoked by someone who doesn't assume the responsibilities of a "
+"package maintainer.  For the latter purpose, a separate tool is provided, "
+"see @ref{autopoint Invocation}."
+msgstr ""

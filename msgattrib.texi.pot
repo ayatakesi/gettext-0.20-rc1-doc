@@ -1,0 +1,978 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-04-14 22:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: pindex
+#: original_texis/msgattrib.texi:5
+#, no-wrap
+msgid "msgattrib"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgattrib.texi:6
+#, no-wrap
+msgid "@code{msgattrib} program, usage"
+msgstr ""
+
+#. type: example
+#: original_texis/msgattrib.texi:9
+#, no-wrap
+msgid "msgattrib [@var{option}] [@var{inputfile}]\n"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgattrib.texi:11
+#, no-wrap
+msgid "filter messages according to attributes"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgattrib.texi:12
+#, no-wrap
+msgid "attribute manipulation"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgattrib.texi:15
+msgid ""
+"The @code{msgattrib} program filters the messages of a translation catalog "
+"according to their attributes, and manipulates the attributes."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgattrib.texi:16
+#, no-wrap
+msgid "Input file location"
+msgstr ""
+
+#. type: var{#1}
+#: original_texis/msgattrib.texi:19
+#, no-wrap
+msgid "inputfile"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:21
+msgid "Input PO file."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:22
+#, no-wrap
+msgid "-D @var{directory}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:23
+#, no-wrap
+msgid "--directory=@var{directory}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:24
+#, no-wrap
+msgid "-D@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:25
+#, no-wrap
+msgid "--directory@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:29
+msgid ""
+"Add @var{directory} to the list of directories.  Source files are searched "
+"relative to this list of directories.  The resulting @file{.po} file will be "
+"written relative to the current directory, though."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgattrib.texi:33
+msgid "If no @var{inputfile} is given or if it is @samp{-}, standard input is read."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgattrib.texi:34
+#, no-wrap
+msgid "Output file location"
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:37
+#, no-wrap
+msgid "-o @var{file}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:38
+#, no-wrap
+msgid "--output-file=@var{file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:39
+#, no-wrap
+msgid "-o@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:40
+#, no-wrap
+msgid "--output-file@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:42
+msgid "Write output to specified file."
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgattrib.texi:47
+msgid ""
+"The results are written to standard output if no output file is specified or "
+"if it is @samp{-}."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgattrib.texi:48
+#, no-wrap
+msgid "Message selection"
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:51
+#, no-wrap
+msgid "--translated"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:52
+#, no-wrap
+msgid "--translated@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:54
+msgid "Keep translated messages, remove untranslated messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:55
+#, no-wrap
+msgid "--untranslated"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:56
+#, no-wrap
+msgid "--untranslated@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:58
+msgid "Keep untranslated messages, remove translated messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:59
+#, no-wrap
+msgid "--no-fuzzy"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:60
+#, no-wrap
+msgid "--no-fuzzy@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:62
+msgid "Remove"
+msgstr ""
+
+#. type: ifhtml
+#: original_texis/msgattrib.texi:64 original_texis/msgattrib.texi:75 original_texis/msgattrib.texi:134 original_texis/msgattrib.texi:149 original_texis/msgattrib.texi:171
+msgid "‘fuzzy’"
+msgstr ""
+
+#. type: ifnothtml
+#: original_texis/msgattrib.texi:67 original_texis/msgattrib.texi:78 original_texis/msgattrib.texi:137 original_texis/msgattrib.texi:152 original_texis/msgattrib.texi:174
+msgid "`fuzzy'"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:69
+msgid "marked messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:70
+#, no-wrap
+msgid "--only-fuzzy"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:71
+#, no-wrap
+msgid "--only-fuzzy@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:73
+msgid "Keep"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:80
+msgid "marked messages, remove all other messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:81
+#, no-wrap
+msgid "--no-obsolete"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:82
+#, no-wrap
+msgid "--no-obsolete@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:84
+msgid "Remove obsolete #~ messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:85
+#, no-wrap
+msgid "--only-obsolete"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:86
+#, no-wrap
+msgid "--only-obsolete@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:88
+msgid "Keep obsolete #~ messages, remove all other messages."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgattrib.texi:91
+#, no-wrap
+msgid "Attribute manipulation"
+msgstr ""
+
+#. type: cindex
+#: original_texis/msgattrib.texi:93
+#, no-wrap
+msgid "modify message attributes"
+msgstr ""
+
+#. type: Plain text
+#: original_texis/msgattrib.texi:99
+msgid ""
+"Attributes are modified after the message selection/removal has been "
+"performed.  If the @samp{--only-file} or @samp{--ignore-file} option is "
+"specified, the attribute modification is applied only to those messages that "
+"are listed in the @var{only-file} and not listed in the @var{ignore-file}."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:101
+#, no-wrap
+msgid "--set-fuzzy"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:102
+#, no-wrap
+msgid "--set-fuzzy@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:104 original_texis/msgattrib.texi:114
+msgid "Set all messages"
+msgstr ""
+
+#. type: ifhtml
+#: original_texis/msgattrib.texi:106
+msgid "‘fuzzy’."
+msgstr ""
+
+#. type: ifnothtml
+#: original_texis/msgattrib.texi:109
+msgid "`fuzzy'."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:111
+#, no-wrap
+msgid "--clear-fuzzy"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:112
+#, no-wrap
+msgid "--clear-fuzzy@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: ifhtml
+#: original_texis/msgattrib.texi:116
+msgid "non-‘fuzzy’."
+msgstr ""
+
+#. type: ifnothtml
+#: original_texis/msgattrib.texi:119
+msgid "non-`fuzzy'."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:121
+#, no-wrap
+msgid "--set-obsolete"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:122
+#, no-wrap
+msgid "--set-obsolete@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:124
+msgid "Set all messages obsolete."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:125
+#, no-wrap
+msgid "--clear-obsolete"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:126
+#, no-wrap
+msgid "--clear-obsolete@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:128
+msgid "Set all messages non-obsolete."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:129
+#, no-wrap
+msgid "--previous"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:130
+#, no-wrap
+msgid "--previous@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:132
+msgid "When setting"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:139
+msgid "mark, keep ``previous msgid'' of translated messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:140
+#, no-wrap
+msgid "--clear-previous"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:141
+#, no-wrap
+msgid "--clear-previous@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:143
+msgid "Remove the ``previous msgid'' (@samp{#|}) comments from all messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:144
+#, no-wrap
+msgid "--empty"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:145
+#, no-wrap
+msgid "--empty@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:147
+msgid "When removing"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:154
+msgid "mark, also set msgstr empty."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:155
+#, no-wrap
+msgid "--only-file=@var{file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:156
+#, no-wrap
+msgid "--only-file@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:159
+msgid ""
+"Limit the attribute changes to entries that are listed in @var{file}.  "
+"@var{file} should be a PO or POT file."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:160
+#, no-wrap
+msgid "--ignore-file=@var{file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:161
+#, no-wrap
+msgid "--ignore-file@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:164
+msgid ""
+"Limit the attribute changes to entries that are not listed in @var{file}.  "
+"@var{file} should be a PO or POT file."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:165
+#, no-wrap
+msgid "--fuzzy"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:166
+#, no-wrap
+msgid "--fuzzy@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:169
+msgid ""
+"Synonym for @samp{--only-fuzzy --clear-fuzzy}: It keeps only the fuzzy "
+"messages and removes their"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:176
+msgid "mark."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:177
+#, no-wrap
+msgid "--obsolete"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:178
+#, no-wrap
+msgid "--obsolete@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:181
+msgid ""
+"Synonym for @samp{--only-obsolete --clear-obsolete}: It keeps only the "
+"obsolete messages and makes them non-obsolete."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgattrib.texi:184
+#, no-wrap
+msgid "Input file syntax"
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:187
+#, no-wrap
+msgid "-P"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:188
+#, no-wrap
+msgid "--properties-input"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:189
+#, no-wrap
+msgid "-P@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:190
+#, no-wrap
+msgid "--properties-input@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:193
+msgid ""
+"Assume the input file is a Java ResourceBundle in Java @code{.properties} "
+"syntax, not in PO file syntax."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:194
+#, no-wrap
+msgid "--stringtable-input"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:195
+#, no-wrap
+msgid "--stringtable-input@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:198
+msgid ""
+"Assume the input file is a NeXTstep/GNUstep localized resource file in "
+"@code{.strings} syntax, not in PO file syntax."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgattrib.texi:201
+#, no-wrap
+msgid "Output details"
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:206
+#, no-wrap
+msgid "--color"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:207
+#, no-wrap
+msgid "--color=@var{when}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:208
+#, no-wrap
+msgid "--color@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:211
+msgid ""
+"Specify whether or when to use colors and other text attributes.  See "
+"@ref{The --color option} for details."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:212
+#, no-wrap
+msgid "--style=@var{style_file}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:213
+#, no-wrap
+msgid "--style@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:216
+msgid ""
+"Specify the CSS style rule file to use for @code{--color}.  See @ref{The "
+"--style option} for details."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:217
+#, no-wrap
+msgid "--force-po"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:218
+#, no-wrap
+msgid "--force-po@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:220
+msgid "Always write an output file even if it contains no message."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:221
+#, no-wrap
+msgid "-i"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:222
+#, no-wrap
+msgid "--indent"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:223
+#, no-wrap
+msgid "-i@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:224
+#, no-wrap
+msgid "--indent@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:226
+msgid "Write the .po file using indented style."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:227
+#, no-wrap
+msgid "--no-location"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:228
+#, no-wrap
+msgid "--no-location@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:230
+msgid "Do not write @samp{#: @var{filename}:@var{line}} lines."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:231
+#, no-wrap
+msgid "-n"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:232
+#, no-wrap
+msgid "--add-location=@var{type}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:233
+#, no-wrap
+msgid "-n@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:234
+#, no-wrap
+msgid "--add-location@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:236
+msgid "Generate @samp{#: @var{filename}:@var{line}} lines (default)."
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:242
+msgid ""
+"The optional @var{type} can be either @samp{full}, @samp{file}, or "
+"@samp{never}.  If it is not given or @samp{full}, it generates the lines "
+"with both file name and line number.  If it is @samp{file}, the line number "
+"part is omitted.  If it is @samp{never}, it completely suppresses the lines "
+"(same as @code{--no-location})."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:243
+#, no-wrap
+msgid "--strict"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:244
+#, no-wrap
+msgid "--strict@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:248
+msgid ""
+"Write out a strict Uniforum conforming PO file.  Note that this Uniforum "
+"format should be avoided because it doesn't support the GNU extensions."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:249
+#, no-wrap
+msgid "-p"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:250
+#, no-wrap
+msgid "--properties-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:251
+#, no-wrap
+msgid "-p@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:252
+#, no-wrap
+msgid "--properties-output@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:256
+msgid ""
+"Write out a Java ResourceBundle in Java @code{.properties} syntax.  Note "
+"that this file format doesn't support plural forms and silently drops "
+"obsolete messages."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:257
+#, no-wrap
+msgid "--stringtable-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:258
+#, no-wrap
+msgid "--stringtable-output@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:261
+msgid ""
+"Write out a NeXTstep/GNUstep localized resource file in @code{.strings} "
+"syntax.  Note that this file format doesn't support plural forms."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:262
+#, no-wrap
+msgid "-w @var{number}"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:263
+#, no-wrap
+msgid "--width=@var{number}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:264
+#, no-wrap
+msgid "-w@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:265
+#, no-wrap
+msgid "--width@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:269
+msgid ""
+"Set the output page width.  Long strings in the output files will be split "
+"across multiple lines in order to ensure that each line's width (= number of "
+"screen columns) is less or equal to the given @var{number}."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:270
+#, no-wrap
+msgid "--no-wrap"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:271
+#, no-wrap
+msgid "--no-wrap@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:275
+msgid ""
+"Do not break long message lines.  Message lines whose width exceeds the "
+"output page width will not be split into several lines.  Only file reference "
+"lines which are wider than the output page width will be split."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:276
+#, no-wrap
+msgid "-s"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:277
+#, no-wrap
+msgid "--sort-output"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:278
+#, no-wrap
+msgid "-s@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:279
+#, no-wrap
+msgid "--sort-output@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:282
+msgid ""
+"Generate sorted output.  Note that using this option makes it much harder "
+"for the translator to understand each message's context."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:283
+#, no-wrap
+msgid "-F"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:284
+#, no-wrap
+msgid "--sort-by-file"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:285
+#, no-wrap
+msgid "-F@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:286
+#, no-wrap
+msgid "--sort-by-file@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:288
+msgid "Sort output by file location."
+msgstr ""
+
+#. type: subsection
+#: original_texis/msgattrib.texi:291
+#, no-wrap
+msgid "Informative output"
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:294
+#, no-wrap
+msgid "-h"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:295
+#, no-wrap
+msgid "--help"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:296
+#, no-wrap
+msgid "-h@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:297
+#, no-wrap
+msgid "--help@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:299
+msgid "Display this help and exit."
+msgstr ""
+
+#. type: item
+#: original_texis/msgattrib.texi:300
+#, no-wrap
+msgid "-V"
+msgstr ""
+
+#. type: itemx
+#: original_texis/msgattrib.texi:301
+#, no-wrap
+msgid "--version"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:302
+#, no-wrap
+msgid "-V@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: opindex
+#: original_texis/msgattrib.texi:303
+#, no-wrap
+msgid "--version@r{, @code{msgattrib} option}"
+msgstr ""
+
+#. type: table
+#: original_texis/msgattrib.texi:305
+msgid "Output version information and exit."
+msgstr ""
